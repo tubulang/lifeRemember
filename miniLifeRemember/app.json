@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/contentInput/contentInput",
     "pages/index/index",
     "pages/logs/logs"
   ],
