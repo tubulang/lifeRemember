@@ -6,8 +6,8 @@ Page({
     title1: '',
     value2: '',
     title2: '',
-    value3: '',
-    title3: '',
+    myTypeValue: '',
+    myType: '',
   },
   onClick1() {
     $wuxSelect('#wux-select1').open({
@@ -82,13 +82,14 @@ Page({
       },
     })
   },
-  onClick3() {
+  showTypes() {
     $wuxSelect('#wux-select3').open({
-      value: this.data.value3,
-      multiple: true,
+      value: this.data.myTypeValue,
+      // multiple: true,
       toolbar: {
         title: 'Please choose',
         confirmText: 'ok',
+        cancelText: 'cancel'
       },
       options: [{
         title: '画画',
@@ -115,20 +116,30 @@ Page({
         value: '6',
       },
       ],
-      onChange: (value, index, options) => {
-        console.log('onChange', value, index, options)
-        this.setData({
-          value3: value,
-          title3: index.map((n) => options[n].title),
-        })
-      },
+      // onChange: (value, index, options) => {
+      //   console.log('onChange', value, index, options)
+      //   this.setData({
+      //     myTypeValue: value,
+      //     // title3: index.map((n) => options[n].title),
+      //     myType: options[index].title,
+      //   })
+      // },
       onConfirm: (value, index, options) => {
         console.log('onConfirm', value, index, options)
         this.setData({
-          value3: value,
-          title3: index.map((n) => options[n].title),
+          myTypeValue: value,
+          // title3: index.map((n) => options[n].title),
+          myType: options[index].title,
         })
       },
+      // onCancel: (value, index, options)=>{
+      //   console.log('onConfirm', value, index, options)
+      //   this.setData({
+      //     myTypeValue: value,
+      //     // title3: index.map((n) => options[n].title),
+      //     myType: options[index].title,
+      //   })
+      // }
     })
   },
 })
