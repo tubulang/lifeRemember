@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/dayOption/dayOption",
     "pages/calenderTab/calenderTab",
     "pages/footerBar/footerBar",
     "pages/classification/classification",
