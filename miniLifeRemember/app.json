@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/footerBar/footerBar",
     "pages/classification/classification",
     "pages/contentInput/contentInput",
     "pages/index/index",
