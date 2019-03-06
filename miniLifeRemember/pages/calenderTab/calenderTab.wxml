@@ -1,5 +1,5 @@
 <view class="container-fluid">
-    <text class="title">Demo1</text>
+    <!-- <text class="title">Demo1</text>
     <view class="calendar-box">
         <view class="left">
             <view class="today">
@@ -30,19 +30,22 @@
         board-style="demo4-board" 
         days-color="{{demo4_days_style}}" 
         />
-    </view>
-    <text class="title">Demo5</text>
+    </view> -->
+    <!-- <text class="title">Demo5</text> -->
     <view class="demo5">
         <calendar        
-        cell-size="30" 
-        next="{{false}}" prev="{{false}}" show-more-days="{{true}}"
+        cell-size="40" 
+        next="{{true}}" prev="{{true}}" show-more-days="{{true}}"
         calendar-style="demo5-calendar" 
         header-style="demo5-header" 
         board-style="demo5-board" 
-        days-color="{{demo5_days_style}}" 
+        days-color="{{demo5_days_style}}"
+        binddayClick='dayChoose'
+        lunar='{{lunarStatus}}'
         />
     </view>
-    <text class="title">Demo6</text>
+    <!-- <wux-button>农历</wux-button> -->
+    <!-- <text class="title">Demo6</text>
     <view class="demo6">
         <calendar       
         weeks-type="full-en"  
@@ -53,5 +56,20 @@
         board-style="demo6-board" 
         days-color="{{demo6_days_style}}" 
         />
+    </view> -->
+    <view class="page">
+    
+    <view class="page__bd">
+            <wux-cell-group title="Form switch">
+                <wux-cell title="农历">
+                    <wux-switch name="lunar" slot="footer" color="calm" value="{{ value1 }}" bind:change="selectLunar" />
+                </wux-cell>
+                <!-- <wux-cell title="Balanced">
+                    <wux-switch name="balanced" slot="footer" color="balanced" value="{{ value1 }}" bind:change="onChange1" />
+                </wux-cell> -->
+                
+            </wux-cell-group>
     </view>
+</view>
+
   </view>
