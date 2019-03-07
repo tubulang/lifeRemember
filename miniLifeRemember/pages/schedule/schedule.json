@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "wux-icon": "../../miniprogram_npm/wux-weapp/icon/index",
+    "wux-timeline": "../../miniprogram_npm/wux-weapp/timeline/index",
+    "wux-timeline-item": "../../miniprogram_npm/wux-weapp/timeline-item/index"
+  }
+}

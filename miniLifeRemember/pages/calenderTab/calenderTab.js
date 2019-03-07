@@ -22,6 +22,22 @@ Page({
     value1: false,
   },
   dayChoose:function(event){
+    try {
+
+      // 同步接口立即写入
+
+      wx.setStorageSync('selectedDay', JSON.stringify(event.detail));
+      wx.navigateTo({
+        url: '/pages/dayOption/dayOption?date='+event.detail
+      })
+
+      console.log('写入value2成功')
+
+    } catch (e) {
+
+      console.log('写入value2发生错误')
+
+    }
     console.log(event.detail);
   },
   onChange(field, e) {
