@@ -1,0 +1,11 @@
+<!--pages/schedule/schedule.wxml-->
+<text>pages/schedule/schedule.wxml</text>
+<view>
+  <view class="sub-title">Position = alternate</view>
+  <wux-timeline position="alternate">
+    <wux-timeline-item content="2018-10-24 v1.0.0" bind:click='selectSchedule' data-content='2018'/>
+    <wux-timeline-item content="2018-10-24 v1.0.0" />
+    <wux-timeline-item content="2018-10-24 v1.0.0" />
+    <wux-timeline-item content="2018-10-24 v1.0.0" />
+  </wux-timeline>
+</view>
