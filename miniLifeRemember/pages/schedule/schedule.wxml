@@ -3,9 +3,28 @@
 <view>
   <view class="sub-title">Position = alternate</view>
   <wux-timeline position="alternate">
-    <wux-timeline-item content="2018-10-24 v1.0.0" bind:click='selectSchedule' data-content='2018'/>
-    <wux-timeline-item content="2018-10-24 v1.0.0" />
-    <wux-timeline-item content="2018-10-24 v1.0.0" />
-    <wux-timeline-item content="2018-10-24 v1.0.0" />
+    <wux-timeline-item custom>
+      <wux-icon slot="dot" type="ios-time" size="23" /><!--自定义节点-->
+      <button bindtap='selectSchedule' data-content='2018'>2018-10-24 v1.0.0</button>
+    </wux-timeline-item>
+      
+    <wux-timeline-item content="2018-10-24 v1.0.0" custom>
+      <wux-icon slot="dot" type="ios-time" size="23" /><!--自定义节点-->
+      <button bindtap='selectSchedule' data-content='2018'>2018-10-24 v1.0.0</button>
+    </wux-timeline-item>
+
+    <wux-timeline-item content="2018-10-24 v1.0.0" custom>
+      <wux-icon slot="dot" type="ios-time" size="23" /><!--自定义节点-->
+    </wux-timeline-item>
+
+    <wux-timeline-item content="2018-10-24 v1.0.0" custom>
+      <wux-icon slot='dot' type='ios-time' size='23' />
+    </wux-timeline-item>
+
+    <wux-timeline-item custom>
+                <wux-icon slot="dot" type="ios-time" size="23" /><!--自定义节点-->
+                <view>2018-10-24 v1.0.0</view>
+            </wux-timeline-item>
   </wux-timeline>
+  <!-- <footerBar> -->
 </view>
