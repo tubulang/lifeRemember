@@ -3,6 +3,8 @@
     "wux-segmented-control": "../../miniprogram_npm/wux-weapp/segmented-control/index",
     "wux-tabs": "../../miniprogram_npm/wux-weapp/tabs/index",
     "wux-tab": "../../miniprogram_npm/wux-weapp/tab/index",
-    "wux-badge": "../../miniprogram_npm/wux-weapp/badge/index"
+    "wux-badge": "../../miniprogram_npm/wux-weapp/badge/index",
+    "my-diy-module": "../diyModule/diyModule",
+    "footer-bar":"../myComponent/footerBar/footerBar"
   }
 }

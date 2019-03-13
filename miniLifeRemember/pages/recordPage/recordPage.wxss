@@ -1,0 +1,12 @@
+/* pages/recordPage/recordPage.wxss */
+.post {
+    float: right;
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 140rpx;
+    right: 60rpx;  
+    border: 0 solid #ffffff;
+    border-radius: 500px;
+    box-shadow: 4px 1px 1px #cccccc;
+
+}

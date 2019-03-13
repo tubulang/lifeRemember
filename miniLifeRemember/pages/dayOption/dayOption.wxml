@@ -8,20 +8,46 @@
     <wux-segmented-control current="{{ current }}" controlled values="{{ ['生日', '日程', '记录'] }}" bind:change="onChange" />
   </view> -->
   <view>
+  <my-diy-module></my-diy-module>
     <wux-tabs wux-class="bordered" controlled current="{{ key }}" bindchange="onTabsChange">
       <block wx:for="{{ tabs }}" wx:key="key">
         <wux-tab key="{{ item.key }}" title="{{ item.title }}"></wux-tab>
       </block>
     </wux-tabs>
-    <swiper current="{{ index }}" bindchange="onSwiperChange">
+    <view style='height:auto'>
+    <swiper current="{{ index }}" bindchange="onSwiperChange" class='swiper-height'>
       <block wx:key="birth">
         <swiper-item>
-          <view class="content">记录生日</view>
+          <view class="content" style='height:30px'>记录生日</view>
         </swiper-item>
       </block>
       <block wx:key="schedule">
-        <swiper-item>
+        <swiper-item class='swiper-item-overflow'>
+          <view class="content" style='height:30px'>你的日程1</view>
+          <view class="content" style='height:30px'>你的日程</view>
+          <view class="content" style='height:30px'>你的日程</view>
+          <view class="content" style='height:30px'>你的日程</view>
+          <view class="content" style='height:30px'>你的日程</view>
+          <view class="content" style='height:30px'>你的日程</view>
+          <view class="content" style='height:30px'>你的日程</view>
+          <view class="content" style='height:30px'>你的日程</view>
+          <view class="content" style='height:30px'>你的日程</view>
+          <view class="content" style='height:30px'>你的日程</view>
+          <view class="content" style='height:30px'>你的日程</view>
+          <view class="content" style='height:30px'>你的日程10</view>
           <view class="content">你的日程</view>
+          <view class="content">你的日程</view>
+          <view class="content">你的日程</view>
+          <view class="content">你的日程</view>
+          <view class="content">你的日程</view>
+          <view class="content">你的日程</view>
+          <view class="content">你的日程</view>
+          <view class="content">你的日程</view>
+          <view class="content">你的日程</view>
+          <view class="content">你的日程</view>
+          <view class="content">你的日程</view>
+          <view class="content">你的日程</view>
+          <view class="content">你的日程100</view>
         </swiper-item>
       </block>
       <block wx:key="log">
@@ -29,6 +55,13 @@
           <view class="content">记录信息</view>
         </swiper-item>
       </block>
+      <block wx:key="account">
+        <swiper-item>
+          <view class="content">账目信息</view>
+        </swiper-item>
+      </block>
     </swiper>
+    </view>
   </view>
+  <footer-bar></footer-bar>
 </view>

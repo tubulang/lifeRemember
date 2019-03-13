@@ -27,6 +27,11 @@ Page({
         title: '记录',
         // content: 'Content of tab 3',
       },
+      {
+        key: 'account',
+        title: '账目',
+        // content: 'Content of tab 3',
+      },
     ],
   },
 

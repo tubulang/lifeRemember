@@ -1,0 +1,23 @@
+/* myComponent/recordList/recordList.wxss */
+.recordContent{
+  height: 3.5rem;
+  /* border-top: 1px #11c1f3 solid;
+  border-left: 1px #11c1f3 solid;
+  border-right: 1px #11c1f3 solid;
+
+  
+  border-bottom: 1px #11c1f3 solid; */
+  /* border: 0.1px #efeff4 solid;  */
+  border-radius: 5px;
+  margin-top: 0.3rem;
+  box-shadow: 1px 1px 5px #efeff4;
+}
+.recordView{
+  height: 3.5rem;
+  text-align: left;
+  /* background-color: #11c2f304; */
+  /* color: white; */
+  padding-left: 1rem;
+  line-height: 3.5rem;
+  
+}

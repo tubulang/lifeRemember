@@ -93,4 +93,5 @@
             </wux-tabbar-item>
         </wux-tabbar>
     </view>
+    <slot></slot>
 </view>
