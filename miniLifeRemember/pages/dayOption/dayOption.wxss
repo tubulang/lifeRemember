@@ -1,1 +1,7 @@
 /* pages/dayOption/dayOption.wxss */
+.swiper-height{
+   height:80vh
+}
+.swiper-item-overflow{
+  overflow-y: auto
+}

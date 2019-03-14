@@ -1,0 +1,18 @@
+{
+  "component": true,
+  "usingComponents": {
+    "wux-swipe-action-group": "../../miniprogram_npm/wux-weapp/swipe-action-group/index",
+    "wux-swipe-action": "../../miniprogram_npm/wux-weapp/swipe-action/index",
+    "wux-cell-group": "../../miniprogram_npm/wux-weapp/cell-group/index",
+    "wux-cell": "../../miniprogram_npm/wux-weapp/cell/index",
+    "wux-icon": "../../miniprogram_npm/wux-weapp/icon/index",
+
+    "wux-checkbox-group": "../../miniprogram_npm/wux-weapp/checkbox-group/index",
+    "wux-checkbox": "../../miniprogram_npm/wux-weapp/checkbox/index",
+
+    "i-radio-group": "../../miniprogram_npm/dist/radio-group/index",
+    "i-radio": "../../miniprogram_npm/dist/radio/index",
+
+    "i-swipeout": "../../miniprogram_npm/dist/swipeout/index"
+  }
+}

@@ -1,0 +1,11 @@
+<!--myComponent/recordList/recordList.wxml-->
+<!-- <text>myComponent/recordList/recordList.wxml</text> -->
+
+<wux-swipe-action-group>
+  <wux-swipe-action autoClose left="{{ left }}" right="{{ right }}" wux-class='recordContent' bind:click='selectTap' bind:open='openRecordBar'>
+    <view class="demo-item recordView" bind:click='selectTap'>
+      {{viewData}}
+    </view>
+  </wux-swipe-action>
+
+</wux-swipe-action-group>

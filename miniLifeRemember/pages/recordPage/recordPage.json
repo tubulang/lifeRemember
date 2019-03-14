@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "record-list": "../../myComponent/recordList/recordList",
+    "wux-search-bar": "../../miniprogram_npm/wux-weapp/search-bar/index",
+    "footer-bar": "../../myComponent/footerBar/footerBar"
+  }
+}

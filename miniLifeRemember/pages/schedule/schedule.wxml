@@ -1,7 +1,7 @@
 <!--pages/schedule/schedule.wxml-->
-<text>pages/schedule/schedule.wxml</text>
+<!-- <text>pages/schedule/schedule.wxml</text> -->
 <view>
-  <view class="sub-title">Position = alternate</view>
+  <view class="sub-title">今日日程</view>
   <wux-timeline position="alternate">
     <wux-timeline-item custom>
       <wux-icon slot="dot" type="ios-time" size="23" /><!--自定义节点-->
@@ -17,8 +17,14 @@
       <wux-icon slot="dot" type="ios-time" size="23" /><!--自定义节点-->
     </wux-timeline-item>
 
-    <wux-timeline-item content="2018-10-24 v1.0.0" custom>
+    <wux-timeline-item  custom>
       <wux-icon slot='dot' type='ios-time' size='23' />
+      <wux-wing-blank size="default">
+            <wux-card title="卡片标题" extra="额外内容" thumb="https://wux.cdn.cloverstd.com/logo.png">
+                <view slot="body">卡片内容</view>
+                <view slot="footer">尾部内容</view>
+            </wux-card>
+        </wux-wing-blank>
     </wux-timeline-item>
 
     <wux-timeline-item custom>

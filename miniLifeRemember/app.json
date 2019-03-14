@@ -1,13 +1,19 @@
 {
   "pages":[
-    "pages/schedule/schedule",
-    "pages/dayOption/dayOption",
+    "pages/recordPage/recordPage",
+    "myComponent/recordList/recordList",
+    "myComponent/footerBar/footerBar",
+    "pages/contentInput/contentInput","pages/dayOption/dayOption",
+    "pages/diyModule/diyModule",
     "pages/calenderTab/calenderTab",
+    "pages/schedule/schedule",
+    
+    
     "pages/footerBar/footerBar",
     "pages/classification/classification",
-    "pages/contentInput/contentInput",
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/index/index"
+    
   ],
   "window":{
     "backgroundTextStyle":"light",

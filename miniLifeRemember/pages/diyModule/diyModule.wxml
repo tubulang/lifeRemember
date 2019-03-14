@@ -1,0 +1,6 @@
+<!--pages/diyModule/diyModule.wxml-->
+<view>
+  <text>pages/diyModule/diyModule.wxml</text>
+  <slot></slot>
+</view>
+

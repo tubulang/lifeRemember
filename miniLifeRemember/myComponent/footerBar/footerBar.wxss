@@ -1,0 +1,4 @@
+/* pages/footerBar/footerBar.wxss */
+.footer-height{
+  height: 20vh
+}

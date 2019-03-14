@@ -1,0 +1,18 @@
+<!--pages/recordPage/recordPage.wxml-->
+
+<view class="page__bd">
+  
+  <wux-search-bar clear value="{{ value }}" controlled placeholder="Search" bind:change="onChange" bind:focus="onFocus" bind:blur="onBlur" bind:confirm="onConfirm" bind:clear="onClear" bind:cancel="onCancel" />
+</view>
+<record-list bindtap='selectOperator' bindselectTap='selectOperator' bind:openBar='openRecordBar'></record-list>
+<record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list>
+<record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list>
+<record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list>
+<record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list>
+<record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list>
+<record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list>
+<record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list>
+<record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list>
+<record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list>
+<icon type="success" size="50" class="post" bindtap="onPostClick"/>
+<footer-bar></footer-bar>

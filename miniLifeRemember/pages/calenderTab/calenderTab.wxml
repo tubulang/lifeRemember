@@ -65,7 +65,7 @@
                     <wux-switch name="lunar" style='width:"80%"' slot="footer" color="calm" value="{{ value1 }}" bind:change="selectLunar" />
                 </wux-cell>
                 <!-- <wux-cell title="Balanced">
-                    <wux-switch name="balanced" slot="footer" color="balanced" value="{{ value1 }}" bind:change="onChange1" />
+                    <wux-switch name="balanced" slot="footer" color="balanced" value="{{ value1 }}" bind:change="selectLunar" />
                 </wux-cell> -->
                 
             </wux-cell-group>
