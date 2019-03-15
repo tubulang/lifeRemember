@@ -7,6 +7,8 @@
     "wux-cell": "../../miniprogram_npm/wux-weapp/cell/index",
     "wux-icon": "../../miniprogram_npm/wux-weapp/icon/index",
 
+    "wux-selectable": "../../miniprogram_npm/wux-weapp/selectable/index",
+
     "wux-checkbox-group": "../../miniprogram_npm/wux-weapp/checkbox-group/index",
     "wux-checkbox": "../../miniprogram_npm/wux-weapp/checkbox/index",
 

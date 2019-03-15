@@ -1,12 +1,16 @@
 /* pages/recordPage/recordPage.wxss */
-.post {
+.newButton {
     float: right;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     position: fixed;
     bottom: 140rpx;
     right: 60rpx;  
-    border: 0 solid #ffffff;
-    border-radius: 500px;
-    box-shadow: 4px 1px 1px #cccccc;
+    border: 0rpx solid #ffffff;
+    border-radius: 100%;
+    box-shadow: 0rpx 0rpx 1rpx #cccccc;
+    transition: display 1s linear;
+}
+.hideAdd{
+  display: none
 
 }

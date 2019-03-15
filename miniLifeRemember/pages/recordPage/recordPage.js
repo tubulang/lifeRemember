@@ -5,13 +5,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    post:'post'
   },
   selectOperator:function(e){
     console.log(e.detail.detail)
+    console.log(e.detail)
+  },
+  onChangeBar(e){
+    console.log(e)
   },
   openRecordBar(){
     console.log('sdfs')
+    // this.setData({
+    //   post:'hideAdd'
+    // })
+  },
+  //新建记录
+  newRecord(){
+    wx.navigateTo({
+      url: '/pages/newRecord/newRecord'
+    })
   },
   onChange(e) {
     console.log('onChange', e)

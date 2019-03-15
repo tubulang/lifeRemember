@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "wux-cell": "../../miniprogram_npm/wux-weapp/cell/index",
+    "wux-cell-group": "../../miniprogram_npm/wux-weapp/cell-group/index",
+    "wux-select": "../../miniprogram_npm/wux-weapp/select/index",
+    "wux-textarea": "../../miniprogram_npm/wux-weapp/textarea/index"
+
+    
+  },
+  "component": true
+}
