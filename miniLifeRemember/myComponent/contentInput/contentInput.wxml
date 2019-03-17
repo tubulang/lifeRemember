@@ -1,0 +1,8 @@
+<!--pages/contentInput/contentInput.wxml-->
+<view>
+  <wux-cell-group title="内容">
+    <wux-cell hover-class="none">
+      <wux-textarea hasCount rows="3" cursorSpacing="80" placeholder="请输入内容" />
+    </wux-cell>
+  </wux-cell-group>
+</view>

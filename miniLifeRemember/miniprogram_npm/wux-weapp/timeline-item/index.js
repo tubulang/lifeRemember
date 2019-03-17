@@ -67,10 +67,5 @@ baseComponent({
             const className = position === 'alternate' ? index % 2 === 0 ? `${prefixCls}--alternate ${prefixCls}--left` : `${prefixCls}--alternate ${prefixCls}--right` : position === 'right' ? `${prefixCls}--right` : ''
             this.setData({ isLast, isPending, pending, className })
         },
-      onTap() {
-        // if (!this.data.disabled && !this.data.loading) {
-          this.triggerEvent('click')
-        // }
-      },
     },
 })

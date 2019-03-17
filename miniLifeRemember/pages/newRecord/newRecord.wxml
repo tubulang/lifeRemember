@@ -1,0 +1,43 @@
+<!--pages/newRecord/newRecord.wxml-->
+<view class="page newRecordView">
+<content-input></content-input>
+<wux-select id="wux-select3" />
+<wux-calendar id="wux-calendar" />
+
+  <view class="page__bd">
+
+    <wux-cell-group title="选项">
+      <wux-cell title="优先级" hover-class="none">
+        <wux-rater slot="footer" default-value="{{ 3 }}" bind:change='setPriority' activeColor='#11c1f3' />
+      </wux-cell>
+      <!-- <wux-cell title="归类" extra="{{ title1 }}" bind:click="onClick1"></wux-cell>
+            <wux-cell title="手机" extra="{{ title2 }}" bind:click="onClick2"></wux-cell> -->
+      <wux-cell title="归类" extra="{{ myType }}" bind:click="showTypes"></wux-cell>
+      <wux-cell title="标签" extra="{{ myType }}" bind:click="showTags"></wux-cell>
+
+      <wux-cell extra="{{ myType }}" bind:click="showRemindTime">
+        <picker mode="time" value="{{remindTime}}" bindchange="bindRemindTimeChange">
+          <view class="picker">
+            提醒时间 {{remindTime}}
+          </view>
+        </picker>
+      </wux-cell>
+
+      <wux-cell wx:if='{{havePlanTime}}' title="计划时间" extra="{{ planTime }}" bind:click="showPlanTime"></wux-cell>
+      <!-- <wux-cell  title="计划时间" extra="{{ myType }}" bind:click="showPlanTime"></wux-cell> -->
+    </wux-cell-group>
+    <view class="section">
+
+    </view>
+    <wux-cell-group title='移动操作'>
+      <wux-cell title="添加到日程">
+        <wux-switch name="openSchedule" style='width:"80%"' slot="footer" color="calm" value="{{ openSchedule }}" bind:change="openSchedule" />
+      </wux-cell>
+    </wux-cell-group>
+
+  </view>
+  <view class='saveButton'>
+  <wux-button block type="calm" loading='{{isLoading}}' bind:click='submitRecord' 
+>保存</wux-button>
+  </view>
+</view>

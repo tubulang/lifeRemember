@@ -1,9 +1,11 @@
 {
-  "pages":[
+  "pages":["pages/newRecord/newRecord",
+    "myComponent/selectAction/index",
+    
     "pages/recordPage/recordPage",
     "myComponent/recordList/recordList",
     "myComponent/footerBar/footerBar",
-    "pages/contentInput/contentInput","pages/dayOption/dayOption",
+    "pages/dayOption/dayOption",
     "pages/diyModule/diyModule",
     "pages/calenderTab/calenderTab",
     "pages/schedule/schedule",

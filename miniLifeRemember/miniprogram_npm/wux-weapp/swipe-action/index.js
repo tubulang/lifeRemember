@@ -71,9 +71,6 @@ baseComponent({
         },
     },
     methods: {
-      slotClick(){
-        this.triggerEvent('click');
-      },
         updated(index) {
             if (this.data.index !== index) {
                 this.setData({ index })

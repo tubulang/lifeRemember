@@ -2,6 +2,7 @@
   "usingComponents": {
     "record-list": "../../myComponent/recordList/recordList",
     "wux-search-bar": "../../miniprogram_npm/wux-weapp/search-bar/index",
-    "footer-bar": "../../myComponent/footerBar/footerBar"
+    "footer-bar": "../../myComponent/footerBar/footerBar",
+    "wux-icon": "../../miniprogram_npm/wux-weapp/icon/index"
   }
 }

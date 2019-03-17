@@ -1,0 +1,10 @@
+/* pages/newRecord/newRecord.wxss */
+.newRecordView{
+  height: 100vh
+}
+.saveButton{
+  position: fixed;
+  bottom: 1rpx;
+  width: 100%;
+  /* border-radius: 5px; */
+}
