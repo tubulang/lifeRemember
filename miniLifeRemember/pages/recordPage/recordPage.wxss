@@ -14,3 +14,18 @@
   display: none
 
 }
+.fabButtonClass{
+  right:60rpx !important;
+bottom:138rpx !important;
+
+}
+.wux-fab-button__button .wux-fab-button__button .newSubButoon{
+  background-color: #DAEDFF !important;
+}
+.wux-fab-button__label{
+  opacity: 1 !important;
+  color: white !important;
+  background-color: #11c1f3 !important;
+  font-size: 15px !important;
+  border-radius: 20px !important;
+}

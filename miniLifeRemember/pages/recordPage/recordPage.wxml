@@ -1,5 +1,6 @@
 <!--pages/recordPage/recordPage.wxml-->
 <view>
+<wux-fab-button buttons="{{ buttons }}" direction='circle' bind:change="onChange" bind:click="onClick" bind:contact="onContact" wux-class='fabButtonClass' sAngle='160' eAngle='290' spaceBetween='30' theme='calm'/>
 <wux-select id="wux-select3" />
   <view class="page__bd">
 
@@ -16,5 +17,6 @@
   <record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list>
   <record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list>
   <wux-icon type="ios-add-circle-outline" class="{{newButton}}" color='#11c1f3' size="50" bindtap="newRecord"></wux-icon>
+  
   <footer-bar bindchangeBar='onChangeBar'></footer-bar>
 </view>

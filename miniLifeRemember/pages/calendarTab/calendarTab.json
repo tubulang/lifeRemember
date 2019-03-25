@@ -5,6 +5,8 @@
     "wux-button": "../../miniprogram_npm/wux-weapp/button/index",
     "wux-cell-group": "../../miniprogram_npm/wux-weapp/cell-group/index",
     "wux-cell": "../../miniprogram_npm/wux-weapp/cell/index",
-    "wux-switch": "../../miniprogram_npm/wux-weapp/switch/index"
+    "wux-switch": "../../miniprogram_npm/wux-weapp/switch/index",
+
+    "footer-bar": "../../myComponent/footerBar/footerBar"
   }
 }

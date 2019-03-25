@@ -1,36 +1,75 @@
 <!--pages/schedule/schedule.wxml-->
 <!-- <text>pages/schedule/schedule.wxml</text> -->
-<view>
+<view class='view-page'>
   <view class="sub-title">今日日程</view>
   <wux-timeline position="alternate">
     <wux-timeline-item custom>
-      <wux-icon slot="dot" type="ios-time" size="23" /><!--自定义节点-->
-      <button bindtap='selectSchedule' data-content='2018'>2018-10-24 v1.0.0</button>
-    </wux-timeline-item>
-      
-    <wux-timeline-item content="2018-10-24 v1.0.0" custom>
-      <wux-icon slot="dot" type="ios-time" size="23" /><!--自定义节点-->
-      <button bindtap='selectSchedule' data-content='2018'>2018-10-24 v1.0.0</button>
+      <wux-icon slot="dot" type="ios-time" size="23" />
+      <!--自定义节点-->
+      <button bindtap='selectSchedule' bindlongpress='longSelectSchedule' data-content='2018'>2018-10-24 v1.0.0</button>
     </wux-timeline-item>
 
     <wux-timeline-item content="2018-10-24 v1.0.0" custom>
-      <wux-icon slot="dot" type="ios-time" size="23" /><!--自定义节点-->
-    </wux-timeline-item>
-
-    <wux-timeline-item  custom>
-      <wux-icon slot='dot' type='ios-time' size='23' />
-      <wux-wing-blank size="default">
-            <wux-card title="卡片标题" extra="额外内容" thumb="https://wux.cdn.cloverstd.com/logo.png">
-                <view slot="body">卡片内容</view>
-                <view slot="footer">尾部内容</view>
-            </wux-card>
-        </wux-wing-blank>
+    <wux-popover visible="{{ visible }}" controlled placement="top" title="Title" bind:change="onChange" wux-class='poverClass'>
+          <view slot="content" bindtap="hide">Close<button size="mini">top</button></view>
+          <button size="mini">top</button>
+          
+        </wux-popover>
+      <wux-icon slot="dot" type="ios-time" size="23" />
+      <!--自定义节点-->
+      <button bindtap='selectSchedule' data-content='2018'>2018-10-24 v1.0.0</button>
     </wux-timeline-item>
 
     <wux-timeline-item custom>
-                <wux-icon slot="dot" type="ios-time" size="23" /><!--自定义节点-->
-                <view>2018-10-24 v1.0.0</view>
-            </wux-timeline-item>
+    <!-- 记录每条的高度，*-2为气泡的top值-->
+        <wux-popover visible="{{ visible }}" controlled placement="top" bind:change="onChange" wux-class='poverClass'>
+          <view slot="content" bindtap="hide">
+            <button size="mini">删除</button>
+            <button size="mini">完成</button>
+          </view>
+          <button size="mini">top</button>
+        </wux-popover>
+
+      <wux-icon slot="dot" type="ios-time" size="23" />
+      <!--自定义节点-->
+    </wux-timeline-item>
+
+    <wux-timeline-item custom>
+      <wux-icon slot='dot' type='ios-time' size='23' />
+      <wux-popover visible="{{ visible }}" controlled placement="top" bind:change="onChange" wux-class='poverClass'>
+          <view slot="content" bindtap="hide">
+            <button size="mini">删除</button>
+            <button size="mini">完成</button>
+          </view>
+          <wux-wing-blank size="default">
+        <wux-card title="卡片标题" extra="额外内容" thumb="https://wux.cdn.cloverstd.com/logo.png">
+          <view slot="body">卡片内容</view>
+          <view slot="footer">尾部内容</view>
+        </wux-card>
+      </wux-wing-blank>
+          <!-- <button size="mini">top</button> -->
+        </wux-popover>
+      
+    </wux-timeline-item>
+
+    <wux-timeline-item custom>
+      <wux-icon slot="dot" type="ios-time" size="23" />
+      <!--自定义节点-->
+      <wux-popover visible="{{ visible }}" controlled placement="top" bind:change="onChange" >
+          <view slot="content" bindtap="hide">
+            <button size="mini">删除</button>
+            <button size="mini">完成</button>
+          </view><view>2018-10-24 v1.0.0</view>
+          <!-- <button size="mini">top</button> -->
+        </wux-popover>
+      
+    </wux-timeline-item>
   </wux-timeline>
-  <!-- <footerBar> -->
+  <!-- <view>
+  <wux-popover visible="{{ visible }}" controlled placement="top" title="Title" bind:change="onChange">
+          <view slot="content" bindtap="hide">Close</view>
+          <button size="mini">top</button>
+        </wux-popover>
+        </view> -->
+  <footer-bar></footer-bar>
 </view>

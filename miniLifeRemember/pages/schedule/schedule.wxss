@@ -1,1 +1,7 @@
 /* pages/schedule/schedule.wxss */
+.view-page{
+  background-color: #DAEDFF;
+}
+.poverClass{
+  top: -45px !important;
+}

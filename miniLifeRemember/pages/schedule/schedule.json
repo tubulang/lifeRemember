@@ -5,6 +5,10 @@
     "wux-timeline-item": "../../miniprogram_npm/wux-weapp/timeline-item/index",
 
     "wux-card": "../../miniprogram_npm/wux-weapp/card/index",
-    "wux-wing-blank": "../../miniprogram_npm/wux-weapp/wing-blank/index"
+    "wux-wing-blank": "../../miniprogram_npm/wux-weapp/wing-blank/index",
+
+    "footer-bar": "../../myComponent/footerBar/footerBar",
+
+    "wux-popover": "../../miniprogram_npm/wux-weapp/popover/index"
   }
 }

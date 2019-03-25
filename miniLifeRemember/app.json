@@ -1,27 +1,24 @@
 {
-  "pages":["pages/newRecord/newRecord",
-    "myComponent/selectAction/index",
+  "pages": ["pages/recordPage/recordPage","pages/schedule/schedule",
+    "pages/calendarTab/calendarTab",
+    "pages/dayOption/dayOption",
     
-    "pages/recordPage/recordPage",
+    "pages/newRecord/newRecord",
+    "myComponent/selectAction/index",
     "myComponent/recordList/recordList",
     "myComponent/footerBar/footerBar",
-    "pages/dayOption/dayOption",
     "pages/diyModule/diyModule",
-    "pages/calenderTab/calenderTab",
-    "pages/schedule/schedule",
-    
     
     "pages/footerBar/footerBar",
     "pages/classification/classification",
     "pages/logs/logs",
     "pages/index/index"
-    
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "plugins": {
     "calendar": {
