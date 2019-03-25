@@ -62,7 +62,7 @@
             </wux-tabbar-item>
         </wux-tabbar>
         <view class="sub-title">With Badge</view> -->
-        <wux-tabbar defaultCurrent="1" position="bottom" safeArea bindchange="onChange" theme="calm">
+        <wux-tabbar current="{{current}}" controlled position="bottom" safeArea bindchange="onChange" theme="calm">
             <wux-tabbar-item title='记录'>
             <wux-badge  slot="icon-on">
                     <wux-icon wux-class="icon" type="ios-create" size="25" />

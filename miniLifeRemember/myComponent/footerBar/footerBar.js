@@ -12,7 +12,12 @@ Component({
    * 组件的初始数据
    */
   data: {
-    current: '1'
+    current: '1',
+    pagesOption:[
+      '../../pages/recordPage/recordPage',
+      '../../pages/schedule/schedule',
+      '../../pages/calendarTab/calendarTab',
+    ]
   },
 
   /**
@@ -23,6 +28,10 @@ Component({
       console.log('onChange', e)
       this.setData({
         current: e.detail.key,
+      })
+      console.log(e.detail.key)
+      wx.redirectTo({
+        url: this.data.pagesOption[e.detail.key]
       })
       this.triggerEvent('changeBar', e)
     },

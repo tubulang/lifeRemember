@@ -1,6 +1,21 @@
 page {
     background-color: #efefef;
 }
+/* .demo5_days_style{
+  color: red !important;
+} */
+.selectButtonCellGroup{
+  padding-left: 15px;
+  padding-right: 15px;
+  /* border-radius: 5px; */
+}
+.selectButton{
+  border-radius: 15px !important;
+}
+/* wux-tabbar-item--calm .wux-tabbar-item--current{
+  color:#80848f;
+
+} */
 
 
 .calendar-box {
@@ -57,90 +72,24 @@ page {
     display: block;
 }
 
-.demo2 {
-    background-image: linear-gradient(to bottom, #2e5d91 0%, #2f3e79 100%);
-    padding-top: 10px;
-    padding-bottom: 10px;    
-}
 
-.demo2-header {
-    font-size: large;
-    color: #3ed7f6;
-}
-
-
-.demo2-board {
-    color: #3ed7f6;
-}
-
-
-.demo3 {
-    background-color: #eeedff;
-    padding-top: 10px;
-}
-
-.demo3-header {
-    font-size: large;
-    color: #605eac;
-}
-
-
-.demo3-board {
-    background-color: #dddcff;
-    color: white;
-}
-
-
-.demo4-calendar {
-    background-color: #413a60;
-    padding-top: 10px;
-}
-
-.demo4-header {
-    font-size: large;
-    color: white;
-}
-
-.demo4-board {
-    color: white;
-}
-
-.demo5 {
+.myCalendar {
     padding: 15px;
 }
 
-.demo5-calendar {
+.myCalendar-calendar {
     background-color: white;
     padding-top: 10px;
     border-radius: 15px;
 }
 
-.demo5-header {
+.myCalendar-header {
     font-size: large;
     color: #59518d;    
 }
 
-.demo5-board {
+.myCalendar-board {
     color: #c7cbe2;
     font-weight: bold;
 }
 
-.demo6 {
-    padding: 15px;
-}
-
-.demo6-calendar {
-    background-color: #fff043;
-    padding-top: 10px;    
-    box-shadow: 5px 5px 2px 1px rgba(255, 240, 67, 0.5);
-}
-
-.demo6-header {
-    font-size: large;
-    color: black;    
-}
-
-.demo6-board {
-    color: #ff8a43;
-    font-weight: bold;
-}

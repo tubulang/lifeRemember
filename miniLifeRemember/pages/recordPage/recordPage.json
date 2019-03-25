@@ -3,6 +3,8 @@
     "record-list": "../../myComponent/recordList/recordList",
     "wux-search-bar": "../../miniprogram_npm/wux-weapp/search-bar/index",
     "footer-bar": "../../myComponent/footerBar/footerBar",
-    "wux-icon": "../../miniprogram_npm/wux-weapp/icon/index"
+    "wux-icon": "../../miniprogram_npm/wux-weapp/icon/index",
+
+    "wux-fab-button": "../../miniprogram_npm/wux-weapp/fab-button/index"
   }
 }
