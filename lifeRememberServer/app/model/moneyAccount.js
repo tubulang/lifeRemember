@@ -1,22 +1,15 @@
 'use strict';
 var moment = require('moment')
 module.exports = app => {
-  const { STRING, INTEGER, BOOLEAN, DATE } = app.Sequelize;
+  const { STRING, INTEGER, DATE } = app.Sequelize;
 
-  const Birthday = app.model.define('birthday', {
+  const MoneyAccount = app.model.define('moneyAccount', {
     id: { type: INTEGER, primaryKey: true, autoIncrement: true },
-    name: STRING,
-    lunarMark: BOOLEAN,
-    lunarDay: DATE,
-    day: {
-      type:DATE,
-      get(){
-        return moment(this.getDataValue('day')).format('YYYY-MM-DD')
-      }
-      // set() {
-      //   return moment(this.getDataValue('day').format('YYYY-MM-DD'))
-      // }
-    },
+    time: DATE,
+    address: STRING,
+    cost: INTEGER,
+    accountType: STRING,
+    totalText: STRING,
     creator: INTEGER,
     created_at:  {
       type:DATE,
@@ -33,9 +26,9 @@ module.exports = app => {
   }, {
     classMethods: {
       associate() {
-        Birthday.belongsTo(app.model.UserInfo);
+        MoneyAccount.belongsTo(app.model.UserInfo);
       },
     },
   });
-  return Birthday;
+  return MoneyAccount;
 };

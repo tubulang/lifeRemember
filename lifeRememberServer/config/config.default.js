@@ -24,12 +24,21 @@
 //   // 是否加载到 agent 上，默认关闭
 //   agent: false,
 // };
+process.env.TZ = 'Asia/Shanghai';
 module.exports = appInfo => {
   /**
    * built-in config
    * @type {Egg.EggAppConfig}
    **/
   const config = {};
+  config.sequelize = {
+    dialect: 'mysql',
+    host: '127.0.0.1',
+    port: 3306,
+    timezone: process.env.TZ,// 调整时区问题
+    password: 'password',
+    database: 'lifeMemory',
+  };
   // config.mysql = {
   //   client: {
   //      //host
@@ -51,13 +60,7 @@ module.exports = appInfo => {
   //   app: true,
   //   agent: false,
   // };
-  config.sequelize = {
-    dialect: 'mysql',
-    host: '127.0.0.1',
-    port: 3306,
-    password: 'password',
-    database: 'lifeMemory',
-  };
+ 
   config.security = {
     csrf: false,
   };

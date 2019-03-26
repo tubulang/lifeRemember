@@ -3,19 +3,16 @@ var moment = require('moment')
 module.exports = app => {
   const { STRING, INTEGER, BOOLEAN, DATE } = app.Sequelize;
 
-  const Birthday = app.model.define('birthday', {
+  const Record = app.model.define('record', {
     id: { type: INTEGER, primaryKey: true, autoIncrement: true },
-    name: STRING,
-    lunarMark: BOOLEAN,
-    lunarDay: DATE,
-    day: {
-      type:DATE,
-      get(){
-        return moment(this.getDataValue('day')).format('YYYY-MM-DD')
-      }
-      // set() {
-      //   return moment(this.getDataValue('day').format('YYYY-MM-DD'))
-      // }
+    labelId: INTEGER,
+    degreeId: INTEGER,
+    recordContent: STRING,
+    remindTime: {
+        type:DATE,
+        get(){
+          return moment(this.getDataValue('remindTime')).format('YYYY-MM-DD HH:mm:ss')
+        }
     },
     creator: INTEGER,
     created_at:  {
@@ -33,9 +30,9 @@ module.exports = app => {
   }, {
     classMethods: {
       associate() {
-        Birthday.belongsTo(app.model.UserInfo);
+        Record.belongsTo(app.model.UserInfo);
       },
     },
   });
-  return Birthday;
+  return Record;
 };

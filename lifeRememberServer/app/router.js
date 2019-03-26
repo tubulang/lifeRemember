@@ -11,5 +11,11 @@ module.exports = app => {
   router.resources('userInfo', '/userInfo', controller.userInfo);
   router.resources('label', '/label', controller.label);
   router.resources('degree', '/degree', controller.degree);
+  router.resources('birthday', '/birthday', controller.birthday);
+  router.resources('classification', '/classification', controller.classification);
+  router.resources('record', '/record', controller.record);
+  router.resources('moneyAccount', '/moneyAccount', controller.moneyAccount);
+  router.resources('timeManage', '/timeManage', controller.timeManage);
+
   // router.post('/user/:name/:age', controller.user.create);
 };

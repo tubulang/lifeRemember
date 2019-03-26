@@ -1,6 +1,0 @@
-2019-03-25 08:11:57,493 INFO 2692 [Timer] /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 56882511ms at 2019-03-26 00:00:00.004
-2019-03-25 08:11:57,494 INFO 2772 [Job#15534727174871673628961884683] /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js executing by app
-2019-03-25 08:11:57,501 INFO 2772 [Job#15534727174871673628961884683] /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-logrotator/app/schedule/clean_log.js execute succeed, used 6ms
-2019-03-25 08:11:58,482 INFO 2772 [Job#15534727184801673638899781743] /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js executing by app
-2019-03-25 08:11:58,485 INFO 2772 [Job#15534727184801673638899781743] /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js execute succeed, used 3ms
-2019-03-25 08:11:58,484 INFO 2692 [Timer] /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 56882519ms at 2019-03-26 00:00:01.003
