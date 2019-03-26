@@ -1,0 +1,296 @@
+{
+  "sequelize": {
+    "dialect": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/config/config.default.js",
+    "host": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/config/config.default.js",
+    "port": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/config/config.default.js",
+    "password": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/config/config.default.js",
+    "database": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/config/config.default.js",
+    "username": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-sequelize/config/config.default.js"
+  },
+  "security": {
+    "csrf": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/config/config.default.js",
+    "domainWhiteList": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-security/config/config.default.js",
+    "protocolWhiteList": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-security/config/config.default.js",
+    "defaultMiddleware": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-security/config/config.default.js",
+    "xframe": {
+      "enable": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-security/config/config.default.js"
+    },
+    "hsts": {
+      "enable": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-security/config/config.local.js",
+      "maxAge": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-security/config/config.default.js",
+      "includeSubdomains": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-security/config/config.default.js"
+    },
+    "dta": {
+      "enable": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-security/config/config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-security/config/config.default.js"
+    },
+    "noopen": {
+      "enable": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-security/config/config.default.js"
+    },
+    "nosniff": {
+      "enable": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-security/config/config.default.js"
+    },
+    "referrerPolicy": {
+      "enable": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-security/config/config.default.js"
+    },
+    "xssProtection": {
+      "enable": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-security/config/config.default.js"
+    },
+    "csp": {
+      "enable": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-security/config/config.default.js",
+      "policy": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-security/config/config.default.js"
+    },
+    "ssrf": {
+      "ipBlackList": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-security/config/config.default.js",
+      "checkAddress": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-security/config/config.default.js"
+    }
+  },
+  "keys": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/config/config.default.js",
+  "middleware": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/config/config.default.js",
+  "session": {
+    "maxAge": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-session/config/config.default.js",
+    "key": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-session/config/config.default.js",
+    "httpOnly": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-session/config/config.default.js",
+    "encrypt": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-session/config/config.default.js"
+  },
+  "helper": {
+    "shtml": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-security/config/config.default.js"
+  },
+  "jsonp": {
+    "limit": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-jsonp/config/config.default.js",
+    "callback": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-jsonp/config/config.default.js",
+    "csrf": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-jsonp/config/config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-onerror/config/config.default.js",
+    "appErrorFilter": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-onerror/config/config.default.js",
+    "templatePath": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-onerror/config/config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-i18n/config/config.default.js",
+    "dirs": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-i18n/config/config.default.js",
+    "queryField": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-i18n/config/config.default.js",
+    "cookieField": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-i18n/config/config.default.js",
+    "cookieMaxAge": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-i18n/config/config.default.js"
+  },
+  "watcher": {
+    "type": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-watcher/config/config.local.js",
+    "eventSources": {
+      "default": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-watcher/config/config.default.js",
+      "development": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-watcher/config/config.default.js"
+    }
+  },
+  "customLogger": {
+    "scheduleLogger": {
+      "consoleLevel": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-schedule/config/config.default.js",
+      "file": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-schedule/config/config.default.js"
+    }
+  },
+  "schedule": {
+    "directory": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-schedule/config/config.default.js"
+  },
+  "multipart": {
+    "mode": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-multipart/config/config.default.js",
+    "autoFields": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-multipart/config/config.default.js",
+    "defaultCharset": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-multipart/config/config.default.js",
+    "fieldNameSize": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-multipart/config/config.default.js",
+    "fieldSize": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-multipart/config/config.default.js",
+    "fields": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-multipart/config/config.default.js",
+    "fileSize": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-multipart/config/config.default.js",
+    "files": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-multipart/config/config.default.js",
+    "fileExtensions": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-multipart/config/config.default.js",
+    "whitelist": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-multipart/config/config.default.js",
+    "tmpdir": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-multipart/config/config.default.js",
+    "cleanSchedule": {
+      "cron": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-multipart/config/config.default.js"
+    }
+  },
+  "development": {
+    "watchDirs": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-development/config/config.default.js",
+    "ignoreDirs": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-development/config/config.default.js",
+    "fastReady": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-development/config/config.default.js",
+    "reloadOnDebug": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-development/config/config.default.js",
+    "overrideDefault": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-development/config/config.default.js"
+  },
+  "logrotator": {
+    "filesRotateByHour": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-logrotator/config/config.default.js",
+    "hourDelimiter": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-logrotator/config/config.default.js",
+    "filesRotateBySize": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-logrotator/config/config.default.js",
+    "maxFileSize": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-logrotator/config/config.default.js",
+    "maxFiles": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-logrotator/config/config.default.js",
+    "rotateDuration": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-logrotator/config/config.default.js",
+    "maxDays": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-logrotator/config/config.default.js"
+  },
+  "static": {
+    "prefix": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-static/config/config.default.js",
+    "dir": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-static/config/config.default.js",
+    "dynamic": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-static/config/config.default.js",
+    "preload": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-static/config/config.default.js",
+    "buffer": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-static/config/config.default.js",
+    "maxFiles": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-static/config/config.default.js"
+  },
+  "view": {
+    "root": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-view/config/config.default.js",
+    "cache": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-view/config/config.local.js",
+    "defaultExtension": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-view/config/config.default.js",
+    "defaultViewEngine": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-view/config/config.default.js",
+    "mapping": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-view/config/config.default.js"
+  },
+  "mysql": {
+    "default": {
+      "database": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-mysql/config/config.default.js",
+      "connectionLimit": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-mysql/config/config.default.js"
+    },
+    "app": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-mysql/config/config.default.js",
+    "agent": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg-mysql/config/config.default.js"
+  },
+  "env": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+  "name": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+  "proxy": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+  "protocolHeaders": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+  "ipHeaders": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+  "hostHeaders": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+  "pkg": {
+    "name": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "version": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "description": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "private": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "egg": {
+      "declarations": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js"
+    },
+    "dependencies": {
+      "egg": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "egg-mysql": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "egg-scripts": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "egg-sequelize": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "mysql2": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js"
+    },
+    "devDependencies": {
+      "autod": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "autod-egg": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "egg-bin": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "egg-ci": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "egg-mock": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "eslint": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "eslint-config-egg": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "webstorm-disable-index": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js"
+    },
+    "engines": {
+      "node": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js"
+    },
+    "scripts": {
+      "start": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "stop": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "dev": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "debug": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "test": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "test-local": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "cov": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "lint": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "ci": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "autod": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js"
+    },
+    "ci": {
+      "version": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js"
+    },
+    "repository": {
+      "type": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "url": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js"
+    },
+    "author": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "license": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js"
+  },
+  "baseDir": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+  "HOME": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+  "rundir": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+  "dump": {
+    "ignore": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js"
+  },
+  "confusedConfigurations": {
+    "bodyparser": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "notFound": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "sitefile": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "middlewares": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "httpClient": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js"
+  },
+  "siteFile": {
+    "/favicon.ico": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js"
+  },
+  "bodyParser": {
+    "enable": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "encoding": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "formLimit": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "jsonLimit": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "strict": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "queryString": {
+      "arrayLimit": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "depth": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "parameterLimit": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js"
+    }
+  },
+  "logger": {
+    "dir": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "encoding": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "env": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "level": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "consoleLevel": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "disableConsoleAfterReady": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "outputJSON": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "buffer": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "appLogName": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "coreLogName": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "agentLogName": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "errorLogName": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "coreLogger": {
+      "consoleLevel": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.local.js"
+    },
+    "allowDebugAtProd": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js"
+  },
+  "httpclient": {
+    "enableDNSCache": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "dnsCacheLookupInterval": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "dnsCacheMaxLength": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "request": {
+      "timeout": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "freeSocketTimeout": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "maxSockets": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "freeSocketTimeout": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "maxSockets": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js"
+    }
+  },
+  "meta": {
+    "enable": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "logging": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js"
+  },
+  "coreMiddleware": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+  "workerStartTimeout": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+  "serverTimeout": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+  "cluster": {
+    "listen": {
+      "path": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "port": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+      "hostname": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js"
+    }
+  },
+  "clusterClient": {
+    "maxWaitTime": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js",
+    "responseTimeout": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js"
+  },
+  "onClientError": "/Users/tubulang/personalProject/lifeRemember/lifeRememberServer/node_modules/egg/config/config.default.js"
+}

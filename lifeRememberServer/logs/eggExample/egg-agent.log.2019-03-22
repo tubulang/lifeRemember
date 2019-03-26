@@ -1,0 +1,277 @@
+2019-03-22 00:00:01,015 INFO 2169 [egg-logrotator] agent logger reload: got log-reload message
+2019-03-22 00:00:11,819 INFO 2227 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:00:11,316 INFO 2227 [egg:logger] init all loggers with options: {"dir":"/Users/tubulang/myPratice/egg/egg-example/logs/eggExample","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"eggExample-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2019-03-22 00:00:11,735 INFO 2227 [egg:core] dump config after load, 3ms
+2019-03-22 00:00:11,774 INFO 2227 [egg-watcher] Start watching: ["/Users/tubulang/myPratice/egg/egg-example/app","/Users/tubulang/myPratice/egg/egg-example/config","/Users/tubulang/myPratice/egg/egg-example/mocks","/Users/tubulang/myPratice/egg/egg-example/mocks_proxy","/Users/tubulang/myPratice/egg/egg-example/app.js"]
+2019-03-22 00:00:11,775 INFO 2227 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/app"
+2019-03-22 00:00:11,775 INFO 2227 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/config"
+2019-03-22 00:00:11,775 INFO 2227 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/mocks"
+2019-03-22 00:00:11,775 INFO 2227 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/mocks_proxy"
+2019-03-22 00:00:11,775 INFO 2227 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/app.js"
+2019-03-22 00:00:11,776 INFO 2227 [egg-watcher:agent] watcher start success
+2019-03-22 00:00:11,824 INFO 2227 [egg:core] dump config after ready, 3ms
+2019-03-22 00:01:12,343 INFO 2227 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12585986,"size":1298,"blocks":8,"atimeMs":1553184072286.5396,"mtimeMs":1553184072287.3796,"ctimeMs":1553184072287.3796,"birthtimeMs":1553182284303.9604,"atime":"2019-03-21T16:01:12.287Z","mtime":"2019-03-21T16:01:12.287Z","ctime":"2019-03-21T16:01:12.287Z","birthtime":"2019-03-21T15:31:24.304Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 00:01:12,548 WARN 2227 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/controller/users.js change
+2019-03-22 00:01:19,989 INFO 2249 [egg-sequelize](0ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:01:19,639 INFO 2249 [egg:logger] init all loggers with options: {"dir":"/Users/tubulang/myPratice/egg/egg-example/logs/eggExample","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"eggExample-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2019-03-22 00:01:19,916 INFO 2249 [egg:core] dump config after load, 3ms
+2019-03-22 00:01:19,946 INFO 2249 [egg-watcher] Start watching: ["/Users/tubulang/myPratice/egg/egg-example/app","/Users/tubulang/myPratice/egg/egg-example/config","/Users/tubulang/myPratice/egg/egg-example/mocks","/Users/tubulang/myPratice/egg/egg-example/mocks_proxy","/Users/tubulang/myPratice/egg/egg-example/app.js"]
+2019-03-22 00:01:19,946 INFO 2249 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/app"
+2019-03-22 00:01:19,946 INFO 2249 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/config"
+2019-03-22 00:01:19,946 INFO 2249 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/mocks"
+2019-03-22 00:01:19,946 INFO 2249 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/mocks_proxy"
+2019-03-22 00:01:19,947 INFO 2249 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/app.js"
+2019-03-22 00:01:19,947 INFO 2249 [egg-watcher:agent] watcher start success
+2019-03-22 00:01:19,994 INFO 2249 [egg:core] dump config after ready, 3ms
+2019-03-22 00:01:55,159 WARN 2249 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/controller/users.js change
+2019-03-22 00:01:54,954 INFO 2249 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12585986,"size":1307,"blocks":8,"atimeMs":1553184114890.0027,"mtimeMs":1553184114890.309,"ctimeMs":1553184114890.309,"birthtimeMs":1553182284303.9604,"atime":"2019-03-21T16:01:54.890Z","mtime":"2019-03-21T16:01:54.890Z","ctime":"2019-03-21T16:01:54.890Z","birthtime":"2019-03-21T15:31:24.304Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 00:03:11,338 WARN 2249 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/controller/users.js change
+2019-03-22 00:03:11,133 INFO 2249 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12585986,"size":1307,"blocks":8,"atimeMs":1553184191071.106,"mtimeMs":1553184191071.5154,"ctimeMs":1553184191071.5154,"birthtimeMs":1553182284303.9604,"atime":"2019-03-21T16:03:11.071Z","mtime":"2019-03-21T16:03:11.072Z","ctime":"2019-03-21T16:03:11.072Z","birthtime":"2019-03-21T15:31:24.304Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 00:03:15,383 WARN 2249 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/controller/users.js change
+2019-03-22 00:03:15,177 INFO 2249 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12585986,"size":1312,"blocks":8,"atimeMs":1553184195166.9187,"mtimeMs":1553184195167.2056,"ctimeMs":1553184195167.2056,"birthtimeMs":1553182284303.9604,"atime":"2019-03-21T16:03:15.167Z","mtime":"2019-03-21T16:03:15.167Z","ctime":"2019-03-21T16:03:15.167Z","birthtime":"2019-03-21T15:31:24.304Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 00:03:44,027 INFO 2249 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/model/users.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12585942,"size":310,"blocks":8,"atimeMs":1553184223697.2678,"mtimeMs":1553184223697.5168,"ctimeMs":1553184223697.5168,"birthtimeMs":1553182238519.6702,"atime":"2019-03-21T16:03:43.697Z","mtime":"2019-03-21T16:03:43.698Z","ctime":"2019-03-21T16:03:43.698Z","birthtime":"2019-03-21T15:30:38.520Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 00:03:44,233 WARN 2249 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/model/users.js change
+2019-03-22 00:03:50,581 WARN 2249 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/model/user.js rename
+2019-03-22 00:03:50,379 INFO 2249 [egg-watcher] Recieved a change event from eventSource: {"event":"rename","path":"/Users/tubulang/myPratice/egg/egg-example/app/model/users.js","remove":true,"isDirectory":false,"isFile":false}
+2019-03-22 00:03:50,380 INFO 2249 [egg-watcher] Recieved a change event from eventSource: {"event":"rename","path":"/Users/tubulang/myPratice/egg/egg-example/app/model/user.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12585942,"size":310,"blocks":8,"atimeMs":1553184230369,"mtimeMs":1553184230369,"ctimeMs":1553184230369.4106,"birthtimeMs":1553182238519.6702,"atime":"2019-03-21T16:03:50.369Z","mtime":"2019-03-21T16:03:50.369Z","ctime":"2019-03-21T16:03:50.369Z","birthtime":"2019-03-21T15:30:38.520Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 00:04:03,092 INFO 2249 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12585986,"size":1312,"blocks":8,"atimeMs":1553184243081.002,"mtimeMs":1553184243081.3574,"ctimeMs":1553184243081.3574,"birthtimeMs":1553182284303.9604,"atime":"2019-03-21T16:04:03.081Z","mtime":"2019-03-21T16:04:03.081Z","ctime":"2019-03-21T16:04:03.081Z","birthtime":"2019-03-21T15:31:24.304Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 00:04:03,293 WARN 2249 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/controller/users.js change
+2019-03-22 00:04:14,524 WARN 2249 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/router.js change
+2019-03-22 00:04:14,320 INFO 2249 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/router.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12069032,"size":281,"blocks":8,"atimeMs":1553184254309.8662,"mtimeMs":1553184254310.2266,"ctimeMs":1553184254310.2266,"birthtimeMs":1553009877705.4783,"atime":"2019-03-21T16:04:14.310Z","mtime":"2019-03-21T16:04:14.310Z","ctime":"2019-03-21T16:04:14.310Z","birthtime":"2019-03-19T15:37:57.705Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 00:04:16,543 WARN 2249 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/router.js change
+2019-03-22 00:04:16,340 INFO 2249 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/router.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12069032,"size":281,"blocks":8,"atimeMs":1553184256328.075,"mtimeMs":1553184256328.3784,"ctimeMs":1553184256328.3784,"birthtimeMs":1553009877705.4783,"atime":"2019-03-21T16:04:16.328Z","mtime":"2019-03-21T16:04:16.328Z","ctime":"2019-03-21T16:04:16.328Z","birthtime":"2019-03-19T15:37:57.705Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 00:04:41,224 INFO 2293 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:04:40,886 INFO 2293 [egg:logger] init all loggers with options: {"dir":"/Users/tubulang/myPratice/egg/egg-example/logs/eggExample","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"eggExample-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2019-03-22 00:04:41,153 INFO 2293 [egg:core] dump config after load, 3ms
+2019-03-22 00:04:41,181 INFO 2293 [egg-watcher] Start watching: ["/Users/tubulang/myPratice/egg/egg-example/app","/Users/tubulang/myPratice/egg/egg-example/config","/Users/tubulang/myPratice/egg/egg-example/mocks","/Users/tubulang/myPratice/egg/egg-example/mocks_proxy","/Users/tubulang/myPratice/egg/egg-example/app.js"]
+2019-03-22 00:04:41,182 INFO 2293 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/app"
+2019-03-22 00:04:41,182 INFO 2293 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/config"
+2019-03-22 00:04:41,182 INFO 2293 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/mocks"
+2019-03-22 00:04:41,182 INFO 2293 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/mocks_proxy"
+2019-03-22 00:04:41,182 INFO 2293 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/app.js"
+2019-03-22 00:04:41,183 INFO 2293 [egg-watcher:agent] watcher start success
+2019-03-22 00:04:41,230 INFO 2293 [egg:core] dump config after ready, 3ms
+2019-03-22 00:05:15,583 INFO 2309 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:05:15,284 INFO 2309 [egg:logger] init all loggers with options: {"dir":"/Users/tubulang/myPratice/egg/egg-example/logs/eggExample","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"eggExample-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2019-03-22 00:05:15,520 INFO 2309 [egg:core] dump config after load, 3ms
+2019-03-22 00:05:15,543 INFO 2309 [egg-watcher] Start watching: ["/Users/tubulang/myPratice/egg/egg-example/app","/Users/tubulang/myPratice/egg/egg-example/config","/Users/tubulang/myPratice/egg/egg-example/mocks","/Users/tubulang/myPratice/egg/egg-example/mocks_proxy","/Users/tubulang/myPratice/egg/egg-example/app.js"]
+2019-03-22 00:05:15,543 INFO 2309 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/app"
+2019-03-22 00:05:15,544 INFO 2309 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/config"
+2019-03-22 00:05:15,544 INFO 2309 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/mocks"
+2019-03-22 00:05:15,544 INFO 2309 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/mocks_proxy"
+2019-03-22 00:05:15,544 INFO 2309 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/app.js"
+2019-03-22 00:05:15,544 INFO 2309 [egg-watcher:agent] watcher start success
+2019-03-22 00:05:15,588 INFO 2309 [egg:core] dump config after ready, 3ms
+2019-03-22 00:09:21,832 WARN 2309 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/controller/user.js change
+2019-03-22 00:09:21,625 INFO 2309 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/controller/user.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12585986,"size":1355,"blocks":8,"atimeMs":1553184561563.0696,"mtimeMs":1553184561563.3945,"ctimeMs":1553184561563.3945,"birthtimeMs":1553182284303.9604,"atime":"2019-03-21T16:09:21.563Z","mtime":"2019-03-21T16:09:21.563Z","ctime":"2019-03-21T16:09:21.563Z","birthtime":"2019-03-21T15:31:24.304Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 00:13:50,752 INFO 2309 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/router.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12069032,"size":275,"blocks":8,"atimeMs":1553184830689.045,"mtimeMs":1553184830689.7234,"ctimeMs":1553184830689.7234,"birthtimeMs":1553009877705.4783,"atime":"2019-03-21T16:13:50.689Z","mtime":"2019-03-21T16:13:50.690Z","ctime":"2019-03-21T16:13:50.690Z","birthtime":"2019-03-19T15:37:57.705Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 00:13:50,958 WARN 2309 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/router.js change
+2019-03-22 00:14:28,917 WARN 2309 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/router.js change
+2019-03-22 00:14:28,711 INFO 2309 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/router.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12069032,"size":281,"blocks":8,"atimeMs":1553184868648.6455,"mtimeMs":1553184868648.9226,"ctimeMs":1553184868648.9226,"birthtimeMs":1553009877705.4783,"atime":"2019-03-21T16:14:28.649Z","mtime":"2019-03-21T16:14:28.649Z","ctime":"2019-03-21T16:14:28.649Z","birthtime":"2019-03-19T15:37:57.705Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 00:19:18,212 WARN 2309 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/router.js change
+2019-03-22 00:19:18,008 INFO 2309 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/router.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12069032,"size":276,"blocks":8,"atimeMs":1553185157946.3032,"mtimeMs":1553185157946.6711,"ctimeMs":1553185157946.6711,"birthtimeMs":1553009877705.4783,"atime":"2019-03-21T16:19:17.946Z","mtime":"2019-03-21T16:19:17.947Z","ctime":"2019-03-21T16:19:17.947Z","birthtime":"2019-03-19T15:37:57.705Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 00:19:51,878 INFO 2309 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/router.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12069032,"size":276,"blocks":8,"atimeMs":1553185191767.188,"mtimeMs":1553185191767.5352,"ctimeMs":1553185191767.5352,"birthtimeMs":1553009877705.4783,"atime":"2019-03-21T16:19:51.767Z","mtime":"2019-03-21T16:19:51.768Z","ctime":"2019-03-21T16:19:51.768Z","birthtime":"2019-03-19T15:37:57.705Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 00:19:52,081 WARN 2309 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/router.js change
+2019-03-22 00:23:36,310 WARN 2309 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/controller/user.js change
+2019-03-22 00:23:36,105 INFO 2309 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/controller/user.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12585986,"size":1318,"blocks":8,"atimeMs":1553185416042.4128,"mtimeMs":1553185416043.963,"ctimeMs":1553185416043.963,"birthtimeMs":1553182284303.9604,"atime":"2019-03-21T16:23:36.042Z","mtime":"2019-03-21T16:23:36.044Z","ctime":"2019-03-21T16:23:36.044Z","birthtime":"2019-03-21T15:31:24.304Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 00:23:46,875 WARN 2309 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/router.js change
+2019-03-22 00:23:46,670 INFO 2309 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/router.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12069032,"size":285,"blocks":8,"atimeMs":1553185426658.8555,"mtimeMs":1553185426659.2236,"ctimeMs":1553185426659.2236,"birthtimeMs":1553009877705.4783,"atime":"2019-03-21T16:23:46.659Z","mtime":"2019-03-21T16:23:46.659Z","ctime":"2019-03-21T16:23:46.659Z","birthtime":"2019-03-19T15:37:57.705Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 00:35:20,933 WARN 2309 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/router.js change
+2019-03-22 00:35:20,731 INFO 2309 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/router.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12069032,"size":343,"blocks":8,"atimeMs":1553186120670.3962,"mtimeMs":1553186120670.8706,"ctimeMs":1553186120670.8706,"birthtimeMs":1553009877705.4783,"atime":"2019-03-21T16:35:20.670Z","mtime":"2019-03-21T16:35:20.671Z","ctime":"2019-03-21T16:35:20.671Z","birthtime":"2019-03-19T15:37:57.705Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 00:39:27,233 INFO 2309 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/config/config.default.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12069034,"size":1674,"blocks":8,"atimeMs":1553186367169.7314,"mtimeMs":1553186367171.8052,"ctimeMs":1553186367171.8052,"birthtimeMs":1553009877705.8694,"atime":"2019-03-21T16:39:27.170Z","mtime":"2019-03-21T16:39:27.172Z","ctime":"2019-03-21T16:39:27.172Z","birthtime":"2019-03-19T15:37:57.706Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 00:39:27,437 WARN 2309 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/config/config.default.js change
+2019-03-22 08:14:17,122 ERROR 2309 nodejs.ClusterClientNoResponseError: client no response in 20194865ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/tubulang/myPratice/egg/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 2309
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-22 08:22:20,439 ERROR 2309 nodejs.ClusterClientNoResponseError: client no response in 463267ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/tubulang/myPratice/egg/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 2309
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-22 08:37:36,273 ERROR 2309 nodejs.ClusterClientNoResponseError: client no response in 875968ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/tubulang/myPratice/egg/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 2309
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-22 08:45:35,346 INFO 2309 [egg-watcher] Recieved a change event from eventSource: {"event":"rename","path":"/Users/tubulang/myPratice/egg/egg-example/app/controller/userInfo.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12592347,"size":0,"blocks":0,"atimeMs":1553215535315.5005,"mtimeMs":1553215535234.2092,"ctimeMs":1553215535234.2092,"birthtimeMs":1553215535234.2092,"atime":"2019-03-22T00:45:35.316Z","mtime":"2019-03-22T00:45:35.234Z","ctime":"2019-03-22T00:45:35.234Z","birthtime":"2019-03-22T00:45:35.234Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 08:45:35,550 WARN 2309 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/controller/userInfo.js rename
+2019-03-22 08:46:26,397 WARN 2309 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/controller/userInfo.js change
+2019-03-22 08:46:26,195 INFO 2309 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/controller/userInfo.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12592347,"size":1318,"blocks":8,"atimeMs":1553215586133.0605,"mtimeMs":1553215586133.2905,"ctimeMs":1553215586133.2905,"birthtimeMs":1553215535234.2092,"atime":"2019-03-22T00:46:26.133Z","mtime":"2019-03-22T00:46:26.133Z","ctime":"2019-03-22T00:46:26.133Z","birthtime":"2019-03-22T00:45:35.234Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 08:46:47,548 WARN 2309 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/model/userInfo.js rename
+2019-03-22 08:46:47,347 INFO 2309 [egg-watcher] Recieved a change event from eventSource: {"event":"rename","path":"/Users/tubulang/myPratice/egg/egg-example/app/model/userInfo.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12592538,"size":0,"blocks":0,"atimeMs":1553215607336.7134,"mtimeMs":1553215607280.6995,"ctimeMs":1553215607280.6995,"birthtimeMs":1553215607280.6995,"atime":"2019-03-22T00:46:47.337Z","mtime":"2019-03-22T00:46:47.281Z","ctime":"2019-03-22T00:46:47.281Z","birthtime":"2019-03-22T00:46:47.281Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 08:46:54,127 WARN 2309 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/model/userInfo.js rename
+2019-03-22 08:46:53,925 INFO 2309 [egg-watcher] Recieved a change event from eventSource: {"event":"rename","path":"/Users/tubulang/myPratice/egg/egg-example/app/model/userInfo.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12592538,"size":314,"blocks":8,"atimeMs":1553215613914.34,"mtimeMs":1553215613914.627,"ctimeMs":1553215613914.627,"birthtimeMs":1553215607280.6995,"atime":"2019-03-22T00:46:53.914Z","mtime":"2019-03-22T00:46:53.915Z","ctime":"2019-03-22T00:46:53.915Z","birthtime":"2019-03-22T00:46:47.281Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 08:47:15,316 WARN 2309 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/model/userInfo.js change
+2019-03-22 08:47:15,111 INFO 2309 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/model/userInfo.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12592538,"size":339,"blocks":8,"atimeMs":1553215635048.9368,"mtimeMs":1553215635049.3032,"ctimeMs":1553215635049.3032,"birthtimeMs":1553215607280.6995,"atime":"2019-03-22T00:47:15.049Z","mtime":"2019-03-22T00:47:15.049Z","ctime":"2019-03-22T00:47:15.049Z","birthtime":"2019-03-22T00:46:47.281Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 08:47:24,609 WARN 2309 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/model/userInfo.js change
+2019-03-22 08:47:24,404 INFO 2309 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/model/userInfo.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12592538,"size":343,"blocks":8,"atimeMs":1553215644393.3086,"mtimeMs":1553215644393.6724,"ctimeMs":1553215644393.6724,"birthtimeMs":1553215607280.6995,"atime":"2019-03-22T00:47:24.393Z","mtime":"2019-03-22T00:47:24.394Z","ctime":"2019-03-22T00:47:24.394Z","birthtime":"2019-03-22T00:46:47.281Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 08:47:31,232 WARN 2309 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/model/userInfo.js change
+2019-03-22 08:47:31,027 INFO 2309 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/model/userInfo.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12592538,"size":343,"blocks":8,"atimeMs":1553215651016.2302,"mtimeMs":1553215651016.602,"ctimeMs":1553215651016.602,"birthtimeMs":1553215607280.6995,"atime":"2019-03-22T00:47:31.016Z","mtime":"2019-03-22T00:47:31.017Z","ctime":"2019-03-22T00:47:31.017Z","birthtime":"2019-03-22T00:46:47.281Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 08:47:56,215 WARN 2309 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/router.js change
+2019-03-22 08:47:56,012 INFO 2309 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/router.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12069032,"size":409,"blocks":8,"atimeMs":1553215675950.4949,"mtimeMs":1553215675950.8672,"ctimeMs":1553215675950.8672,"birthtimeMs":1553009877705.4783,"atime":"2019-03-22T00:47:55.950Z","mtime":"2019-03-22T00:47:55.951Z","ctime":"2019-03-22T00:47:55.951Z","birthtime":"2019-03-19T15:37:57.705Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 08:48:17,346 WARN 2309 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/config/config.default.js change
+2019-03-22 08:48:17,144 INFO 2309 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/config/config.default.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12069034,"size":1676,"blocks":8,"atimeMs":1553215697082.915,"mtimeMs":1553215697083.3418,"ctimeMs":1553215697083.3418,"birthtimeMs":1553009877705.8694,"atime":"2019-03-22T00:48:17.083Z","mtime":"2019-03-22T00:48:17.083Z","ctime":"2019-03-22T00:48:17.083Z","birthtime":"2019-03-19T15:37:57.706Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 08:49:57,006 INFO 2692 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 08:49:56,663 INFO 2692 [egg:logger] init all loggers with options: {"dir":"/Users/tubulang/myPratice/egg/egg-example/logs/eggExample","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"eggExample-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2019-03-22 08:49:56,930 INFO 2692 [egg:core] dump config after load, 3ms
+2019-03-22 08:49:56,963 INFO 2692 [egg-watcher] Start watching: ["/Users/tubulang/myPratice/egg/egg-example/app","/Users/tubulang/myPratice/egg/egg-example/config","/Users/tubulang/myPratice/egg/egg-example/mocks","/Users/tubulang/myPratice/egg/egg-example/mocks_proxy","/Users/tubulang/myPratice/egg/egg-example/app.js"]
+2019-03-22 08:49:56,964 INFO 2692 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/app"
+2019-03-22 08:49:56,964 INFO 2692 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/config"
+2019-03-22 08:49:56,964 INFO 2692 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/mocks"
+2019-03-22 08:49:56,964 INFO 2692 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/mocks_proxy"
+2019-03-22 08:49:56,964 INFO 2692 [egg-watcher] Start watching: "/Users/tubulang/myPratice/egg/egg-example/app.js"
+2019-03-22 08:49:56,965 INFO 2692 [egg-watcher:agent] watcher start success
+2019-03-22 08:49:57,016 INFO 2692 [egg:core] dump config after ready, 3ms
+2019-03-22 08:51:15,438 WARN 2692 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/model/userInfo.js change
+2019-03-22 08:51:15,233 INFO 2692 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/model/userInfo.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12592538,"size":351,"blocks":8,"atimeMs":1553215875167.2393,"mtimeMs":1553215875169.0703,"ctimeMs":1553215875169.0703,"birthtimeMs":1553215607280.6995,"atime":"2019-03-22T00:51:15.167Z","mtime":"2019-03-22T00:51:15.169Z","ctime":"2019-03-22T00:51:15.169Z","birthtime":"2019-03-22T00:46:47.281Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 08:52:48,902 WARN 2692 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/controller/userInfo.js change
+2019-03-22 08:52:48,696 INFO 2692 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/controller/userInfo.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12592347,"size":1374,"blocks":8,"atimeMs":1553215968633.6997,"mtimeMs":1553215968634.068,"ctimeMs":1553215968634.068,"birthtimeMs":1553215535234.2092,"atime":"2019-03-22T00:52:48.634Z","mtime":"2019-03-22T00:52:48.634Z","ctime":"2019-03-22T00:52:48.634Z","birthtime":"2019-03-22T00:45:35.234Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 08:53:00,638 WARN 2692 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/controller/userInfo.js change
+2019-03-22 08:53:00,434 INFO 2692 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/controller/userInfo.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12592347,"size":1382,"blocks":8,"atimeMs":1553215980422.9746,"mtimeMs":1553215980423.3286,"ctimeMs":1553215980423.3286,"birthtimeMs":1553215535234.2092,"atime":"2019-03-22T00:53:00.423Z","mtime":"2019-03-22T00:53:00.423Z","ctime":"2019-03-22T00:53:00.423Z","birthtime":"2019-03-22T00:45:35.234Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 08:53:01,495 WARN 2692 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/controller/userInfo.js change
+2019-03-22 08:53:01,292 INFO 2692 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/controller/userInfo.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12592347,"size":1382,"blocks":8,"atimeMs":1553215981280.7803,"mtimeMs":1553215981281.1133,"ctimeMs":1553215981281.1133,"birthtimeMs":1553215535234.2092,"atime":"2019-03-22T00:53:01.281Z","mtime":"2019-03-22T00:53:01.281Z","ctime":"2019-03-22T00:53:01.281Z","birthtime":"2019-03-22T00:45:35.234Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 08:55:33,369 WARN 2692 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/router.js change
+2019-03-22 08:55:33,168 INFO 2692 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/router.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12069032,"size":409,"blocks":8,"atimeMs":1553216133105.8938,"mtimeMs":1553216133106.2402,"ctimeMs":1553216133106.2402,"birthtimeMs":1553009877705.4783,"atime":"2019-03-22T00:55:33.106Z","mtime":"2019-03-22T00:55:33.106Z","ctime":"2019-03-22T00:55:33.106Z","birthtime":"2019-03-19T15:37:57.705Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 09:05:41,312 WARN 2692 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/model/userInfo.js change
+2019-03-22 09:05:41,108 INFO 2692 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/model/userInfo.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12592538,"size":354,"blocks":8,"atimeMs":1553216741045.3923,"mtimeMs":1553216741046.7058,"ctimeMs":1553216741046.7058,"birthtimeMs":1553215607280.6995,"atime":"2019-03-22T01:05:41.045Z","mtime":"2019-03-22T01:05:41.047Z","ctime":"2019-03-22T01:05:41.047Z","birthtime":"2019-03-22T00:46:47.281Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 09:06:42,933 WARN 2692 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/controller/userInfo.js change
+2019-03-22 09:06:42,730 INFO 2692 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/controller/userInfo.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12592347,"size":1382,"blocks":8,"atimeMs":1553216802668.0369,"mtimeMs":1553216802668.431,"ctimeMs":1553216802668.431,"birthtimeMs":1553215535234.2092,"atime":"2019-03-22T01:06:42.668Z","mtime":"2019-03-22T01:06:42.668Z","ctime":"2019-03-22T01:06:42.668Z","birthtime":"2019-03-22T00:45:35.234Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 09:07:46,827 WARN 2692 [agent:development] reload worker because /Users/tubulang/myPratice/egg/egg-example/app/controller/userInfo.js change
+2019-03-22 09:07:46,627 INFO 2692 [egg-watcher] Recieved a change event from eventSource: {"event":"change","path":"/Users/tubulang/myPratice/egg/egg-example/app/controller/userInfo.js","stat":{"dev":16777221,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":12592347,"size":1380,"blocks":8,"atimeMs":1553216866564.9783,"mtimeMs":1553216866565.311,"ctimeMs":1553216866565.311,"birthtimeMs":1553215535234.2092,"atime":"2019-03-22T01:07:46.565Z","mtime":"2019-03-22T01:07:46.565Z","ctime":"2019-03-22T01:07:46.565Z","birthtime":"2019-03-22T00:45:35.234Z"},"remove":false,"isDirectory":false,"isFile":true}
+2019-03-22 09:39:05,422 ERROR 2692 nodejs.ClusterClientNoResponseError: client no response in 1309137ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/tubulang/myPratice/egg/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 2692
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-22 21:58:50,018 ERROR 2692 nodejs.ClusterClientNoResponseError: client no response in 6017491ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/tubulang/myPratice/egg/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 2692
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-23 00:27:30,417 ERROR 2692 nodejs.ClusterClientNoResponseError: client no response in 1818718ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/tubulang/myPratice/egg/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 2692
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-23 01:24:37,918 ERROR 2692 nodejs.ClusterClientNoResponseError: client no response in 2827201ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/tubulang/myPratice/egg/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 2692
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-23 02:34:36,284 ERROR 2692 nodejs.ClusterClientNoResponseError: client no response in 3618181ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/tubulang/myPratice/egg/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 2692
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-23 03:44:54,620 ERROR 2692 nodejs.ClusterClientNoResponseError: client no response in 3618142ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/tubulang/myPratice/egg/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 2692
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-23 04:09:39,132 ERROR 2692 nodejs.ClusterClientNoResponseError: client no response in 904331ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/tubulang/myPratice/egg/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 2692
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-23 05:19:38,328 ERROR 2692 nodejs.ClusterClientNoResponseError: client no response in 3619014ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/tubulang/myPratice/egg/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 2692
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-23 06:29:56,717 ERROR 2692 nodejs.ClusterClientNoResponseError: client no response in 3618203ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/tubulang/myPratice/egg/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 2692
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-23 07:39:55,043 ERROR 2692 nodejs.ClusterClientNoResponseError: client no response in 3618149ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/tubulang/myPratice/egg/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 2692
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-23 08:16:51,371 ERROR 2692 nodejs.ClusterClientNoResponseError: client no response in 1616157ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/tubulang/myPratice/egg/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 2692
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-23 09:26:49,738 ERROR 2692 nodejs.ClusterClientNoResponseError: client no response in 3618187ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/tubulang/myPratice/egg/egg-example/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 2692
+hostname: tubulangdeMacBook-Pro.local
+

@@ -1,0 +1,638 @@
+2019-03-22 00:00:12,881 INFO 2228 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:00:20,247 ERROR 2228 [-/127.0.0.1/-/7ms GET /users/create] nodejs.TypeError: Cannot read property 'findById' of undefined
+    at UserController.show (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:20:37)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+
+pid: 2228
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-22 00:00:26,639 ERROR 2228 [-/127.0.0.1/-/2ms GET /users] nodejs.TypeError: Cannot read property 'findAll' of undefined
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:15:37)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+
+pid: 2228
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-22 00:01:13,962 INFO 2232 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:01:21,012 INFO 2250 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:01:22,929 ERROR 2250 [-/127.0.0.1/-/8ms GET /users] nodejs.TypeError: Cannot read property 'findAll' of undefined
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:15:37)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+
+pid: 2250
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-22 00:01:25,143 ERROR 2250 [-/127.0.0.1/-/1ms GET /users] nodejs.TypeError: Cannot read property 'findAll' of undefined
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:15:37)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+
+pid: 2250
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-22 00:01:28,824 ERROR 2250 [-/127.0.0.1/-/1ms GET /users] nodejs.TypeError: Cannot read property 'findAll' of undefined
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:15:37)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+
+pid: 2250
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-22 00:01:56,495 INFO 2253 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:01:58,743 ERROR 2253 [-/127.0.0.1/-/8ms GET /users] nodejs.TypeError: Cannot read property 'findAll' of undefined
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:15:37)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+
+pid: 2253
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-22 00:03:12,752 INFO 2262 [egg-sequelize](0ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:03:16,421 INFO 2263 [egg-sequelize](0ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:03:20,830 ERROR 2263 [-/127.0.0.1/-/7ms GET /users] nodejs.TypeError: Cannot read property 'findAll' of undefined
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:15:37)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+
+pid: 2263
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-22 00:03:45,326 INFO 2268 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:03:51,624 INFO 2272 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:04:04,420 INFO 2274 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:05:16,562 INFO 2314 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:05:23,915 INFO 2314 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` LIMIT 1, 1;
+2019-03-22 00:05:23,921 ERROR 2314 [-/127.0.0.1/-/13ms GET /user] nodejs.SequelizeDatabaseError: Unknown column 'age' in 'field list'
+    at Query.formatError (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/query.js:247:16)
+    at Query.handler [as onResult] (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/query.js:68:23)
+    at Query.execute (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/commands/command.js:30:14)
+    at Connection.handlePacket (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/connection.js:449:32)
+    at PacketParser.Connection.packetParser.p [as onPacket] (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/connection.js:72:12)
+    at PacketParser.executeStart (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.Connection.stream.on.data (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/connection.js:79:25)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+From previous event:
+    at Query.run (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/query.js:57:12)
+    at Promise.try.then.connection (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:558:20)
+From previous event:
+    at Promise.resolve.retryParameters (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:555:8)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/retry-as-promised/index.js:39:21
+    at retryAsPromised (/Users/tubulang/myPratice/egg/egg-example/node_modules/retry-as-promised/index.js:29:10)
+    at Sequelize.query (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:454:28)
+    at QueryInterface.select (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/query-interface.js:1104:27)
+    at Promise.try.then.then.then (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/model.js:1598:34)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+From previous event:
+    at Function.findAll (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/model.js:1595:8)
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/user.js:15:37)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at nosniff (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/nosniff.js:8:11)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'age' in 'field list'","sql":"SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` LIMIT 1, 1;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'age' in 'field list'","sql":"SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` LIMIT 1, 1;"}
+sql: "SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` LIMIT 1, 1;"
+pid: 2314
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-22 00:07:32,012 INFO 2314 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` LIMIT 1, 1;
+2019-03-22 00:07:32,015 ERROR 2314 [-/127.0.0.1/-/9ms GET /user] nodejs.SequelizeDatabaseError: Table 'nodetest.users' doesn't exist
+    at Query.formatError (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/query.js:247:16)
+    at Query.handler [as onResult] (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/query.js:68:23)
+    at Query.execute (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/commands/command.js:30:14)
+    at Connection.handlePacket (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/connection.js:449:32)
+    at PacketParser.Connection.packetParser.p [as onPacket] (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/connection.js:72:12)
+    at PacketParser.executeStart (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.Connection.stream.on.data (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/connection.js:79:25)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+From previous event:
+    at Query.run (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/query.js:57:12)
+    at Promise.try.then.connection (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:558:20)
+From previous event:
+    at Promise.resolve.retryParameters (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:555:8)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/retry-as-promised/index.js:39:21
+    at retryAsPromised (/Users/tubulang/myPratice/egg/egg-example/node_modules/retry-as-promised/index.js:29:10)
+    at Sequelize.query (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:454:28)
+    at QueryInterface.select (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/query-interface.js:1104:27)
+    at Promise.try.then.then.then (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/model.js:1598:34)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+From previous event:
+    at Function.findAll (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/model.js:1595:8)
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/user.js:15:37)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at nosniff (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/nosniff.js:8:11)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","sqlMessage":"Table 'nodetest.users' doesn't exist","sql":"SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` LIMIT 1, 1;"}
+original: {"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","sqlMessage":"Table 'nodetest.users' doesn't exist","sql":"SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` LIMIT 1, 1;"}
+sql: "SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` LIMIT 1, 1;"
+pid: 2314
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-22 00:07:33,230 INFO 2314 [egg-sequelize](0ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` LIMIT 1, 1;
+2019-03-22 00:07:33,233 ERROR 2314 [-/127.0.0.1/-/4ms GET /user] nodejs.SequelizeDatabaseError: Table 'nodetest.users' doesn't exist
+    at Query.formatError (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/query.js:247:16)
+    at Query.handler [as onResult] (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/query.js:68:23)
+    at Query.execute (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/commands/command.js:30:14)
+    at Connection.handlePacket (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/connection.js:449:32)
+    at PacketParser.Connection.packetParser.p [as onPacket] (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/connection.js:72:12)
+    at PacketParser.executeStart (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.Connection.stream.on.data (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/connection.js:79:25)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+From previous event:
+    at Query.run (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/query.js:57:12)
+    at Promise.try.then.connection (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:558:20)
+From previous event:
+    at Promise.resolve.retryParameters (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:555:8)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/retry-as-promised/index.js:39:21
+    at retryAsPromised (/Users/tubulang/myPratice/egg/egg-example/node_modules/retry-as-promised/index.js:29:10)
+    at Sequelize.query (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:454:28)
+    at QueryInterface.select (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/query-interface.js:1104:27)
+    at Promise.try.then.then.then (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/model.js:1598:34)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+From previous event:
+    at Function.findAll (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/model.js:1595:8)
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/user.js:15:37)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at nosniff (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/nosniff.js:8:11)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","sqlMessage":"Table 'nodetest.users' doesn't exist","sql":"SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` LIMIT 1, 1;"}
+original: {"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","sqlMessage":"Table 'nodetest.users' doesn't exist","sql":"SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` LIMIT 1, 1;"}
+sql: "SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` LIMIT 1, 1;"
+pid: 2314
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-22 00:08:30,467 INFO 2314 [egg-sequelize](3ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` LIMIT 1, 1;
+2019-03-22 00:09:23,197 INFO 2334 [egg-sequelize](0ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:09:28,130 INFO 2334 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user`;
+2019-03-22 00:10:11,171 INFO 2334 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user`;
+2019-03-22 00:10:35,380 INFO 2334 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` WHERE `user`.`id` = 0;
+2019-03-22 00:11:12,539 INFO 2334 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` WHERE `user`.`id` = 0;
+2019-03-22 00:11:31,438 INFO 2334 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` WHERE `user`.`id` = 0;
+2019-03-22 00:11:42,506 INFO 2334 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` WHERE `user`.`id` = 0;
+2019-03-22 00:11:51,504 INFO 2334 [egg-sequelize](0ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` WHERE `user`.`id` = 0;
+2019-03-22 00:12:21,630 INFO 2334 [egg-sequelize](0ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` WHERE `user`.`id` = 0;
+2019-03-22 00:12:35,025 INFO 2334 [egg-sequelize](0ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user`;
+2019-03-22 00:13:08,701 INFO 2334 [egg-sequelize](0ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user`;
+2019-03-22 00:13:14,723 INFO 2334 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` WHERE `user`.`id` = 0;
+2019-03-22 00:13:52,932 INFO 2357 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:14:30,546 INFO 2360 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:14:39,348 INFO 2360 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user`;
+2019-03-22 00:19:19,957 INFO 2374 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:19:27,270 INFO 2374 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` WHERE `user`.`id` = 2;
+2019-03-22 00:19:34,954 INFO 2374 [egg-sequelize](2ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` WHERE `user`.`id` = 0;
+2019-03-22 00:19:53,538 INFO 2378 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:20:03,383 INFO 2378 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` WHERE `user`.`id` = 0;
+2019-03-22 00:20:42,578 INFO 2378 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` WHERE `user`.`id` = 1;
+2019-03-22 00:20:47,050 INFO 2378 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` WHERE `user`.`id` = 2;
+2019-03-22 00:20:53,648 INFO 2378 [egg-sequelize](0ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` WHERE `user`.`id` = 0;
+2019-03-22 00:20:59,238 INFO 2378 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` WHERE `user`.`id` = 1;
+2019-03-22 00:23:38,126 INFO 2391 [egg-sequelize](0ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:23:47,944 INFO 2393 [egg-sequelize](0ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:23:57,401 INFO 2393 [egg-sequelize](3ms) Executed (default): INSERT INTO `users` (`id`,`created_at`,`updated_at`) VALUES (DEFAULT,'2019-03-21 16:23:57','2019-03-21 16:23:57');
+2019-03-22 00:35:23,144 INFO 2423 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:35:35,430 INFO 2423 [egg-sequelize](2ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user`;
+2019-03-22 00:36:08,427 INFO 2423 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user`;
+2019-03-22 00:36:51,196 INFO 2423 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user`;
+2019-03-22 00:37:43,768 INFO 2423 [egg-sequelize](0ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user`;
+2019-03-22 00:37:58,484 WARN 2423 [-/::1/-/2ms POST /user?name=tubulang&age=22] invalid csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2019-03-22 00:37:58,485 WARN 2423 [-/::1/-/3ms POST /user?name=tubulang&age=22] nodejs.ForbiddenError: invalid csrf token
+    at Object.throw (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/lib/context.js:97:11)
+    at Object.assertCsrf (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/app/extend/context.js:157:17)
+    at csrf (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/csrf.js:31:9)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at bodyParser (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-bodyparser/index.js:86:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+message: "invalid csrf token"
+pid: 2423
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-22 00:39:29,208 INFO 2447 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 00:40:34,434 INFO 2447 [egg-sequelize](2ms) Executed (default): INSERT INTO `users` (`id`,`created_at`,`updated_at`) VALUES (DEFAULT,'2019-03-21 16:40:34','2019-03-21 16:40:34');
+2019-03-22 00:41:12,398 INFO 2447 [egg-sequelize](1ms) Executed (default): INSERT INTO `users` (`id`,`name`,`age`,`created_at`,`updated_at`) VALUES (DEFAULT,'tubulang','22','2019-03-21 16:41:12','2019-03-21 16:41:12');
+2019-03-22 00:41:27,618 INFO 2447 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user`;
+2019-03-22 00:43:34,790 INFO 2447 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user` WHERE `user`.`id` = 2;
+2019-03-22 00:43:34,796 INFO 2447 [egg-sequelize](2ms) Executed (default): UPDATE `users` SET `name`='tubulang',`age`='22',`updated_at`='2019-03-21 16:43:34' WHERE `id` = 2
+2019-03-22 08:45:37,321 INFO 2610 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 08:46:27,476 INFO 2617 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 08:46:48,598 INFO 2623 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 08:46:55,127 INFO 2624 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 08:47:16,366 INFO 2625 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 08:47:25,660 INFO 2627 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 08:47:32,248 INFO 2628 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 08:47:57,201 INFO 2630 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 08:48:18,330 INFO 2633 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 08:49:57,987 INFO 2693 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 08:50:19,126 INFO 2693 [egg-sequelize](2ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user`;
+2019-03-22 08:50:19,133 ERROR 2693 [-/127.0.0.1/-/19ms GET /userInfo] nodejs.SequelizeDatabaseError: Table 'lifememory.users' doesn't exist
+    at Query.formatError (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/query.js:247:16)
+    at Query.handler [as onResult] (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/query.js:68:23)
+    at Query.execute (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/commands/command.js:30:14)
+    at Connection.handlePacket (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/connection.js:449:32)
+    at PacketParser.Connection.packetParser.p [as onPacket] (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/connection.js:72:12)
+    at PacketParser.executeStart (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.Connection.stream.on.data (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/connection.js:79:25)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+From previous event:
+    at Query.run (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/query.js:57:12)
+    at Promise.try.then.connection (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:558:20)
+From previous event:
+    at Promise.resolve.retryParameters (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:555:8)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/retry-as-promised/index.js:39:21
+    at retryAsPromised (/Users/tubulang/myPratice/egg/egg-example/node_modules/retry-as-promised/index.js:29:10)
+    at Sequelize.query (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:454:28)
+    at QueryInterface.select (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/query-interface.js:1104:27)
+    at Promise.try.then.then.then (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/model.js:1598:34)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+From previous event:
+    at Function.findAll (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/model.js:1595:8)
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/userInfo.js:14:37)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at nosniff (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/nosniff.js:8:11)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","sqlMessage":"Table 'lifememory.users' doesn't exist","sql":"SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user`;"}
+original: {"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","sqlMessage":"Table 'lifememory.users' doesn't exist","sql":"SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user`;"}
+sql: "SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user`;"
+pid: 2693
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-22 08:51:16,480 INFO 2704 [egg-sequelize](0ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 08:52:49,910 INFO 2709 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 08:53:01,626 INFO 2711 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 08:53:02,661 INFO 2712 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 08:53:17,352 INFO 2712 [egg-sequelize](2ms) Executed (default): SELECT `id`, `userName`, `createTime`, `created_at`, `updated_at` FROM `userInfos` AS `userInfo`;
+2019-03-22 08:53:17,360 ERROR 2712 [-/127.0.0.1/-/21ms GET /userInfo] nodejs.SequelizeDatabaseError: Table 'lifememory.userinfos' doesn't exist
+    at Query.formatError (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/query.js:247:16)
+    at Query.handler [as onResult] (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/query.js:68:23)
+    at Query.execute (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/commands/command.js:30:14)
+    at Connection.handlePacket (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/connection.js:449:32)
+    at PacketParser.Connection.packetParser.p [as onPacket] (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/connection.js:72:12)
+    at PacketParser.executeStart (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.Connection.stream.on.data (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/connection.js:79:25)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+From previous event:
+    at Query.run (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/query.js:57:12)
+    at Promise.try.then.connection (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:558:20)
+From previous event:
+    at Promise.resolve.retryParameters (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:555:8)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/retry-as-promised/index.js:39:21
+    at retryAsPromised (/Users/tubulang/myPratice/egg/egg-example/node_modules/retry-as-promised/index.js:29:10)
+    at Sequelize.query (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:454:28)
+    at QueryInterface.select (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/query-interface.js:1104:27)
+    at Promise.try.then.then.then (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/model.js:1598:34)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+From previous event:
+    at Function.findAll (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/model.js:1595:8)
+    at UserInfoController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/userInfo.js:14:41)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at nosniff (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/nosniff.js:8:11)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","sqlMessage":"Table 'lifememory.userinfos' doesn't exist","sql":"SELECT `id`, `userName`, `createTime`, `created_at`, `updated_at` FROM `userInfos` AS `userInfo`;"}
+original: {"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","sqlMessage":"Table 'lifememory.userinfos' doesn't exist","sql":"SELECT `id`, `userName`, `createTime`, `created_at`, `updated_at` FROM `userInfos` AS `userInfo`;"}
+sql: "SELECT `id`, `userName`, `createTime`, `created_at`, `updated_at` FROM `userInfos` AS `userInfo`;"
+pid: 2712
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-22 08:55:34,510 INFO 2724 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 08:55:36,821 INFO 2724 [egg-sequelize](1ms) Executed (default): SELECT `id`, `userName`, `createTime`, `created_at`, `updated_at` FROM `userInfos` AS `userInfo`;
+2019-03-22 08:55:36,827 ERROR 2724 [-/127.0.0.1/-/15ms GET /userInfo] nodejs.SequelizeDatabaseError: Unknown column 'created_at' in 'field list'
+    at Query.formatError (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/query.js:247:16)
+    at Query.handler [as onResult] (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/query.js:68:23)
+    at Query.execute (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/commands/command.js:30:14)
+    at Connection.handlePacket (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/connection.js:449:32)
+    at PacketParser.Connection.packetParser.p [as onPacket] (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/connection.js:72:12)
+    at PacketParser.executeStart (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.Connection.stream.on.data (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/connection.js:79:25)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+From previous event:
+    at Query.run (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/query.js:57:12)
+    at Promise.try.then.connection (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:558:20)
+From previous event:
+    at Promise.resolve.retryParameters (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:555:8)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/retry-as-promised/index.js:39:21
+    at retryAsPromised (/Users/tubulang/myPratice/egg/egg-example/node_modules/retry-as-promised/index.js:29:10)
+    at Sequelize.query (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:454:28)
+    at QueryInterface.select (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/query-interface.js:1104:27)
+    at Promise.try.then.then.then (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/model.js:1598:34)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+From previous event:
+    at Function.findAll (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/model.js:1595:8)
+    at UserInfoController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/userInfo.js:14:41)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at nosniff (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/nosniff.js:8:11)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'created_at' in 'field list'","sql":"SELECT `id`, `userName`, `createTime`, `created_at`, `updated_at` FROM `userInfos` AS `userInfo`;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'created_at' in 'field list'","sql":"SELECT `id`, `userName`, `createTime`, `created_at`, `updated_at` FROM `userInfos` AS `userInfo`;"}
+sql: "SELECT `id`, `userName`, `createTime`, `created_at`, `updated_at` FROM `userInfos` AS `userInfo`;"
+pid: 2724
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-22 08:58:13,401 INFO 2724 [egg-sequelize](1ms) Executed (default): SELECT `id`, `userName`, `createTime`, `created_at`, `updated_at` FROM `userInfos` AS `userInfo`;
+2019-03-22 09:05:42,295 INFO 2741 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 09:06:43,964 INFO 2752 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 09:07:47,846 INFO 2772 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-22 09:08:09,499 INFO 2772 [egg-sequelize](1ms) Executed (default): SELECT `id`, `userName`, `created_at`, `updated_at` FROM `userInfos` AS `userInfo`;
+2019-03-22 09:08:25,761 INFO 2772 [egg-sequelize](3ms) Executed (default): INSERT INTO `userInfos` (`id`,`userName`,`created_at`,`updated_at`) VALUES (DEFAULT,'tubulang','2019-03-22 01:08:25','2019-03-22 01:08:25');
+2019-03-22 09:08:35,981 INFO 2772 [egg-sequelize](0ms) Executed (default): SELECT `id`, `userName`, `created_at`, `updated_at` FROM `userInfos` AS `userInfo`;

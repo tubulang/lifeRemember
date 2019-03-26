@@ -1,0 +1,552 @@
+2019-03-21 09:50:08,879 ERROR 9124 [-/127.0.0.1/-/0ms GET /] nodejs.ER_ACCESS_DENIED_ERRORError: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)
+    at Handshake.Sequence._packetToError (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/protocol/sequences/Handshake.js:124:18)
+    at Protocol._parsePacket (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    --------------------
+    at Protocol._enqueue (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/Connection.js:118:18)
+    at Pool.getConnection (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (/Users/tubulang/myPratice/egg/egg-example/node_modules/ali-rds/node_modules/pify/index.js:12:10)
+    at Pool.ret [as getConnection] (/Users/tubulang/myPratice/egg/egg-example/node_modules/ali-rds/node_modules/pify/index.js:56:34)
+    at Pool.query (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/Pool.js:202:8)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    sql: select now() as currentTime;
+code: "ER_ACCESS_DENIED_ERROR"
+errno: 1045
+sqlMessage: "Access denied for user 'root'@'localhost' (using password: YES)"
+sqlState: "28000"
+fatal: true
+name: "ER_ACCESS_DENIED_ERRORError"
+pid: 9124
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-21 10:05:42,978 ERROR 9361 [-/127.0.0.1/-/0ms GET /] nodejs.ER_NOT_SUPPORTED_AUTH_MODEError: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+    at Handshake.Sequence._packetToError (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/protocol/sequences/Handshake.js:124:18)
+    at Protocol._parsePacket (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    --------------------
+    at Protocol._enqueue (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/Connection.js:118:18)
+    at Pool.getConnection (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (/Users/tubulang/myPratice/egg/egg-example/node_modules/ali-rds/node_modules/pify/index.js:12:10)
+    at Pool.ret [as getConnection] (/Users/tubulang/myPratice/egg/egg-example/node_modules/ali-rds/node_modules/pify/index.js:56:34)
+    at Pool.query (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql/lib/Pool.js:202:8)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    sql: select now() as currentTime;
+code: "ER_NOT_SUPPORTED_AUTH_MODE"
+errno: 1251
+sqlMessage: "Client does not support authentication protocol requested by server; consider upgrading MySQL client"
+sqlState: "08004"
+fatal: true
+name: "ER_NOT_SUPPORTED_AUTH_MODEError"
+pid: 9361
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-21 23:41:39,284 ERROR 1999 [-/127.0.0.1/-/8ms GET /users] nodejs.TypeError: Cannot read property 'User' of undefined
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:14:32)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+
+pid: 1999
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-21 23:42:47,558 ERROR 2013 [-/127.0.0.1/-/8ms GET /users] nodejs.TypeError: Cannot read property 'User' of undefined
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:14:32)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+
+pid: 2013
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-21 23:42:56,551 ERROR 2013 [-/127.0.0.1/-/1ms GET /users] nodejs.TypeError: Cannot read property 'User' of undefined
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:14:32)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+
+pid: 2013
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-21 23:46:21,305 ERROR 2044 [-/127.0.0.1/-/7ms GET /users] nodejs.TypeError: Cannot read property 'User' of undefined
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:14:32)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+
+pid: 2044
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-21 23:46:54,839 ERROR 2044 [-/127.0.0.1/-/1ms GET /users] nodejs.TypeError: Cannot read property 'User' of undefined
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:14:32)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+
+pid: 2044
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-21 23:46:56,606 ERROR 2044 [-/127.0.0.1/-/0ms GET /users] nodejs.TypeError: Cannot read property 'User' of undefined
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:14:32)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+
+pid: 2044
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-21 23:47:29,904 ERROR 2044 [-/127.0.0.1/-/0ms GET /users] nodejs.TypeError: Cannot read property 'User' of undefined
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:14:32)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+
+pid: 2044
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-21 23:47:57,271 ERROR 2044 [-/127.0.0.1/-/1ms GET /users] nodejs.TypeError: Cannot read property 'User' of undefined
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:14:32)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+
+pid: 2044
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-21 23:50:09,376 ERROR 2044 [-/127.0.0.1/-/0ms GET /users] nodejs.TypeError: Cannot read property 'User' of undefined
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:14:32)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+
+pid: 2044
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-21 23:50:10,584 ERROR 2044 [-/127.0.0.1/-/0ms GET /users] nodejs.TypeError: Cannot read property 'User' of undefined
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:14:32)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+
+pid: 2044
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-21 23:51:47,343 ERROR 2130 [-/127.0.0.1/-/7ms GET /users] nodejs.TypeError: Cannot read property 'User' of undefined
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:14:32)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+
+pid: 2130
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-21 23:53:15,978 ERROR 2139 [-/127.0.0.1/-/0ms GET /] nodejs.SequelizeAccessDeniedError: Access denied for user 'root'@'localhost' (using password: NO)
+    at Utils.Promise.tap.then.catch.err (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:141:19)
+From previous event:
+    at ConnectionManager.connect (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:136:13)
+    at sequelize.runHooks.then (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:50)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+From previous event:
+    at ConnectionManager._connect (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:8)
+    at ConnectionManager.getConnection (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:46)
+    at Promise.try (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:554:34)
+From previous event:
+    at Promise.resolve.retryParameters (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:454:64)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/retry-as-promised/index.js:39:21
+    at retryAsPromised (/Users/tubulang/myPratice/egg/egg-example/node_modules/retry-as-promised/index.js:29:10)
+    at Sequelize.query (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:454:28)
+    at Sequelize.authenticate (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:783:17)
+    at authenticate (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-sequelize/lib/loader.js:129:22)
+    at Promise.all.databases.map.database (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-sequelize/lib/loader.js:40:49)
+    at Array.map (<anonymous>)
+    at app.beforeStart (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-sequelize/lib/loader.js:40:33)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:42)
+    at process.nextTick (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/lifecycle.js:248:13)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:745:11)
+    at startup (internal/bootstrap/node.js:283:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:743:3)
+name: "SequelizeAccessDeniedError"
+parent: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+original: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+pid: 2139
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-21 23:53:17,115 ERROR 2141 [-/127.0.0.1/-/1ms GET /] nodejs.SequelizeAccessDeniedError: Access denied for user 'root'@'localhost' (using password: NO)
+    at Utils.Promise.tap.then.catch.err (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:141:19)
+From previous event:
+    at ConnectionManager.connect (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:136:13)
+    at sequelize.runHooks.then (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:50)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+From previous event:
+    at ConnectionManager._connect (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:320:8)
+    at ConnectionManager.getConnection (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:46)
+    at Promise.try (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:554:34)
+From previous event:
+    at Promise.resolve.retryParameters (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:454:64)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/retry-as-promised/index.js:39:21
+    at retryAsPromised (/Users/tubulang/myPratice/egg/egg-example/node_modules/retry-as-promised/index.js:29:10)
+    at Sequelize.query (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:454:28)
+    at Sequelize.authenticate (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:783:17)
+    at authenticate (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-sequelize/lib/loader.js:129:22)
+    at Promise.all.databases.map.database (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-sequelize/lib/loader.js:40:49)
+    at Array.map (<anonymous>)
+    at app.beforeStart (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-sequelize/lib/loader.js:40:33)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:42)
+    at process.nextTick (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/lifecycle.js:248:13)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:745:11)
+    at startup (internal/bootstrap/node.js:283:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:743:3)
+name: "SequelizeAccessDeniedError"
+parent: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+original: {"code":"ER_ACCESS_DENIED_ERROR","errno":1045,"sqlState":"28000","sqlMessage":"Access denied for user 'root'@'localhost' (using password: NO)"}
+pid: 2141
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-21 23:54:06,367 INFO 2174 [egg-sequelize](0ms) Executed (default): SELECT 1+1 AS result
+2019-03-21 23:54:15,120 INFO 2174 [egg-sequelize](1ms) Executed (default): SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user`;
+2019-03-21 23:54:15,126 ERROR 2174 [-/127.0.0.1/-/17ms GET /users] nodejs.SequelizeDatabaseError: Table 'nodetest.users' doesn't exist
+    at Query.formatError (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/query.js:247:16)
+    at Query.handler [as onResult] (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/query.js:68:23)
+    at Query.execute (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/commands/command.js:30:14)
+    at Connection.handlePacket (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/connection.js:449:32)
+    at PacketParser.Connection.packetParser.p [as onPacket] (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/connection.js:72:12)
+    at PacketParser.executeStart (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.Connection.stream.on.data (/Users/tubulang/myPratice/egg/egg-example/node_modules/mysql2/lib/connection.js:79:25)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+From previous event:
+    at Query.run (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/dialects/mysql/query.js:57:12)
+    at Promise.try.then.connection (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:558:20)
+From previous event:
+    at Promise.resolve.retryParameters (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:555:8)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/retry-as-promised/index.js:39:21
+    at retryAsPromised (/Users/tubulang/myPratice/egg/egg-example/node_modules/retry-as-promised/index.js:29:10)
+    at Sequelize.query (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/sequelize.js:454:28)
+    at QueryInterface.select (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/query-interface.js:1104:27)
+    at Promise.try.then.then.then (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/model.js:1598:34)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+From previous event:
+    at Function.findAll (/Users/tubulang/myPratice/egg/egg-example/node_modules/sequelize/lib/model.js:1595:8)
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:14:37)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at nosniff (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/nosniff.js:8:11)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","sqlMessage":"Table 'nodetest.users' doesn't exist","sql":"SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user`;"}
+original: {"code":"ER_NO_SUCH_TABLE","errno":1146,"sqlState":"42S02","sqlMessage":"Table 'nodetest.users' doesn't exist","sql":"SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user`;"}
+sql: "SELECT `id`, `name`, `age`, `created_at`, `updated_at` FROM `users` AS `user`;"
+pid: 2174
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-21 23:54:54,421 INFO 2184 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-21 23:54:59,306 INFO 2189 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-21 23:55:00,337 INFO 2190 [egg-sequelize](0ms) Executed (default): SELECT 1+1 AS result
+2019-03-21 23:55:01,883 INFO 2191 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-21 23:55:07,804 ERROR 2191 [-/127.0.0.1/-/7ms GET /users] nodejs.TypeError: Cannot read property 'findAll' of undefined
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:14:37)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+
+pid: 2191
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-21 23:55:46,062 ERROR 2191 [-/127.0.0.1/-/1ms GET /users] nodejs.TypeError: Cannot read property 'findAll' of undefined
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:14:37)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+
+pid: 2191
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-21 23:55:48,809 ERROR 2191 [-/127.0.0.1/-/0ms GET /users] nodejs.TypeError: Cannot read property 'findAll' of undefined
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:14:37)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+
+pid: 2191
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-21 23:56:58,093 ERROR 2191 [-/127.0.0.1/-/0ms GET /users?1] nodejs.TypeError: Cannot read property 'findAll' of undefined
+    at UserController.index (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:14:37)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+
+pid: 2191
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-21 23:57:38,473 INFO 2204 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2019-03-21 23:58:37,184 ERROR 2204 [-/127.0.0.1/-/7ms GET /users/create?name=%27tubulang%27&&age=22] nodejs.TypeError: Cannot read property 'findById' of undefined
+    at UserController.show (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:20:37)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+
+pid: 2204
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-21 23:59:06,478 ERROR 2204 [-/127.0.0.1/-/0ms GET /users/create] nodejs.TypeError: Cannot read property 'findById' of undefined
+    at UserController.show (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:20:37)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+
+pid: 2204
+hostname: tubulangdeMacBook-Pro.local
+
+2019-03-21 23:59:13,957 ERROR 2204 [-/127.0.0.1/-/1ms GET /users/create] nodejs.TypeError: Cannot read property 'findById' of undefined
+    at UserController.show (/Users/tubulang/myPratice/egg/egg-example/app/controller/users.js:20:37)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at next (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:45:18)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:44:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/koa-compose/index.js:36:12
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /Users/tubulang/myPratice/egg/egg-example/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at i18n (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-i18n/app/middleware/i18n.js:13:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at dta (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/dta.js:12:12)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xframe (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xframe.js:7:11)
+    at dispatch (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at xssProtection (/Users/tubulang/myPratice/egg/egg-example/node_modules/egg-security/lib/middlewares/xssProtection.js:7:11)
+
+pid: 2204
+hostname: tubulangdeMacBook-Pro.local
+
