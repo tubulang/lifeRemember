@@ -1,12 +1,27 @@
 <!--pages/recordPage/recordPage.wxml-->
 <view>
-<wux-fab-button buttons="{{ buttons }}" direction='circle' bind:change="onChange" bind:click="onClick" bind:contact="onContact" wux-class='fabButtonClass' sAngle='160' eAngle='290' spaceBetween='30' theme='calm'/>
-<wux-select id="wux-select3" />
+<wux-dialog id="wux-dialog" />
+  <wux-fab-button buttons="{{ buttons }}" direction='circle' bind:change="onChange" bind:click="onClick" bind:contact="onContact" wux-class='fabButtonClass' sAngle='160' eAngle='290' spaceBetween='30' theme='calm' />
+  <wux-select id="wux-select3" />
   <view class="page__bd">
-
     <wux-search-bar clear value="{{ value }}" controlled placeholder="Search" bind:change="onChange" bind:focus="onFocus" bind:blur="onBlur" bind:confirm="onConfirm" bind:clear="onClear" bind:cancel="onCancel" />
   </view>
-  <record-list bindselectTap='selectOperator' bind:openBar='openRecordBar'></record-list>
+  <block wx:for="{{recordData}}" wx:key="{{index}}" wx:value="" wx:for-item='record'>
+    <!-- <record-list bindtap='selectOperator' bindselectTap='selectOperator' bind:openBar='openRecordBar'>
+      </record-list> -->
+    <scroll-view scroll-y='true'>
+
+      <wux-swipe-action-group>
+        <wux-swipe-action autoClose left="{{ left }}" right="{{ right }}" data-selectId="{{record.id}}" wux-class='recordContent' bind:click='onClickOperator' bind:open='openRecordBar'>
+          <view class="demo-item recordView {{record.status == 'true'?'doneStyle':''}}" >
+            <wux-selectable color="calm" checked="{{che}}"  value="{{index}}" wux-class="selcetAction" bind:change="onSelectChange"></wux-selectable>
+          {{record.recordContent}}</view>
+        </wux-swipe-action>
+
+      </wux-swipe-action-group>
+    </scroll-view>
+  </block>
+  <!-- <record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list>
   <record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list>
   <record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list>
   <record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list>
@@ -14,9 +29,8 @@
   <record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list>
   <record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list>
   <record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list>
-  <record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list>
-  <record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list>
-  <wux-icon type="ios-add-circle-outline" class="{{newButton}}" color='#11c1f3' size="50" bindtap="newRecord"></wux-icon>
-  
+  <record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list> -->
+  <!-- <wux-icon type="ios-add-circle-outline" class="{{newButton}}" color='#11c1f3' size="50" bindtap="newRecord"></wux-icon> -->
+
   <footer-bar bindchangeBar='onChangeBar'></footer-bar>
 </view>

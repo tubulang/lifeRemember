@@ -8,6 +8,7 @@ module.exports = app => {
     labelId: INTEGER,
     degreeId: INTEGER,
     recordContent: STRING,
+    status: STRING,
     remindTime: {
         type:DATE,
         get(){

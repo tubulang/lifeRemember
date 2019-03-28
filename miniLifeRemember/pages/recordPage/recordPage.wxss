@@ -29,3 +29,42 @@ bottom:138rpx !important;
   font-size: 15px !important;
   border-radius: 20px !important;
 }
+
+/* myComponent/recordList/recordList.wxss */
+.recordContent{
+  height: 3.5rem;
+  /* border-top: 1px #11c1f3 solid;
+  border-left: 1px #11c1f3 solid;
+  border-right: 1px #11c1f3 solid;
+
+  
+  border-bottom: 1px #11c1f3 solid; */
+  /* border: 0.1px #efeff4 solid;  */
+  /* border-radius: 5px; */
+  margin-top: 0.3rem;
+  box-shadow: 1px 1px 5px #efeff4;
+}
+.recordView{
+  height: 3.5rem;
+  text-align: left;
+  /* background-color: #11c2f304; */
+  /* color: white; */
+  padding-left: 1rem;
+  line-height: 3.5rem;
+  
+}
+.selcetAction{
+  line-height: 0px;
+}
+
+.doneStyle{
+  color: red
+}
+/* 设置提示框的确认按钮颜色 */
+.wux-dialog__button{
+  color: red !important;
+}
+.wux-dialog__button--default {
+  color:#353535 !important;
+
+}

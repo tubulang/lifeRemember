@@ -1,5 +1,5 @@
 // pages/recordPage/recordPage.js
-const icon = 'data:image/png;base64,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'
+
 const buttons = [{
   openType: 'getUserInfo',
   label: '记录',
@@ -24,6 +24,8 @@ const buttons = [{
   // icon,
 },
 ]
+import { $wuxDialog } from '../../miniprogram_npm/wux-weapp/index'
+const app = getApp()
 Page({
 
   /**
@@ -32,10 +34,140 @@ Page({
   data: {
     post:'post',
     buttons,
+    recordData: [],
+    che: true,
+    value4: ['1'],
+    done: true,
+    right: [{
+      text: '编辑',
+      style: 'background-color: #11c1f3; color: white; width: 3.5rem;border: 0px;',
+    },
+    {
+      text: '完成',
+      style: 'background-color: #33cd5f; color: white; width: 3.5rem;border: 0px;'
+    }],
+    left: [{
+      text: '删除',
+      style: 'background-color: #F4333C; color: white; width: 3.5rem;border: 0px;',
+    }],
+    // viewData: 'aa'
+  },
+  onClick(e){
+    console.log(e)
+    let vm = this;
+    if(e.detail.index === 0){
+      vm.newRecord();
+    }
+  },
+  //新建记录
+  newRecord() {
+    wx.navigateTo({
+      url: '/pages/newRecord/newRecord'
+    })
+  },
+  //删除提示
+  confirmDelete(index) {
+    let vm = this;
+    $wuxDialog().confirm({
+      resetOnClose: true,
+      closable: true,
+      title: '定制冰激凌',
+      prefixCls: 'wux-dialog',
+      confirmType: 'warn',
+      confirmText: '确定',
+      content: '你确定要吃我的冰淇淋吗？',
+      onConfirm(e) {
+        console.log('凭什么吃我的冰淇淋！')
+        wx.request({
+          url: app.globalData.url + '/record/' + index, // 仅为示例，并非真实的接口地址
+          method: 'DELETE',
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success(res) {
+            let data = vm.data.recordData;
+            data = vm.data.recordData.filter(function(v){
+              return v.id!=index
+            })
+            vm.setData({
+              recordData: data
+            })
+          },
+          error(err) {
+            console.log(err)
+          }
+        })
+      },
+      onCancel(e) {
+        console.log('谢谢你不吃之恩！')
+      },
+    })
+  },
+  onSelectChange(e){
+    console.log(e)
+  },
+  openRecordBar() {
+    // console.log('daf')
+    this.triggerEvent('openBar')
+  },
+  leftOperator(e) {
+    console.log(e.currentTarget.dataset)
+    this.confirmDelete(e.currentTarget.dataset.selectid);
+    console.log('onClick', e.detail, e)
+  },
+  // selectTap(e) {
+  //   console.log('aa')
+  //   console.log(e.detail.detail)
+  //   console.log(e)
+  //   // this.triggerEvent('selectTap', e, { composed: true })
+  // },
+  // onTap(e){
+  //   this.triggerEvent('click', e, {composed:true})
+  // },
+  rightOperator(e) {
+    if (e.detail.index === 0) {
+      console.log(e.detail.value)
+      return false
+    }
+    if (e.detail.index === 1) {
+      console.log(e.detail.value)
+    }
+  },
+  onClickOperator(e) {
+
+    switch (e.detail.type) {
+      case 'left': this.leftOperator(e)
+        break;
+      case 'right': this.rightOperator(e)
+        break;
+      default:
+        break;
+    }
+
+  },
+  onShare() {
+    console.log('onShare')
+  },
+
+  //checkbox
+  onChange(field, e) {
+    const { value } = e.detail
+    const data = this.data[field]
+    const index = data.indexOf(value)
+    const current = index === -1 ? [...data, value] : data.filter((n) => n !== value)
+
+    this.setData({
+      [field]: current,
+    })
+
+    console.log('checkbox发生change事件，携带value值为：', e.detail.value)
+  },
+  onChange1(e) {
+    this.onChange('value1', e)
   },
   selectOperator:function(e){
     console.log(e.detail.detail)
-    console.log(e.detail)
+    console.log(e)
   },
   onChangeBar(e){
     console.log(e)
@@ -43,16 +175,11 @@ Page({
   openRecordBar(e){
     console.log('sdfs')
     
-    this.setData({
-      [buttons[e.detail.data.index]]:'hideAdd'
-    })
+    // this.setData({
+    //   [buttons[e.detail.data.index]]:'hideAdd'
+    // })
   },
-  //新建记录
-  newRecord(){
-    wx.navigateTo({
-      url: '/pages/newRecord/newRecord'
-    })
-  },
+  
   onChange(e) {
     console.log('onChange', e)
     this.setData({
@@ -81,14 +208,47 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const vm = this;
+    console.log(wx.getStorageSync('sessionKey'))
+    wx.request({
+      url: app.globalData.url + '/record', // 仅为示例，并非真实的接口地址
+      // data: {
+      //   x: '',
+      //   y: ''
+      // },
+      method: 'GET',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        // this.setData({
+        //   value: e.detail.value,
+        // })
+        // for(let i = 0; i< res.data.length; i++){
+        //   res.data[i][status] = true
+        // }
+        vm.setData({
+          recordData: res.data
+        })
+        // for(let i in res.data){
+          // vm.setData({
+          //   "recordData[1].status":true
+          // })
+        // }
+        console.log(vm.data.recordData[1].status)
+      },
+      error(err) {
+        console.log(err)
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
