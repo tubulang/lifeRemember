@@ -20,8 +20,8 @@ class RecordController extends Controller {
 
   async create() {
     const ctx = this.ctx;
-    const { labelId, degreeId, recordContent, remindTime, creator } = ctx.request.body;
-    const record = await ctx.model.Record.create({ labelId, degreeId, recordContent, remindTime, creator });
+    const { labelId, degreeId, recordContent, remindTime, creator, status } = ctx.request.body;
+    const record = await ctx.model.Record.create({ labelId, degreeId, recordContent, remindTime, creator, status });
     ctx.status = 201;
     ctx.body = record;
   }
@@ -35,8 +35,8 @@ class RecordController extends Controller {
       return;
     }
 
-    const { labelId, degreeId, recordContent, remindTime, creator } = ctx.request.body;
-    await record.update({ labelId, degreeId, recordContent, remindTime, creator });
+    const { labelId, degreeId, recordContent, remindTime, creator, status } = ctx.request.body;
+    await record.update({ labelId, degreeId, recordContent, remindTime, creator, status });
     ctx.body = record;
   }
 

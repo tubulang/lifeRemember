@@ -5,6 +5,12 @@
     "footer-bar": "../../myComponent/footerBar/footerBar",
     "wux-icon": "../../miniprogram_npm/wux-weapp/icon/index",
 
-    "wux-fab-button": "../../miniprogram_npm/wux-weapp/fab-button/index"
+    "wux-fab-button": "../../miniprogram_npm/wux-weapp/fab-button/index",
+
+    "wux-swipe-action-group": "../../miniprogram_npm/wux-weapp/swipe-action-group/index",
+    "wux-swipe-action": "../../miniprogram_npm/wux-weapp/swipe-action/index",
+    "wux-selectable": "../../miniprogram_npm/wux-weapp/selectable/index",
+
+    "wux-dialog": "../../miniprogram_npm/wux-weapp/dialog/index"
   }
 }

@@ -6,7 +6,7 @@
   <wux-swipe-action autoClose left="{{ left }}" right="{{ right }}" wux-class='recordContent' bind:click='selectTap' bind:open='openRecordBar'>
     <view class="demo-item recordView" bind:click='selectTap'>
       <!-- {{viewData}} -->
-      <wux-selectable color="calm" value="4" >{{viewData}}</wux-selectable>
+      <wux-selectable color="calm" value="4" ></wux-selectable>
        <!-- <wux-cell-group>
             <block  wx:key="">
                 <wux-cell title="{{ item.label }}">

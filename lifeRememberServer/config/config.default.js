@@ -39,6 +39,8 @@ module.exports = appInfo => {
     password: 'password',
     database: 'lifeMemory',
   };
+  config.appId = 'wxd696fb28ab3bb39d'
+  config.appSecret = '9f4e8a28e29edf2a309268571969fb72'
   // config.mysql = {
   //   client: {
   //      //host

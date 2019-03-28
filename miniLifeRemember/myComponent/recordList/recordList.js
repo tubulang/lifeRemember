@@ -15,15 +15,15 @@ Component({
     value4: ['1'],
       right: [{
         text: '编辑',
-        style: 'background-color: #11c1f3; color: white; width: 3.5rem;',
+        style: 'background-color: #11c1f3; color: white; width: 3.5rem;border: 0px;',
       },
       {
         text: '完成',
-        style: 'background-color: #33cd5f; color: white; width: 3.5rem;'
+        style: 'background-color: #33cd5f; color: white; width: 3.5rem;border: 0px;'
       }],
       left: [{
         text: '删除',
-        style: 'background-color: #F4333C; color: white; width: 3.5rem;',
+        style: 'background-color: #F4333C; color: white; width: 3.5rem;border: 0px;',
       }],
     viewData:'aa'
     
