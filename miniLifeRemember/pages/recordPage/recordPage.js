@@ -1,7 +1,7 @@
 // pages/recordPage/recordPage.js
 
 const buttons = [{
-  openType: 'getUserInfo',
+  
   label: '记录',
   className:'newSubButoon'
   // icon,
@@ -20,6 +20,7 @@ const buttons = [{
 },
 {
   label: '账目',
+  openType: 'getUserInfo',
   className: 'newSubButoon'
   // icon,
 },
@@ -38,6 +39,7 @@ Page({
     che: true,
     value4: ['1'],
     done: true,
+    searchValue: '',
     right: [{
       text: '编辑',
       style: 'background-color: #11c1f3; color: white; width: 3.5rem;border: 0px;',
@@ -198,10 +200,12 @@ Page({
   onClear(e) {
     console.log('onClear', e)
     this.setData({
-      value: '',
+      searchValue: '',
     })
   },
   onCancel(e) {
+    let vm = this;
+    vm.onClear()
     console.log('onCancel', e)
   },
   /**
@@ -236,7 +240,7 @@ Page({
           //   "recordData[1].status":true
           // })
         // }
-        console.log(vm.data.recordData[1].status)
+        // console.log(vm.data.recordData[1].status)
       },
       error(err) {
         console.log(err)

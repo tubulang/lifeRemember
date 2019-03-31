@@ -4,7 +4,8 @@
 }
 .saveButton{
   position: fixed;
-  bottom: 1rpx;
+  bottom: 0rpx;
   width: 100%;
+  margin-bottom: -20rpx;
   /* border-radius: 5px; */
 }

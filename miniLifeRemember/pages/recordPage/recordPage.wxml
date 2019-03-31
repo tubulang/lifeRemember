@@ -4,7 +4,7 @@
   <wux-fab-button buttons="{{ buttons }}" direction='circle' bind:change="onChange" bind:click="onClick" bind:contact="onContact" wux-class='fabButtonClass' sAngle='160' eAngle='290' spaceBetween='30' theme='calm' />
   <wux-select id="wux-select3" />
   <view class="page__bd">
-    <wux-search-bar clear value="{{ value }}" controlled placeholder="Search" bind:change="onChange" bind:focus="onFocus" bind:blur="onBlur" bind:confirm="onConfirm" bind:clear="onClear" bind:cancel="onCancel" />
+    <wux-search-bar clear value="{{ searchValue }}" controlled placeholder="Search" bind:change="onChange" bind:focus="onFocus" bind:blur="onBlur" bind:confirm="onConfirm" bind:clear="onClear" bind:cancel="onCancel" />
   </view>
   <block wx:for="{{recordData}}" wx:key="{{index}}" wx:value="" wx:for-item='record'>
     <!-- <record-list bindtap='selectOperator' bindselectTap='selectOperator' bind:openBar='openRecordBar'>

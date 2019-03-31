@@ -12,6 +12,10 @@ page {
 .selectButton{
   border-radius: 15px !important;
 }
+.wux-cell-group__bd{
+  border-radius: 15px !important;
+
+}
 /* wux-tabbar-item--calm .wux-tabbar-item--current{
   color:#80848f;
 
