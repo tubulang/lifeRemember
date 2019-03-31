@@ -8,6 +8,9 @@ App({
     //判断登陆sessionKey
     this.checkSkey();
     
+    
+  },
+  doGetUserInfo(fn){
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -17,7 +20,30 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
+              console.log('userInfo', res)
+              const { encryptedData, iv } = res
+              console.log('test',encryptedData,'hhhhhhhhhhhhhhhh',iv)
+              fn(encryptedData, iv);
+              
+              // wx.request({
+              //   url: this.globalData.url + '/login', // 仅为示例，并非真实的接口地址
+              //   data: {
+              //     encryptedData,
+              //     iv
+              //   },
+              //   method: 'post',
+              //   header: {
+              //     'content-type': 'application/json' // 默认值
+              //   },
+              //   success(res) {
+              //     console.log(res.data)
+              //     wx.setStorageSync('sessionKey', res.data)
 
+              //   },
+              //   error(err) {
+              //     console.log(err)
+              //   }
+              // })
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
@@ -31,6 +57,7 @@ App({
   },
   //登陆
   doLogin() {
+    let vm = this;
     // 登录
     wx.login({
       success: res => {
@@ -38,24 +65,38 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         if (res.code) {
           // example: 081LXytJ1Xq1Y40sg3uJ1FWntJ1LXyth
-          wx.request({
-            url: this.globalData.url + '/login', // 仅为示例，并非真实的接口地址
-            data: {
-              code: res.code
-            },
-            method: 'post',
-            header: {
-              'content-type': 'application/json' // 默认值
-            },
-            success(res) {
-              console.log(res.data)
-              wx.setStorageSync('sessionKey', res.data)
+          let encryptedData = '', iv = '';
 
-            },
-            error(err) {
-              console.log(err)
-            }
-          })
+          this.doGetUserInfo(function (encryptedData, iv){
+            vm.globalData.encryptedData = encryptedData;
+            vm.globalData.iv = iv;
+            wx.request({
+              url: vm.globalData.url + '/login', // 仅为示例，并非真实的接口地址
+              data: {
+                code: res.code,
+                encryptedData: vm.globalData.encryptedData,
+                iv: vm.globalData.iv
+              },
+              method: 'post',
+              header: {
+                'content-type': 'application/json' // 默认值
+              },
+              success(res) {
+                console.log(res.data)
+                if (res.data.status === -2) {
+                  console.log(res.data.errmsg)
+                } else {
+                  wx.setStorageSync('sessionKey', res.data)
+                }
+
+
+              },
+              error(err) {
+                console.log(err)
+              }
+            })
+          });
+          
         }
       }
     })
@@ -63,7 +104,7 @@ App({
   checkSkey(){
     //判断登陆sessionkey是否失效
     let loginFlag = wx.getStorageSync('sessionKey');
-    if (loginFlag) {
+    if (!loginFlag) {
       // 检查 session_key 是否过期
       wx.checkSession({
         // session_key 有效(未过期)
@@ -84,6 +125,10 @@ App({
   },
   globalData: {
     userInfo: null,
+    encryptedData:'',
+    iv:'',
     url: 'http://localhost:7001',
+    // url: 'https://api.tubulang.cn',
+    // url:'http://172.16.213.133:7001'
   }
 })

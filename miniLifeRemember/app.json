@@ -8,11 +8,11 @@
     "myComponent/recordList/recordList",
     "myComponent/footerBar/footerBar",
     "pages/diyModule/diyModule",
-    
+    "pages/index/index",
     "pages/footerBar/footerBar",
     "pages/classification/classification",
-    "pages/logs/logs",
-    "pages/index/index"
+    "pages/logs/logs"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
