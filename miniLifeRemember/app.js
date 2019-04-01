@@ -22,8 +22,9 @@ App({
               this.globalData.userInfo = res.userInfo
               console.log('userInfo', res)
               const { encryptedData, iv } = res
+              const name = res.userInfo.nickName;
               console.log('test',encryptedData,'hhhhhhhhhhhhhhhh',iv)
-              fn(encryptedData, iv);
+              fn(encryptedData, iv, name);
               
               // wx.request({
               //   url: this.globalData.url + '/login', // 仅为示例，并非真实的接口地址
@@ -56,72 +57,82 @@ App({
     })
   },
   //登陆
-  doLogin() {
+  doLogin(successRes,failErr) {
     let vm = this;
-    // 登录
-    wx.login({
-      success: res => {
-        console.log(res)
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        if (res.code) {
-          // example: 081LXytJ1Xq1Y40sg3uJ1FWntJ1LXyth
-          let encryptedData = '', iv = '';
+    // return new Promise(function (resolve, reject) {
+      // 登录
+      wx.login({
+        success: res => {
+          console.log(res)
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          if (res.code) {
+            // example: 081LXytJ1Xq1Y40sg3uJ1FWntJ1LXyth
+            let encryptedData = '', iv = '';
 
-          this.doGetUserInfo(function (encryptedData, iv){
-            vm.globalData.encryptedData = encryptedData;
-            vm.globalData.iv = iv;
-            wx.request({
-              url: vm.globalData.url + '/login', // 仅为示例，并非真实的接口地址
-              data: {
-                code: res.code,
-                encryptedData: vm.globalData.encryptedData,
-                iv: vm.globalData.iv
-              },
-              method: 'post',
-              header: {
-                'content-type': 'application/json' // 默认值
-              },
-              success(res) {
-                console.log(res.data)
-                if (res.data.status === -2) {
-                  console.log(res.data.errmsg)
-                } else {
-                  wx.setStorageSync('sessionKey', res.data)
+            this.doGetUserInfo(function (encryptedData, iv, name){
+              vm.globalData.encryptedData = encryptedData;
+              vm.globalData.iv = iv;
+              wx.request({
+                url: vm.globalData.url + '/login', // 仅为示例，并非真实的接口地址
+                data: {
+                  code: res.code,
+                  encryptedData: vm.globalData.encryptedData,
+                  iv: vm.globalData.iv,
+                  name
+                },
+                method: 'post',
+                header: {
+                  'content-type': 'application/json' // 默认值
+                },
+                success(res) {
+                  console.log(res)
+                  if (res.data.status === -2) {
+                    console.log(res.data.errmsg)
+                  } else {
+                    wx.setStorageSync('userId', res.data)
+                    successRes(res);//成功回调
+                  }
+
+
+                },
+                error(err) {
+                  console.log(err)
+                  failErr(err); // 失败回调
                 }
-
-
-              },
-              error(err) {
-                console.log(err)
-              }
-            })
-          });
-          
+              })
+            });
+            
+          }
         }
-      }
-    })
+      })
+    // })
   },
   checkSkey(){
-    //判断登陆sessionkey是否失效
-    let loginFlag = wx.getStorageSync('sessionKey');
-    if (!loginFlag) {
-      // 检查 session_key 是否过期
-      wx.checkSession({
-        // session_key 有效(未过期)
-        success: function () {
-          // 业务逻辑处理
-        },
+    return new Promise(function (resolve, reject) {
+      //判断登陆sessionkey是否失效
+      let loginFlag = wx.getStorageSync('userId');
+      console.log(loginFlag)
+      if (loginFlag) {
+        // 检查 session_key 是否过期
+        wx.checkSession({
+          // session_key 有效(未过期)
+          success: function (res) {
+            console.log(res)
+            resolve(res);
+            // 业务逻辑处理
+          },
 
-        // session_key 过期
-        fail: function () {
-          // session_key过期，重新登录
-          this.doLogin();
-        }
-      });
-    } else {
-      // 无skey，作为首次登录
-      this.doLogin();
-    }
+          // session_key 过期
+          fail: function () {
+            // session_key过期，重新登录
+            this.doLogin(res=>resolve(res),err=>reject(err));
+          }
+        });
+      } else {
+        // 无skey，作为首次登录
+        this.doLogin(res => resolve(res), err => reject(err));
+      }
+    })
   },
   globalData: {
     userInfo: null,

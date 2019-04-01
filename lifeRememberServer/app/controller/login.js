@@ -20,7 +20,8 @@ class LoginController extends Controller {
         const {
             code,
             encryptedData,
-            iv
+            iv,
+            name
         } = ctx.request.body;
         // const ctx = this.ctx;
         console.log('appId', appId)
@@ -44,23 +45,34 @@ class LoginController extends Controller {
         });
         var data = result.data;//获取sessionkey
         let sessionKey = '';
+        let returnData = '';
         console.log(data)
         if (!data.openid || !data.session_key || data.errcode) {
-            sessionKey = {
+            returnData = {
                 status: -2,
                 errmsg: data.errmsg || '返回数据字段不完整'
             }
         } else {
-            const { session_key } = data;
+            const { openid } = data;
             // sessionStorage.setItem('session_key')
             // const skey = this.encryptSha1(session_key);//加密sessionkey
-            let userData = this.getUionId(appId,session_key,encryptedData,iv);
-            console.log(userData);
-            sessionKey = userData
+            // let userData = this.getUionId(appId,session_key,encryptedData,iv);
+            returnData = await this.ctx.model.UserInfo.findOne({
+                where:{
+                    openId:openid
+                }
+            });
+            console.log(returnData)
+            console.log('openId',openid)
+            if(!returnData){
+                returnData = await ctx.model.UserInfo.create({ name, openid });;
+            };
+            console.log(returnData);
+            // sessionKey = userData
         }
         // const label = await ctx.model.Label.create({ name, creator });
         ctx.status = 201;
-        ctx.body = sessionKey;
+        ctx.body = returnData.id;
     }
     // encryptSha1(data) {
     //     return crypto.createHash('sha1').update(data, 'utf8').digest('hex')
@@ -74,19 +86,22 @@ class LoginController extends Controller {
         console.log('解密后 data: ', data)
         return data;
     }
-    //通过unionId获取userId
-    getUserId(unionId){
-        return this.ctx.model.UserInfo.findOne({
+    //通过openId获取userId
+    async getUserId(openId){
+        let userId = await this.ctx.model.UserInfo.findOne({
 			where:{
-				unionId:unionId
+				openId:openId
 			}
-		});
+        });
+        console.log('userId',userId.id)
+        return userId.id
     }
     //创建用户
-    async createUserId(name,unionId){
+    async createUserId(name,openId){
         const ctx = this.ctx;
         // const { name, unionId } = ctx.request.body;
-        const userInfo = await ctx.model.UserInfo.create({ name, unionId });
+        const userInfo = await ctx.model.UserInfo.create({ name, openId });
+        return userInfo
         console.log(userInfo)
     }
 }

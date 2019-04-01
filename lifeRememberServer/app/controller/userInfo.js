@@ -21,8 +21,8 @@ class UserInfoController extends Controller {
 
   async create() {
     const ctx = this.ctx;
-    const { name, miniUserId } = ctx.request.body;
-    const userInfo = await ctx.model.UserInfo.create({ name, miniUserId });
+    const { name, openid } = ctx.request.body;
+    const userInfo = await ctx.model.UserInfo.create({ name, openid });
     ctx.status = 201;
     ctx.body = userInfo;
   }

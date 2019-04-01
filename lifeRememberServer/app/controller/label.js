@@ -15,10 +15,21 @@ class LabelController extends Controller {
   }
 
   async show() {
-    const ctx = this.ctx;
+    const ctx = this.ctx;console.log('test1',ctx.params.id)
     ctx.body = await ctx.model.Label.findById(toInt(ctx.params.id));
   }
-
+  async showByUserId() {
+    const ctx = this.ctx;
+    ctx.body = {
+      data:await ctx.model.Label.findAll({
+        where:{
+          creator:toInt(ctx.params.userId)
+        }
+      }),
+      status: 200
+    }
+    ctx.status = 200;
+  }
   async create() {
     const ctx = this.ctx;
     const { name, creator } = ctx.request.body;

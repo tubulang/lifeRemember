@@ -17,7 +17,17 @@ class ClassificationController extends Controller {
     const ctx = this.ctx;
     ctx.body = await ctx.model.Classification.findById(toInt(ctx.params.id));
   }
-
+  async showByUserId() {
+    const ctx = this.ctx;
+    ctx.body = {
+      data:await ctx.model.Classification.findAll({
+        where:{
+          creator:toInt(ctx.params.userId)
+        }
+      }),
+    }
+    ctx.status = 200;
+  }
   async create() {
     const ctx = this.ctx;
     const { name, creator, day, lunarDay, lunarMark } = ctx.request.body;
