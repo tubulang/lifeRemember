@@ -3,6 +3,7 @@
     "content-input": "../../myComponent/contentInput/contentInput",
     "wux-cell-group": "../../miniprogram_npm/wux-weapp/cell-group/index",
     "wux-cell": "../../miniprogram_npm/wux-weapp/cell/index",
+    "wux-textarea": "../../miniprogram_npm/wux-weapp/textarea/index",
     "wux-select": "../../miniprogram_npm/wux-weapp/select/index",
 
     "wux-switch": "../../miniprogram_npm/wux-weapp/switch/index",

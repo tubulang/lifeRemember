@@ -2,8 +2,8 @@
   "pages": ["pages/recordPage/recordPage","pages/schedule/schedule",
     "pages/calendarTab/calendarTab",
     "pages/dayOption/dayOption",
-    
     "pages/newRecord/newRecord",
+    
     "myComponent/selectAction/index",
     "myComponent/recordList/recordList",
     "myComponent/footerBar/footerBar",

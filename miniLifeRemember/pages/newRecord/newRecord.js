@@ -5,70 +5,160 @@ import {
 import {
   $wuxCalendar
 } from '../../miniprogram_npm/wux-weapp/index'
-
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    value1: '',
-    title1: '',
-    value2: '',
-    title2: '',
-    priorityValue: '',
+    // priorityValue: '',
     havePlanTime: false,
     planTime: [],
-    remindTime: '',
+    remindTime: [],
     openSchedule: false,
-    myTypeValue: '',
-    myType: '',
+    contentValue:'',
+    degreeValue: '',
+    label: '',
+    labelValue: '',
+    classification: '',
+    classificationValue: '',
+    recordStatus: false,
+    // myTypeValue: '',
+    // myType: '',
     isLoading: false,
-    options: [{
-        title: '画画',
-        value: '1',
-      },
-      {
-        title: '打球',
-        value: '2',
-      },
-      {
-        title: '唱歌',
-        value: '3',
-      },
-      {
-        title: '游泳',
-        value: '4',
-      },
-      {
-        title: '健身',
-        value: '5',
-      },
-      {
-        title: '睡觉',
-        value: '6',
-      },
-    ]
+    labelOptions: [],
+    classificationOptions: [],
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    // app.checkSkey();
+    //获取label数据
+    // if(wx.getStorageSync('userId')){
+      let vm  = this;
+      app.checkSkey().then(()=>{
+        //获取标签
+        wx.request({
+          url: app.globalData.url + '/getLabel/' + wx.getStorageSync('userId'), // 仅为示例，并非真实的接口地址
+          method: 'GET',
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success(res) {
+            let data = [];
+            console.log(res.statusCode)
+            if (res.statusCode === 200) {
+              res.data.data.forEach((v, index) => {
+                console.log(index)
+                data.push({ 'title': v.name, 'value': v.id })
+              });
+              vm.setData({
+                labelOptions: data
+              })
+            }
+            console.log(res.data)
+          },
+          error(err) {
+            console.log(err)
+          }
+        })
+        //获取分类
+        wx.request({
+          url: app.globalData.url + '/getClassification/' + wx.getStorageSync('userId'), // 仅为示例，并非真实的接口地址
+          method: 'GET',
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success(res) {
+            let data = [];
+            console.log(res.statusCode)
+            if (res.statusCode === 200){
+              res.data.data.forEach((v, index) => {
+                console.log(index)
+                data.push({ 'title': v.name, 'value': v.id })
+              });
+              vm.setData({
+                classificationOptions: data
+              })
+            }
+            console.log(res.data)
+          },
+          error(err) {
+            console.log(err)
+          }
+        })
+      })
+      
+    // }
+    
   },
   //保存记录
   submitRecord(e){
-    this.setData({
-      isLoading: true
+    // this.setData({
+    //   isLoading: true
+    // })
+    let sendData = {
+      labelId: +this.data.labelValue,
+      degreeNumber: +this.data.degreeValue,
+      classificationId: +this.data.classificationValue,
+      recordContent: this.data.contentValue,
+      remindTime: this.data.remindTime[0],
+      creator: wx.getStorageSync('userId'),
+      status: this.data.recordStatus
+    }
+    console.log(sendData)
+    wx.request({
+      url: app.globalData.url + '/record', // 仅为示例，并非真实的接口地址
+      data: sendData,
+      method: 'POST',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        wx.redirectTo({
+          url: '/pages/recordPage/recordPage',
+        })
+      },
+      error(err) {
+        console.log(err)
+      }
     })
     console.log(e)
   },
-  //选择提醒时间
-  bindRemindTimeChange(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+  //内容
+  setContentValue(e){
     this.setData({
-      remindTime: e.detail.value
+      contentValue: e.detail.value
+    })
+  },
+  setRecordStatus(e){
+    this.setData({
+      recordStatus: !this.data.recordStatus,
+    })
+  },
+  //选择提醒时间
+  showRemindTime(e) {
+    // console.log('picker发送选择改变，携带值为', e.detail.value)
+    // this.setData({
+    //   remindTime: e.detail.value
+    // })
+    const now = new Date()
+    const minDate = now.getTime()
+    $wuxCalendar().open({
+      value: this.data.remindTime,
+      minDate,
+      direction: 'vertical',
+      onChange: (values, displayValues) => {
+        console.log('onChange', values, displayValues)
+        this.setData({
+          remindTime: displayValues,
+        })
+      },
     })
   },
 
@@ -96,25 +186,26 @@ Page({
     })
   },
   //选择优先级
-  setPriority(e) {
+  setDegree(e) {
     this.setData({
-      priorityValue: e.detail.value
+      degreeValue: e.detail.value
     })
-    console.log('priority', this.data.priorityValue)
+    console.log('priority', this.data.degreeValue)
   },
   //选择标签
   showTags() {
     console.log('test')
     // this.triggerEvent('showSelect')
-    $wuxSelect('#wux-select3').open({
-      value: this.data.myTypeValue,
+    $wuxSelect('#label').open({
+      value: this.data.labelValue,
       // multiple: true,
       toolbar: {
         title: 'Please choose',
         confirmText: 'ok',
         cancelText: 'cancel'
       },
-      options: this.data.options,
+
+      options: this.data.labelOptions,
       // onChange: (value, index, options) => {
       //   console.log('onChange', value, index, options)
       //   this.setData({
@@ -127,9 +218,9 @@ Page({
         console.log('onConfirm', index)
         if (index !== -1) {
           this.setData({
-            myTypeValue: value,
+            labelValue: value,
             // title3: index.map((n) => options[n].title),
-            myType: options[index].title,
+            label: options[index].title,
           })
         }
 
@@ -149,15 +240,15 @@ Page({
   showTypes() {
     console.log('test')
     // this.triggerEvent('showSelect')
-    $wuxSelect('#wux-select3').open({
-      value: this.data.myTypeValue,
+    $wuxSelect('#classification').open({
+      value: this.data.classificationValue,
       // multiple: true,
       toolbar: {
         title: 'Please choose',
         confirmText: 'ok',
         cancelText: 'cancel'
       },
-      options: this.data.options,
+      options: this.data.classificationOptions,
       // onChange: (value, index, options) => {
       //   console.log('onChange', value, index, options)
       //   this.setData({
@@ -170,9 +261,9 @@ Page({
         console.log('onConfirm', index)
         if (index !== -1) {
           this.setData({
-            myTypeValue: value,
+            classificationValue: value,
             // title3: index.map((n) => options[n].title),
-            myType: options[index].title,
+            classification: options[index].title,
           })
         }
 

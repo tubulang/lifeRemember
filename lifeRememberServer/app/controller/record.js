@@ -17,11 +17,18 @@ class RecordController extends Controller {
     const ctx = this.ctx;
     ctx.body = await ctx.model.Record.findById(toInt(ctx.params.id));
   }
-
+  async showByUserId() {
+    const ctx = this.ctx;
+    ctx.body = await ctx.model.Record.findOne({
+      where:{
+        creator:toInt(ctx.params.userId)
+      }
+    })
+  }
   async create() {
     const ctx = this.ctx;
-    const { labelId, degreeId, recordContent, remindTime, creator, status } = ctx.request.body;
-    const record = await ctx.model.Record.create({ labelId, degreeId, recordContent, remindTime, creator, status });
+    const { labelId, degreeId, recordContent, remindTime, creator, status, degreeNumber } = ctx.request.body;
+    const record = await ctx.model.Record.create({ labelId, degreeId, recordContent, remindTime, creator, status, degreeNumber });
     ctx.status = 201;
     ctx.body = record;
   }
@@ -35,8 +42,8 @@ class RecordController extends Controller {
       return;
     }
 
-    const { labelId, degreeId, recordContent, remindTime, creator, status } = ctx.request.body;
-    await record.update({ labelId, degreeId, recordContent, remindTime, creator, status });
+    const { labelId, degreeId, recordContent, remindTime, creator, status, degreeNumber } = ctx.request.body;
+    await record.update({ labelId, degreeId, recordContent, remindTime, creator, status, degreeNumber });
     ctx.body = record;
   }
 

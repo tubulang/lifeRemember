@@ -7,6 +7,7 @@ module.exports = app => {
     id: { type: INTEGER, primaryKey: true, autoIncrement: true },
     labelId: INTEGER,
     degreeId: INTEGER,
+    degreeNumber: INTEGER,
     recordContent: STRING,
     status: STRING,
     remindTime: {
