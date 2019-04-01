@@ -17,7 +17,18 @@ class BirthdayController extends Controller {
     const ctx = this.ctx;
     ctx.body = await ctx.model.Birthday.findById(toInt(ctx.params.id));
   }
-
+  async showByUserId() {
+    const ctx = this.ctx;
+    ctx.body = await ctx.model.Birthday.findAll({
+      order: [
+        // 转义 username 并对查询结果按 DESC 方向排序
+        ['created_at', 'DESC']
+      ],
+      where:{
+        creator:toInt(ctx.params.userId)
+      }
+    })
+  }
   async create() {
     const ctx = this.ctx;
     const { name, creator, day, lunarDay, lunarMark } = ctx.request.body;

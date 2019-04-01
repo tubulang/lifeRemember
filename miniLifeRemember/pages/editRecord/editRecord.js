@@ -1,4 +1,4 @@
-// pages/newRecord/newRecord.js
+// pages/editRecord/editRecord.js
 import {
   $wuxSelect
 } from '../../miniprogram_npm/wux-weapp/index'
@@ -17,13 +17,14 @@ Page({
     planTime: [],
     remindTime: [],
     openSchedule: false,
-    contentValue:'',
+    contentValue: '',
     degreeValue: '',
     label: '',
     labelValue: '',
     classification: '',
     classificationValue: '',
     recordStatus: 'undo',
+    recordId: '',
     // myTypeValue: '',
     // myType: '',
     isLoading: false,
@@ -39,9 +40,14 @@ Page({
     // app.checkSkey();
     //获取label数据
     // if(wx.getStorageSync('userId')){
-      let vm  = this;
-      app.checkSkey().then(()=>{
-        //获取标签
+    let vm = this;
+    console.log(options)
+    vm.setData({
+      recordId: options.recordId
+    })
+    app.checkSkey().then(() => {
+      //获取标签
+      const labelPromise = new Promise((resolve, reject) => {
         wx.request({
           url: app.globalData.url + '/getLabel/' + wx.getStorageSync('userId'), // 仅为示例，并非真实的接口地址
           method: 'GET',
@@ -50,23 +56,30 @@ Page({
           },
           success(res) {
             let data = [];
-            console.log(res.statusCode)
+            console.log(res.data)
             if (res.statusCode === 200) {
               res.data.forEach((v, index) => {
-                console.log(index)
-                data.push({ 'title': v.name, 'value': v.id })
+                // console.log(index)
+                data.push({
+                  'title': v.name,
+                  'value': v.id
+                })
               });
               vm.setData({
                 labelOptions: data
               })
+              resolve();
             }
-            console.log(res.data)
+            // console.log(res.data)
           },
           error(err) {
+            reject();
             console.log(err)
           }
         })
-        //获取分类
+      })
+      //获取分类
+      const classificationPromise = new Promise((resolve, reject) => {
         wx.request({
           url: app.globalData.url + '/getClassification/' + wx.getStorageSync('userId'), // 仅为示例，并非真实的接口地址
           method: 'GET',
@@ -76,35 +89,83 @@ Page({
           success(res) {
             let data = [];
             console.log(res.statusCode)
-            if (res.statusCode === 200){
+            if (res.statusCode === 200) {
               res.data.forEach((v, index) => {
-                console.log(index)
-                data.push({ 'title': v.name, 'value': v.id })
+                // console.log(index)
+                data.push({
+                  'title': v.name,
+                  'value': v.id
+                })
               });
               vm.setData({
                 classificationOptions: data
               })
+              resolve()
             }
             console.log(res.data)
           },
           error(err) {
+            reject()
             console.log(err)
           }
         })
       })
-      
-    // }
+      let getRecordData = []
+      //获取record信息
+      const recordPromise = new Promise((resolve, reject) => {      
+        wx.request({
+          url: app.globalData.url + '/record/' + options.recordId, // 仅为示例，并非真实的接口地址
+          method: 'GET',
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success(res) {
+            console.log(res)
+            if (res.statusCode === 200) {
+              getRecordData = res.data
+              resolve();
+            }
+            reject()
+          },
+          error(err) {
+            reject()
+            console.log(err)
+          }
+        })
+      })
+      Promise.all([labelPromise, classificationPromise, recordPromise]).then(() => {
+        console.log(getRecordData.recordContent)
+        let labelData = ''
+        this.data.labelOptions.forEach(v=>{
+          if(v.value === getRecordData.labelId){
+            labelData = v.title
+          }
+        })
+        vm.setData({
+          contentValue: getRecordData.recordContent,
+          labelValue: getRecordData.labelId,
+          label: labelData,
+          degreeValue: getRecordData.degreeNumber,
+          'remindTime[0]': getRecordData.remindTime,
+          recordStatus: getRecordData.status
+          // classificationValue: getRecordData.class
+        })
+        console.log(this.data.labelOptions)
+      })
+    })
     
+    // }
+
   },
-  //保存记录
-  submitRecord(e){
+  //修改记录
+  submitRecord(e) {
     // this.setData({
     //   isLoading: true
     // })
     let sendData = {
       labelId: +this.data.labelValue,
       degreeNumber: +this.data.degreeValue,
-      classificationId: +this.data.classificationValue,
+      // classificationId: +this.data.classificationValue,
       recordContent: this.data.contentValue,
       remindTime: this.data.remindTime[0],
       creator: wx.getStorageSync('userId'),
@@ -112,9 +173,9 @@ Page({
     }
     console.log(sendData)
     wx.request({
-      url: app.globalData.url + '/record', // 仅为示例，并非真实的接口地址
+      url: app.globalData.url + '/record/'+this.data.recordId, // 仅为示例，并非真实的接口地址
       data: sendData,
-      method: 'POST',
+      method: 'PUT',
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -131,17 +192,16 @@ Page({
     console.log(e)
   },
   //内容
-  setContentValue(e){
+  setContentValue(e) {
     this.setData({
       contentValue: e.detail.value
     })
   },
-  setRecordStatus(e){
-    console.log(e)
+  setRecordStatus(e) {
     let changeStatus = '';
-    if(this.data.recordStatus === 'undo'){
+    if (this.data.recordStatus === 'undo') {
       changeStatus = 'finish'
-    }else{
+    } else {
       changeStatus = 'undo'
     }
     this.setData({

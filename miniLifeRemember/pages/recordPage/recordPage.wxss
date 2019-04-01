@@ -1,4 +1,7 @@
 /* pages/recordPage/recordPage.wxss */
+.footer-height{
+  height: 20vh
+}
 .newButton {
     float: right;
     /* background-color: #ffffff; */
@@ -58,7 +61,8 @@ bottom:138rpx !important;
 }
 
 .doneStyle{
-  color: red
+  color: black;
+  opacity: 0.3
 }
 /* 设置提示框的确认按钮颜色 */
 .wux-dialog__button{

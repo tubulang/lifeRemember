@@ -17,7 +17,18 @@ class MoneyAccountController extends Controller {
     const ctx = this.ctx;
     ctx.body = await ctx.model.MoneyAccount.findById(toInt(ctx.params.id));
   }
-
+  async showByUserId() {
+    const ctx = this.ctx;
+    ctx.body = await ctx.model.MoneyAccount.findAll({
+      order: [
+        // 转义 username 并对查询结果按 DESC 方向排序
+        ['created_at', 'DESC']
+      ],
+      where:{
+        creator:toInt(ctx.params.userId)
+      }
+    })
+  }
   async create() {
     const ctx = this.ctx;
     const { time, address, cost, accountType, totalText, creator } = ctx.request.body;

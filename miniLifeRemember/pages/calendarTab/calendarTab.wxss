@@ -1,6 +1,9 @@
 page {
     background-color: #efefef;
 }
+.footer-height{
+  height: 20vh
+}
 /* .demo5_days_style{
   color: red !important;
 } */

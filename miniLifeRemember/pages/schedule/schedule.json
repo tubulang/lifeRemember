@@ -9,6 +9,12 @@
 
     "footer-bar": "../../myComponent/footerBar/footerBar",
 
-    "wux-popover": "../../miniprogram_npm/wux-weapp/popover/index"
+    "wux-popover": "../../miniprogram_npm/wux-weapp/popover/index",
+
+    "wux-fab-button": "../../miniprogram_npm/wux-weapp/fab-button/index",
+    
+    "wux-badge": "../../miniprogram_npm/wux-weapp/badge/index",
+    "wux-tabbar": "../../miniprogram_npm/wux-weapp/tabbar/index",
+    "wux-tabbar-item": "../../miniprogram_npm/wux-weapp/tabbar-item/index"
   }
 }

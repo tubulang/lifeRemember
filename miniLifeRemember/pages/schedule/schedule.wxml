@@ -2,6 +2,7 @@
 <!-- <text>pages/schedule/schedule.wxml</text> -->
 <view class='view-page'>
   <view class="sub-title">今日日程</view>
+  <wux-fab-button buttons="{{ buttons }}" direction='circle' bind:change="onChange" bind:click="onClick" bind:contact="onContact" wux-class='fabButtonClass' sAngle='160' eAngle='290' spaceBetween='30' theme='calm' />
   <wux-timeline position="alternate">
     <wux-timeline-item custom>
       <wux-icon slot="dot" type="ios-time" size="23" />
@@ -10,25 +11,27 @@
     </wux-timeline-item>
 
     <wux-timeline-item content="2018-10-24 v1.0.0" custom>
-    <wux-popover visible="{{ visible }}" controlled placement="top" title="Title" bind:change="onChange" wux-class='poverClass'>
-          <view slot="content" bindtap="hide">Close<button size="mini">top</button></view>
+      <wux-popover visible="{{ visible }}" controlled placement="top" title="Title" bind:change="onChange" wux-class='poverClass'>
+        <view slot="content" bindtap="hide">Close
           <button size="mini">top</button>
-          
-        </wux-popover>
+        </view>
+        <button size="mini">top</button>
+
+      </wux-popover>
       <wux-icon slot="dot" type="ios-time" size="23" />
       <!--自定义节点-->
       <button bindtap='selectSchedule' data-content='2018'>2018-10-24 v1.0.0</button>
     </wux-timeline-item>
 
     <wux-timeline-item custom>
-    <!-- 记录每条的高度，*-2为气泡的top值-->
-        <wux-popover visible="{{ visible }}" controlled placement="top" bind:change="onChange" wux-class='poverClass'>
-          <view slot="content" bindtap="hide">
-            <button size="mini">删除</button>
-            <button size="mini">完成</button>
-          </view>
-          <button size="mini">top</button>
-        </wux-popover>
+      <!-- 记录每条的高度，*-2为气泡的top值-->
+      <wux-popover visible="{{ visible }}" controlled placement="top" bind:change="onChange" wux-class='poverClass'>
+        <view slot="content" bindtap="hide">
+          <button size="mini">删除</button>
+          <button size="mini">完成</button>
+        </view>
+        <button size="mini">top</button>
+      </wux-popover>
 
       <wux-icon slot="dot" type="ios-time" size="23" />
       <!--自定义节点-->
@@ -37,32 +40,33 @@
     <wux-timeline-item custom>
       <wux-icon slot='dot' type='ios-time' size='23' />
       <wux-popover visible="{{ visible }}" controlled placement="top" bind:change="onChange" wux-class='poverClass'>
-          <view slot="content" bindtap="hide">
-            <button size="mini">删除</button>
-            <button size="mini">完成</button>
-          </view>
-          <wux-wing-blank size="default">
-        <wux-card title="卡片标题" extra="额外内容" thumb="https://wux.cdn.cloverstd.com/logo.png">
-          <view slot="body">卡片内容</view>
-          <view slot="footer">尾部内容</view>
-        </wux-card>
-      </wux-wing-blank>
-          <!-- <button size="mini">top</button> -->
-        </wux-popover>
-      
+        <view slot="content" bindtap="hide">
+          <button size="mini">删除</button>
+          <button size="mini">完成</button>
+        </view>
+        <wux-wing-blank size="default">
+          <wux-card title="卡片标题" extra="额外内容" thumb="https://wux.cdn.cloverstd.com/logo.png">
+            <view slot="body">卡片内容</view>
+            <view slot="footer">尾部内容</view>
+          </wux-card>
+        </wux-wing-blank>
+        <!-- <button size="mini">top</button> -->
+      </wux-popover>
+
     </wux-timeline-item>
 
     <wux-timeline-item custom>
       <wux-icon slot="dot" type="ios-time" size="23" />
       <!--自定义节点-->
-      <wux-popover visible="{{ visible }}" controlled placement="top" bind:change="onChange" >
-          <view slot="content" bindtap="hide">
-            <button size="mini">删除</button>
-            <button size="mini">完成</button>
-          </view><view>2018-10-24 v1.0.0</view>
-          <!-- <button size="mini">top</button> -->
-        </wux-popover>
-      
+      <wux-popover visible="{{ visible }}" controlled placement="top" bind:change="onChange">
+        <view slot="content" bindtap="hide">
+          <button size="mini">删除</button>
+          <button size="mini">完成</button>
+        </view>
+        <view>2018-10-24 v1.0.0</view>
+        <!-- <button size="mini">top</button> -->
+      </wux-popover>
+
     </wux-timeline-item>
   </wux-timeline>
   <!-- <view>
@@ -71,5 +75,54 @@
           <button size="mini">top</button>
         </wux-popover>
         </view> -->
-  <footer-bar></footer-bar>
+  <!-- <footer-bar></footer-bar> -->
+
+  <view class="page footer-height">
+    <view class="page__bd">
+      <wux-tabbar current="{{current}}" controlled position="bottom" safeArea bindchange="onChangeTab" theme="calm">
+        <wux-tabbar-item title='记录'>
+          <wux-badge slot="icon-on">
+            <wux-icon wux-class="icon" type="ios-create" size="25" />
+          </wux-badge>
+          <wux-badge slot="icon-off">
+            <wux-icon wux-class="icon" type="ios-create" size="25" />
+          </wux-badge>
+
+        </wux-tabbar-item>
+        <wux-tabbar-item title='日程'>
+          <wux-badge slot="icon-on">
+            <wux-icon wux-class="icon" type="ios-sunny" size="25" />
+          </wux-badge>
+          <wux-badge slot="icon-off">
+            <wux-icon wux-class="icon" type="ios-sunny" size="25" />
+          </wux-badge>
+        </wux-tabbar-item>
+        <wux-tabbar-item title="日历">
+          <wux-badge slot="icon-on">
+            <wux-icon wux-class="icon" type="ios-calendar" size="25" />
+          </wux-badge>
+          <wux-badge slot="icon-off">
+            <wux-icon wux-class="icon" type="ios-calendar" size="25" />
+          </wux-badge>
+        </wux-tabbar-item>
+        <wux-tabbar-item title="账目">
+          <wux-badge slot="icon-on">
+            <wux-icon wux-class="icon" type="ios-card" size="25" />
+          </wux-badge>
+          <wux-badge slot="icon-off">
+            <wux-icon wux-class="icon" type="ios-card" size="25" />
+          </wux-badge>
+        </wux-tabbar-item>
+        <wux-tabbar-item title="我的">
+          <wux-badge slot="icon-on">
+            <wux-icon wux-class="icon" type="ios-person" size="25" />
+          </wux-badge>
+          <wux-badge slot="icon-off">
+            <wux-icon wux-class="icon" type="ios-person" size="25" />
+          </wux-badge>
+        </wux-tabbar-item>
+      </wux-tabbar>
+    </view>
+
+  </view>
 </view>

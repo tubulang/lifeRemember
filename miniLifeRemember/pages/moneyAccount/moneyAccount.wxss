@@ -1,0 +1,4 @@
+/* pages/moneyAccount/moneyAccount.wxss */
+.footer-height{
+  height: 20vh
+}
