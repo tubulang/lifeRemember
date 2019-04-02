@@ -1,9 +1,14 @@
 {
   "usingComponents": {
+    "wux-icon": "../../miniprogram_npm/wux-weapp/icon/index",
+    "wux-badge": "../../miniprogram_npm/wux-weapp/badge/index",
+    "wux-tabbar": "../../miniprogram_npm/wux-weapp/tabbar/index",
+    "wux-tabbar-item": "../../miniprogram_npm/wux-weapp/tabbar-item/index",
+
     "record-list": "../../myComponent/recordList/recordList",
     "wux-search-bar": "../../miniprogram_npm/wux-weapp/search-bar/index",
     "footer-bar": "../../myComponent/footerBar/footerBar",
-    "wux-icon": "../../miniprogram_npm/wux-weapp/icon/index",
+
 
     "wux-fab-button": "../../miniprogram_npm/wux-weapp/fab-button/index",
 
@@ -11,6 +16,8 @@
     "wux-swipe-action": "../../miniprogram_npm/wux-weapp/swipe-action/index",
     "wux-selectable": "../../miniprogram_npm/wux-weapp/selectable/index",
 
-    "wux-dialog": "../../miniprogram_npm/wux-weapp/dialog/index"
+    "wux-dialog": "../../miniprogram_npm/wux-weapp/dialog/index",
+
+    "wux-toast": "../../miniprogram_npm/wux-weapp/toast/index"
   }
 }

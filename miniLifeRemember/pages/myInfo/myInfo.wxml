@@ -1,7 +1,10 @@
-<!--pages/footerBar/footerBar.wxml-->
+<!--pages/myInfo/myInfo.wxml-->
+<text>pages/myInfo/myInfo.wxml</text>
+<view>
+
 <view class="page footer-height">
     <view class="page__bd">
-        <wux-tabbar current="{{current}}" controlled position="bottom" safeArea bindchange="onChange" theme="calm">
+        <wux-tabbar current="{{current}}" controlled position="bottom" safeArea bindchange="onChangeTab" theme="calm">
             <wux-tabbar-item title='记录'>
             <wux-badge  slot="icon-on">
                     <wux-icon wux-class="icon" type="ios-create" size="25" />
@@ -46,4 +49,5 @@
         </wux-tabbar>
     </view>
     
+</view>
 </view>

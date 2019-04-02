@@ -1,38 +1,11 @@
-// pages/schedule/schedule.js
-const buttons = [{
-
-  label: '记录',
-  className: 'newSubButoon'
-  // icon,
-},
-{
-  openType: 'share',
-  label: '日程',
-  className: 'newSubButoon'
-  // icon,
-},
-{
-  openType: 'contact',
-  label: '生日',
-  className: 'newSubButoon'
-  // icon,
-},
-{
-  label: '账目',
-  openType: 'getUserInfo',
-  className: 'newSubButoon'
-  // icon,
-},
-]
+// pages/myInfo/myInfo.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    visible: false,
-    buttons,
-    current: '1',
+    current: '4',
     pagesOption: [
       '../../pages/recordPage/recordPage',
       '../../pages/schedule/schedule',
@@ -51,23 +24,6 @@ Page({
       url: this.data.pagesOption[e.detail.key]
     })
     this.triggerEvent('changeBar', e)
-  },
-  selectSchedule:function(event){
-    console.log(event.currentTarget.dataset.content)
-  },
-  longSelectSchedule(e){
-    console.log(e)
-  },
-  hide() {
-    this.setData({
-      visible: false,
-    })
-  },
-  onChange(e) {
-    console.log('onChange', e)
-    this.setData({
-      visible: e.detail.visible,
-    })
   },
   /**
    * 生命周期函数--监听页面加载

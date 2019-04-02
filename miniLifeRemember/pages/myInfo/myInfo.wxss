@@ -1,0 +1,4 @@
+/* pages/myInfo/myInfo.wxss */
+.footer-height{
+  height: 20vh
+}
