@@ -1,0 +1,22 @@
+/* pages/newRecord/newRecord.wxss */
+view{
+  font-size: 14px
+}
+.newRecordView{
+  height: 100vh
+}
+.saveButton{
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+  margin-bottom: -20rpx;
+  background-color: #11c1f3!important;
+  color: white;
+  box-sizing:border-box;
+margin:0;
+padding:0 24rpx;
+min-width:104rpx;
+min-height:88rpx;
+
+  /* border-radius: 5px; */
+}

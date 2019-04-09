@@ -14,16 +14,20 @@ App({
     // 获取用户信息
     wx.getSetting({
       success: res => {
+        let vm =this;
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
+              vm.globalData.userInfo = res.userInfo
               console.log('userInfo', res)
               const { encryptedData, iv } = res
               const name = res.userInfo.nickName;
-              console.log('test',encryptedData,'hhhhhhhhhhhhhhhh',iv)
+              // console.log('test',encryptedData,'hhhhhhhhhhhhhhhh',iv)
+              // vm.globalData.myInfo = res.userInfo;
+              // console.log(vm.globalData.myInfo);
+              // console.log(res.userInfo);
               fn(encryptedData, iv, name);
               
               // wx.request({
@@ -47,8 +51,8 @@ App({
               // })
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
+              if (vm.userInfoReadyCallback) {
+                vm.userInfoReadyCallback(res)
               }
             }
           })
@@ -108,10 +112,12 @@ App({
     // })
   },
   checkSkey(){
+    let vm = this;
     return new Promise(function (resolve, reject) {
       //判断登陆sessionkey是否失效
       let loginFlag = wx.getStorageSync('userId');
-      console.log(loginFlag)
+      // console.log(loginFlag)
+      
       if (loginFlag) {
         // 检查 session_key 是否过期
         wx.checkSession({
@@ -119,19 +125,24 @@ App({
           success: function (res) {
             console.log(res)
             resolve(res);
+            vm.doGetUserInfo(()=>{});
+
             // 业务逻辑处理
           },
 
           // session_key 过期
           fail: function () {
             // session_key过期，重新登录
-            this.doLogin(res=>resolve(res),err=>reject(err));
+            vm.doLogin(res=>resolve(res),err=>reject(err));
           }
         });
       } else {
         // 无skey，作为首次登录
-        this.doLogin(res => resolve(res), err => reject(err));
+        vm.doLogin(res => resolve(res), err => reject(err));
       }
+      // vm.doLogin(res => resolve(res), err => reject(err));
+      //vm.getMyInfo();
+      // console.log(vm.globalData.myInfo)
     })
   },
   globalData: {
@@ -139,6 +150,7 @@ App({
     encryptedData:'',
     iv:'',
     url: 'http://localhost:7001',
+    // myInfo:''
     // url: 'https://api.tubulang.cn',
     // url:'http://172.16.213.133:7001'
   }

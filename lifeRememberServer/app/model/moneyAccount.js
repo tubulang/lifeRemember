@@ -5,11 +5,10 @@ module.exports = app => {
 
   const MoneyAccount = app.model.define('moneyAccount', {
     id: { type: INTEGER, primaryKey: true, autoIncrement: true },
-    time: DATE,
-    address: STRING,
-    cost: INTEGER,
+    moneyTypeId: INTEGER,
+    money: INTEGER,
     accountType: STRING,
-    totalText: STRING,
+    comment: STRING,
     creator: INTEGER,
     created_at:  {
       type:DATE,

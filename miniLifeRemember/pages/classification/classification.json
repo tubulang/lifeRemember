@@ -2,6 +2,12 @@
   "usingComponents": {
     "wux-cell-group": "../../miniprogram_npm/wux-weapp/cell-group/index",
     "wux-cell": "../../miniprogram_npm/wux-weapp/cell/index",
-    "wux-select": "../../miniprogram_npm/wux-weapp/select/index"
+    "wux-select": "../../miniprogram_npm/wux-weapp/select/index",
+
+    "i-cell": "../../miniprogram_npm/dist/cell/index",
+
+    "wux-popup": "../../miniprogram_npm/wux-weapp/popup/index",
+    "wux-button": "../../miniprogram_npm/wux-weapp/button/index",
+    "wux-input": "../../miniprogram_npm/wux-weapp/input/index"
   }
 }

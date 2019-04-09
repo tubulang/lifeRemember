@@ -53,11 +53,11 @@ Page({
       text: '编辑',
       style: 'background-color: #11c1f3; color: white; width: 3.5rem;border: 0px;',
     }
-    // ,
-    // {
-    //   text: '完成',
-    //   style: 'background-color: #33cd5f; color: white; width: 3.5rem;border: 0px;'
-    // }
+    ,
+    {
+      text: '详情',
+      style: 'background-color: #33cd5f; color: white; width: 3.5rem;border: 0px;'
+    }
     ],
     left: [{
       text: '删除',
@@ -141,8 +141,11 @@ Page({
               return v.id!=index
             })
             vm.setData({
-              searchData: data
+              searchData: data,
+              recordData: data
+
             })
+            vm.showToast('success','已删除')
           },
           error(err) {
             console.log(err)
@@ -210,10 +213,15 @@ Page({
       })
       return false
     }
-    // if (e.detail.index === 1) {
-    //   this.finishRecordStatus(e.currentTarget.dataset.selectid)
-    //   console.log(e)
-    // }
+    if (e.detail.index === 1) {
+      // this.finishRecordStatus(e.currentTarget.dataset.selectid)
+      // console.log(e)
+      console.log(e)
+      wx.navigateTo({
+        url: '/pages/recordDetail/recordDetail?recordId=' + e.currentTarget.dataset.selectid
+      })
+      return false
+    }
   },
   onClickOperator(e) {
 
@@ -298,10 +306,12 @@ Page({
     this.setData({
       searchValue: '',
     })
+    this.onSearchChange(e)
   },
   onCancel(e) {
     let vm = this;
-    vm.onClear()
+    vm.onClear(e)
+    console.log('this',this.data.searchValue)
     console.log('onCancel', e)
   },
   /**

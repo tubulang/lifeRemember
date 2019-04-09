@@ -1,0 +1,51 @@
+<!--pages/newRecord/newRecord.wxml-->
+<view class="page newRecordView">
+  <form bindsubmit="submitMoneyAccount" bindreset="formReset" report-submit='true'>
+    <!-- <content-input value></content-input> -->
+
+    <wux-select id="input" />
+    <wux-select id="output" />
+    <!-- <wux-select id="remindTime" /> -->
+    <wux-calendar id="wux-calendar" />
+    <!-- <wux-segmented-control theme="calm" values="{{ ['收入', '支出'] }}" bind:change="onChangeCard" /> -->
+
+    <view class="page__bd">
+    <block wx:if='{{isIncome}}'>
+      <wux-cell-group title="收入详情">
+
+        <wux-cell title="种类" extra="{{ input }}" controlled bind:click="showInputType"></wux-cell>
+        <!-- <i-input value="{{ inputMoney }}" type="number" right title="金额" mode="normal" placeholder="请输入收入数目" /> -->
+        <wux-cell hover-class="none">
+        <wux-input label="金额" type="number" controlled bind:change='inputChange' value='{{inputMoney}}' placeholder="请输入收入数目" />
+        </wux-cell>
+      </wux-cell-group>
+      <wux-cell-group title="备注">
+        <wux-cell hover-class="none">
+          <wux-textarea hasCount rows="3" controlled bind:change='setInputContentValue' value='{{inputContentValue}}' cursorSpacing="80" placeholder="请输入备注" />
+        </wux-cell>
+      </wux-cell-group>
+    </block>
+    <block wx:else>
+      <wux-cell-group title="支出详情">
+
+        <wux-cell title="种类" extra="{{ output }}" controlled bind:click="showOutputType"></wux-cell>
+        <!-- <i-input value="{{ outputMoney }}" type="number" right title="金额" mode="normal" placeholder="请输入支出数目" /> -->
+        <wux-cell hover-class="none">
+        <wux-input label="金额" type="number" controlled bind:change='outputChange' value='{{outputMoney}}' placeholder="请输入支出数目" />
+        </wux-cell>
+      </wux-cell-group>
+      <wux-cell-group title="备注">
+        <wux-cell hover-class="none">
+          <wux-textarea hasCount rows="3" controlled bind:change='setOutputContentValue' value='{{outputContentValue}}' cursorSpacing="80" placeholder="请输入备注" />
+        </wux-cell>
+      </wux-cell-group>
+    </block>
+
+    </view>
+    <view>
+      <button form-type='submit' class='saveButton'>保存</button>
+      <!-- <wux-button block type="calm" formType='submit' loading='{{isLoading}}' 
+  >保存</wux-button> -->
+    </view>
+  </form>
+</view>

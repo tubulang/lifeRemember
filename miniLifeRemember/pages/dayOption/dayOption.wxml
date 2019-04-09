@@ -8,7 +8,7 @@
     <wux-segmented-control current="{{ current }}" controlled values="{{ ['生日', '日程', '记录'] }}" bind:change="onChange" />
   </view> -->
   <view>
-  <my-diy-module></my-diy-module>
+  <!-- <my-diy-module></my-diy-module> -->
     <wux-tabs wux-class="bordered" controlled current="{{ key }}" bindchange="onTabsChange">
       <block wx:for="{{ tabs }}" wx:key="key">
         <wux-tab key="{{ item.key }}" title="{{ item.title }}"></wux-tab>
@@ -63,5 +63,5 @@
     </swiper>
     </view>
   </view>
-  <footer-bar></footer-bar>
+  <!-- <footer-bar></footer-bar> -->
 </view>

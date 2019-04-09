@@ -181,7 +181,7 @@ Page({
       },
       success(res) {
         console.log(res.data)
-        wx.redirectTo({
+        wx.reLaunch({
           url: '/pages/recordPage/recordPage',
         })
       },
@@ -215,7 +215,7 @@ Page({
     //   remindTime: e.detail.value
     // })
     const now = new Date()
-    const minDate = now.getTime()
+    const minDate = now.getTime() - 1000 * 60 * 60 * 24
     $wuxCalendar().open({
       value: this.data.remindTime,
       minDate,
@@ -232,7 +232,7 @@ Page({
   //选择计划时间
   showPlanTime() {
     const now = new Date()
-    const minDate = now.getTime()
+    const minDate = now.getTime() - 1000 * 60 * 60 * 24
     $wuxCalendar().open({
       value: this.data.planTime,
       minDate,

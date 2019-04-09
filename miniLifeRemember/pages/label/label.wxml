@@ -1,0 +1,33 @@
+<!--pages/classification/classification.wxml-->
+<!-- <wux-select id="wux-select1" />
+<wux-select id="wux-select2" />
+<wux-select id="wux-select3" /> -->
+
+<view class="page">
+  <!-- <view class="page__bd">
+        <wux-cell-group title="Select">
+            
+            <wux-cell title="归类" extra="{{ myType }}" bind:click="showTypes"></wux-cell>
+        </wux-cell-group>
+    </view> -->
+  <wux-popup position="center" visible="{{ visible }}" bind:close="hide">
+    <wux-cell-group title="新增标签">
+      <!-- <wux-cell hover-class="none" title="Jack Ma"></wux-cell> -->
+      <wux-cell>
+      <wux-input  label="名称" defaultValue="{{labelName}}" bind:change="onChangeInput"></wux-input>
+      </wux-cell>
+      <wux-cell hover-class="none">
+        <wux-button block type="calm" bindtap="newLabel">确认</wux-button>
+      </wux-cell>
+    </wux-cell-group>
+  </wux-popup>
+  
+  <block wx:for="{{labelData}}" wx:key="{{item.id}}">
+    <i-cell title="{{item.name}}"></i-cell>
+  </block>
+  <view>
+    <button bindtap='openNew' class='saveButton'>新增标签</button>
+    <!-- <wux-button block type="calm" formType='submit' loading='{{isLoading}}' 
+  >保存</wux-button> -->
+  </view>
+</view>

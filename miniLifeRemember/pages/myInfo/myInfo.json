@@ -3,6 +3,11 @@
     "wux-icon": "../../miniprogram_npm/wux-weapp/icon/index",
     "wux-badge": "../../miniprogram_npm/wux-weapp/badge/index",
     "wux-tabbar": "../../miniprogram_npm/wux-weapp/tabbar/index",
-    "wux-tabbar-item": "../../miniprogram_npm/wux-weapp/tabbar-item/index"
+    "wux-tabbar-item": "../../miniprogram_npm/wux-weapp/tabbar-item/index",
+
+    "i-cell-group": "../../miniprogram_npm/dist/cell-group/index",
+    "i-cell": "../../miniprogram_npm/dist/cell/index",
+
+    "wux-avatar": "../../miniprogram_npm/wux-weapp/avatar/index"
   }
 }

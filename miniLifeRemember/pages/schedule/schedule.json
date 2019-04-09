@@ -15,6 +15,9 @@
     
     "wux-badge": "../../miniprogram_npm/wux-weapp/badge/index",
     "wux-tabbar": "../../miniprogram_npm/wux-weapp/tabbar/index",
-    "wux-tabbar-item": "../../miniprogram_npm/wux-weapp/tabbar-item/index"
+    "wux-tabbar-item": "../../miniprogram_npm/wux-weapp/tabbar-item/index",
+
+    "wux-dialog": "../../miniprogram_npm/wux-weapp/dialog/index",
+    "wux-toast": "../../miniprogram_npm/wux-weapp/toast/index"
   }
 }

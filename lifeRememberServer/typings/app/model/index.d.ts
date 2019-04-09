@@ -7,6 +7,7 @@ import ExportClassification = require('../../../app/model/classification');
 import ExportDegree = require('../../../app/model/degree');
 import ExportLabel = require('../../../app/model/label');
 import ExportMoneyAccount = require('../../../app/model/moneyAccount');
+import ExportMoneyType = require('../../../app/model/moneyType');
 import ExportRecord = require('../../../app/model/record');
 import ExportTimeManage = require('../../../app/model/timeManage');
 import ExportUser = require('../../../app/model/user');
@@ -19,6 +20,7 @@ declare module 'sequelize' {
     Degree: ReturnType<typeof ExportDegree>;
     Label: ReturnType<typeof ExportLabel>;
     MoneyAccount: ReturnType<typeof ExportMoneyAccount>;
+    MoneyType: ReturnType<typeof ExportMoneyType>;
     Record: ReturnType<typeof ExportRecord>;
     TimeManage: ReturnType<typeof ExportTimeManage>;
     User: ReturnType<typeof ExportUser>;

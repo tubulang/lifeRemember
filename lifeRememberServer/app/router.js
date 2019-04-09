@@ -9,6 +9,7 @@ module.exports = app => {
   router.post('/login', controller.login.login);
   router.get('/test', controller.home.test);
   router.resources('user', '/user', controller.user);
+  
   router.resources('userInfo', '/userInfo', controller.userInfo);
   router.resources('label', '/label', controller.label);
   router.resources('degree', '/degree', controller.degree);
@@ -16,6 +17,7 @@ module.exports = app => {
   router.resources('classification', '/classification', controller.classification);
   router.resources('record', '/record', controller.record);
   router.resources('moneyAccount', '/moneyAccount', controller.moneyAccount);
+  router.resources('moneyType', '/moneyType', controller.moneyType);
   router.resources('timeManage', '/timeManage', controller.timeManage);
 
   // router.get('record/showByUserId/:userId', controller.record.showByUserId);
@@ -25,7 +27,9 @@ module.exports = app => {
   router.get('/getBirthday/:userId', controller.birthday.showByUserId);
   router.get('/getMoneyAccount/:userId', controller.moneyAccount.showByUserId);
   router.get('/getTimeManage/:userId', controller.timeManage.showByUserId);
+  router.get('/getMoneyType/:userId', controller.moneyType.showByUserId);
   
+  router.get('/showMoneyHeader', controller.showImage.showMoneyHeader);
 
   // router.post('/user/:name/:age', controller.user.create);
 };

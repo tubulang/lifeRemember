@@ -1,53 +1,72 @@
 <!--pages/myInfo/myInfo.wxml-->
-<text>pages/myInfo/myInfo.wxml</text>
+<!-- <text>pages/myInfo/myInfo.wxml</text> -->
 <view>
+  <view class='userinfo'>
+  <!-- <wux-avatar body-style="background-color: #11c1f3" size="large"> -->
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover">
+    </image>
+  </view>
+  <!-- </wux-avatar> -->
+  <i-cell-group>
+    <!-- <i-cell title="只显示箭头" is-link></i-cell> -->
+    <i-cell title="我的详情" is-link url="/pages/myDetailInfo/myDetailInfo"></i-cell>
+    <i-cell title="分类管理" is-link url="/pages/classification/classification"></i-cell>
+    <i-cell title="标签管理" is-link url="/pages/label/label"></i-cell>
+    <i-cell title="账目分类管理" is-link url="/pages/moneyType/moneyType"></i-cell>
+    <!-- <i-cell title="发送桌面教程" is-link url="/pages/label/label"></i-cell> -->
+    <!-- <i-cell title="我的详情" is-link url="/pages/dashboard/index"></i-cell> -->
+    <!-- <i-cell title="只有 footer 点击有效" is-link url="/pages/dashboard/index" only-tap-footer></i-cell> -->
+    <!-- <i-cell title="开关">
+      <switch slot="footer" checked />
+    </i-cell> -->
+  </i-cell-group>
 
-<view class="page footer-height">
+  <view class="page footer-height">
     <view class="page__bd">
-        <wux-tabbar current="{{current}}" controlled position="bottom" safeArea bindchange="onChangeTab" theme="calm">
-            <wux-tabbar-item title='记录'>
-            <wux-badge  slot="icon-on">
-                    <wux-icon wux-class="icon" type="ios-create" size="25" />
-                </wux-badge>
-                <wux-badge  slot="icon-off" >
-                    <wux-icon wux-class="icon" type="ios-create" size="25" />
-                </wux-badge>
-                
-            </wux-tabbar-item>
-            <wux-tabbar-item title='日程'>
-                <wux-badge slot="icon-on">
-                    <wux-icon wux-class="icon" type="ios-sunny" size="25" />
-                </wux-badge>
-                <wux-badge slot="icon-off">
-                    <wux-icon wux-class="icon" type="ios-sunny" size="25" />
-                </wux-badge>
-            </wux-tabbar-item>
-            <wux-tabbar-item title="日历">
-                <wux-badge slot="icon-on">
-                    <wux-icon wux-class="icon" type="ios-calendar" size="25" />
-                </wux-badge>
-                <wux-badge slot="icon-off">
-                    <wux-icon wux-class="icon" type="ios-calendar" size="25" />
-                </wux-badge>
-            </wux-tabbar-item>
-            <wux-tabbar-item title="账目" >
-                <wux-badge slot="icon-on">
-                    <wux-icon wux-class="icon" type="ios-card" size="25"/>
-                </wux-badge>
-                <wux-badge slot="icon-off">
-                    <wux-icon wux-class="icon" type="ios-card" size="25" />
-                </wux-badge>
-            </wux-tabbar-item>
-            <wux-tabbar-item title="我的">
-                <wux-badge slot="icon-on">
-                    <wux-icon wux-class="icon" type="ios-person" size="25" />
-                </wux-badge>
-                <wux-badge slot="icon-off">
-                    <wux-icon wux-class="icon" type="ios-person" size="25" />
-                </wux-badge>
-            </wux-tabbar-item>
-        </wux-tabbar>
+      <wux-tabbar current="{{current}}" controlled position="bottom" safeArea bindchange="onChangeTab" theme="calm">
+        <wux-tabbar-item title='记录'>
+          <wux-badge slot="icon-on">
+            <wux-icon wux-class="icon" type="ios-create" size="25" />
+          </wux-badge>
+          <wux-badge slot="icon-off">
+            <wux-icon wux-class="icon" type="ios-create" size="25" />
+          </wux-badge>
+
+        </wux-tabbar-item>
+        <wux-tabbar-item title='日程'>
+          <wux-badge slot="icon-on">
+            <wux-icon wux-class="icon" type="ios-sunny" size="25" />
+          </wux-badge>
+          <wux-badge slot="icon-off">
+            <wux-icon wux-class="icon" type="ios-sunny" size="25" />
+          </wux-badge>
+        </wux-tabbar-item>
+        <wux-tabbar-item title="日历">
+          <wux-badge slot="icon-on">
+            <wux-icon wux-class="icon" type="ios-calendar" size="25" />
+          </wux-badge>
+          <wux-badge slot="icon-off">
+            <wux-icon wux-class="icon" type="ios-calendar" size="25" />
+          </wux-badge>
+        </wux-tabbar-item>
+        <wux-tabbar-item title="账目">
+          <wux-badge slot="icon-on">
+            <wux-icon wux-class="icon" type="ios-card" size="25" />
+          </wux-badge>
+          <wux-badge slot="icon-off">
+            <wux-icon wux-class="icon" type="ios-card" size="25" />
+          </wux-badge>
+        </wux-tabbar-item>
+        <wux-tabbar-item title="我的">
+          <wux-badge slot="icon-on">
+            <wux-icon wux-class="icon" type="ios-person" size="25" />
+          </wux-badge>
+          <wux-badge slot="icon-off">
+            <wux-icon wux-class="icon" type="ios-person" size="25" />
+          </wux-badge>
+        </wux-tabbar-item>
+      </wux-tabbar>
     </view>
-    
-</view>
+
+  </view>
 </view>

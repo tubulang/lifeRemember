@@ -31,8 +31,8 @@ class MoneyAccountController extends Controller {
   }
   async create() {
     const ctx = this.ctx;
-    const { time, address, cost, accountType, totalText, creator } = ctx.request.body;
-    const moneyAccount = await ctx.model.MoneyAccount.create({ time, address, cost, accountType, totalText, creator });
+    const { moneyTypeId, money, accountType, comment, creator } = ctx.request.body;
+    const moneyAccount = await ctx.model.MoneyAccount.create({ moneyTypeId, money, accountType, comment, creator });
     ctx.status = 201;
     ctx.body = moneyAccount;
   }
@@ -45,8 +45,8 @@ class MoneyAccountController extends Controller {
       ctx.status = 404;
       return;
     }
-    const { time, address, cost, accountType, totalText, creator } = ctx.request.body;
-    await moneyAccount.update({ time, address, cost, accountType, totalText, creator });
+    const { moneyTypeId, money, accountType, comment, creator } = ctx.request.body;
+    await moneyAccount.update({ moneyTypeId, money, accountType, comment, creator });
     ctx.body = moneyAccount;
   }
 
@@ -59,7 +59,7 @@ class MoneyAccountController extends Controller {
       return;
     }
 
-    await moneyAccounts.destroy();
+    await moneyAccount.destroy();
     ctx.status = 200;
   }
 }

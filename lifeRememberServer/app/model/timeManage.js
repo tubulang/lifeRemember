@@ -7,7 +7,8 @@ module.exports = app => {
     id: { type: INTEGER, primaryKey: true, autoIncrement: true },
     schedule: STRING,
     classificationId: INTEGER,
-    degreeId: INTEGER,
+    degreeNumber: INTEGER,
+    status: STRING,
     planTime: {
         type:DATE,
         get(){

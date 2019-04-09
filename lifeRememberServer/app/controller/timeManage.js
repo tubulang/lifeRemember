@@ -31,8 +31,8 @@ class TimeManageController extends Controller {
   }
   async create() {
     const ctx = this.ctx;
-    const { schedule, classificationId, creator, degreeId, planTime } = ctx.request.body;
-    const timeManage = await ctx.model.TimeManage.create({ schedule, classificationId, creator, degreeId, planTime });
+    const { schedule, classificationId, creator, degreeNumber, planTime, status } = ctx.request.body;
+    const timeManage = await ctx.model.TimeManage.create({ schedule, classificationId, creator, degreeNumber, planTime, status });
     ctx.status = 201;
     ctx.body = timeManage;
   }
@@ -46,8 +46,8 @@ class TimeManageController extends Controller {
       return;
     }
 
-    const { schedule, classificationId, creator, degreeId, planTime } = ctx.request.body;
-    await timeManage.update({ schedule, classificationId, creator, degreeId, planTime });
+    const { schedule, classificationId, creator, degreeNumber, planTime, status } = ctx.request.body;
+    await timeManage.update({ schedule, classificationId, creator, degreeNumber, planTime, status });
     ctx.body = timeManage;
   }
 
