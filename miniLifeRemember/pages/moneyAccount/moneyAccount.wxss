@@ -1,4 +1,43 @@
 /* pages/moneyAccount/moneyAccount.wxss */
+.mainPage{
+  /* background-color: #efefef; */
+  height: 100vh;
+}
 .footer-height{
   height: 20vh
+}
+.headerImg{
+  width: 100%;
+  height: 15vh;
+}
+.contentClass{
+  margin-top: 30rpx;
+}
+.wux-segment{
+  margin: 0rpx !important;
+  margin-bottom: 30rpx;
+}
+.wux-popover__element{
+  width: 90%;
+}
+
+.poverClass{
+  left: 30vw !important;
+  top: -30px !important;
+}
+
+.fabButtonClass{
+  right:60rpx !important;
+bottom:138rpx !important;
+
+}
+.wux-fab-button__button .wux-fab-button__button .newSubButoon{
+  background-color: #DAEDFF !important;
+}
+.wux-fab-button__label{
+  opacity: 1 !important;
+  color: white !important;
+  background-color: #11c1f3 !important;
+  font-size: 15px !important;
+  border-radius: 20px !important;
 }

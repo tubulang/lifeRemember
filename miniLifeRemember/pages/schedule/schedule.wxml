@@ -1,30 +1,32 @@
 <!--pages/schedule/schedule.wxml-->
 <!-- <text>pages/schedule/schedule.wxml</text> -->
-<view class='view-page'>
+<view class='view-page' bindtap='hideAllPopover'>
+<wux-toast id="wux-toast" />
+<wux-dialog id="wux-dialog" />
   <view class="sub-title">今日日程</view>
-  <wux-fab-button buttons="{{ buttons }}" direction='circle' bind:change="onChange" bind:click="onClick" bind:contact="onContact" wux-class='fabButtonClass' sAngle='160' eAngle='290' spaceBetween='30' theme='calm' />
+  <wux-fab-button buttons="{{ buttons }}" direction='circle' catch:change="onFabButtonChange" catch:click="onNewClick" catch:contact="onContact" wux-class='fabButtonClass' sAngle='160' eAngle='290' spaceBetween='30' theme='calm' />
   <wux-timeline position="alternate">
-    <wux-timeline-item custom>
+    <!-- <wux-timeline-item custom>
       <wux-icon slot="dot" type="ios-time" size="23" />
-      <!--自定义节点-->
+       
       <button bindtap='selectSchedule' bindlongpress='longSelectSchedule' data-content='2018'>2018-10-24 v1.0.0</button>
-    </wux-timeline-item>
-
-    <wux-timeline-item content="2018-10-24 v1.0.0" custom>
-      <wux-popover visible="{{ visible }}" controlled placement="top" title="Title" bind:change="onChange" wux-class='poverClass'>
-        <view slot="content" bindtap="hide">Close
+    </wux-timeline-item> -->
+    <!-- <block wx:for="{{scheduleData}}" wx:key="{{index}}" wx:value="" wx:for-item='schedule'> -->
+      <!-- <wux-timeline-item content="2018-10-24 v1.0.0" custom>
+        <wux-popover visible="{{ visible }}" controlled placement="top" title="Title" bind:change="onChange" wux-class='poverClass'>
+          <view slot="content" bindtap="hide">Close
+            <button size="mini">top</button>
+          </view>
           <button size="mini">top</button>
-        </view>
-        <button size="mini">top</button>
-
-      </wux-popover>
-      <wux-icon slot="dot" type="ios-time" size="23" />
-      <!--自定义节点-->
-      <button bindtap='selectSchedule' data-content='2018'>2018-10-24 v1.0.0</button>
-    </wux-timeline-item>
-
-    <wux-timeline-item custom>
-      <!-- 记录每条的高度，*-2为气泡的top值-->
+        <button bindtap='selectSchedule' data-content='2018'>2018-10-24</button>
+        </wux-popover>
+        <wux-icon slot="dot" type="ios-time" size="23" />
+        
+        <button bindtap='selectSchedule' data-content='2018'>2018-10-24</button>
+      </wux-timeline-item> -->
+    <!-- </block> -->
+    <!-- <wux-timeline-item custom>
+      
       <wux-popover visible="{{ visible }}" controlled placement="top" bind:change="onChange" wux-class='poverClass'>
         <view slot="content" bindtap="hide">
           <button size="mini">删除</button>
@@ -34,40 +36,40 @@
       </wux-popover>
 
       <wux-icon slot="dot" type="ios-time" size="23" />
-      <!--自定义节点-->
-    </wux-timeline-item>
+       
+    </wux-timeline-item> -->
+    <block wx:for="{{scheduleData}}" wx:key='schedule.id' wx:for-item='schedule'>
+      <wux-timeline-item custom content="{{schedule.planTime}}">
+        <wux-icon slot='dot' type='ios-time' size='23' />
+        <!-- 记录每条的高度，*-2为气泡的top值-->
+        <wux-popover visible="{{ visible[schedule.id] }}" controlled placement="top" catch:change="onPopoverChange" wux-class='poverClass {{index%2 == 0 ? "evenClass" : "" }}' data-index="{{schedule.id}}" data-forIndex="{{index}}" trigger='longpress' catchlongpress='longSelectSchedule' catchtap='selectSchedule'>
+          <view slot="content" catchtap="hide" data-index="{{schedule.id}}" class='popoverView'>
+            <button size="mini" data-index="{{schedule.id}}" bindtap='deleteSchedule'>删除</button>
+            <button size="mini" data-index="{{schedule.id}}" bindtap='changeScheduleStatus'>{{schedule.status === 'undo' ? '完成' : '未做'}}</button>
+          </view>
+          <wux-wing-blank size="default">
+            <!-- <wux-card title="卡片标题" thumb="https://wux.cdn.cloverstd.com/logo.png"> -->
+            <wux-card title="{{schedule.classification}}">
+              <view slot="body">{{schedule.schedule}}</view>
+              <view slot="footer">{{schedule.status}}</view>
+            </wux-card>
+          </wux-wing-blank>
+        </wux-popover>
 
-    <wux-timeline-item custom>
-      <wux-icon slot='dot' type='ios-time' size='23' />
-      <wux-popover visible="{{ visible }}" controlled placement="top" bind:change="onChange" wux-class='poverClass'>
-        <view slot="content" bindtap="hide">
-          <button size="mini">删除</button>
-          <button size="mini">完成</button>
-        </view>
-        <wux-wing-blank size="default">
-          <wux-card title="卡片标题" extra="额外内容" thumb="https://wux.cdn.cloverstd.com/logo.png">
-            <view slot="body">卡片内容</view>
-            <view slot="footer">尾部内容</view>
-          </wux-card>
-        </wux-wing-blank>
-        <!-- <button size="mini">top</button> -->
-      </wux-popover>
+      </wux-timeline-item>
+    </block>
 
-    </wux-timeline-item>
-
-    <wux-timeline-item custom>
+    <!-- <wux-timeline-item custom>
       <wux-icon slot="dot" type="ios-time" size="23" />
-      <!--自定义节点-->
       <wux-popover visible="{{ visible }}" controlled placement="top" bind:change="onChange">
         <view slot="content" bindtap="hide">
           <button size="mini">删除</button>
           <button size="mini">完成</button>
         </view>
         <view>2018-10-24 v1.0.0</view>
-        <!-- <button size="mini">top</button> -->
       </wux-popover>
 
-    </wux-timeline-item>
+    </wux-timeline-item> -->
   </wux-timeline>
   <!-- <view>
   <wux-popover visible="{{ visible }}" controlled placement="top" title="Title" bind:change="onChange">

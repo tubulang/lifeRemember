@@ -1,19 +1,24 @@
 {
-  "pages": ["pages/recordPage/recordPage",
+  "pages": ["pages/myInfo/myInfo","pages/classification/classification","pages/moneyAccount/moneyAccount","pages/calendarTab/calendarTab","pages/schedule/schedule","pages/newSchedule/newSchedule","pages/recordPage/recordPage",
+    "pages/recordDetail/recordDetail",
+    "pages/myDetailInfo/myDetailInfo","pages/label/label",
     "pages/editRecord/editRecord",
-    "pages/schedule/schedule",
-    "pages/calendarTab/calendarTab",
+    "pages/editSchedule/editSchedule",
+    "pages/editInputMoneyAccount/editInputMoneyAccount",
+    "pages/editOutputMoneyAccount/editOutputMoneyAccount",
     "pages/dayOption/dayOption",
     "pages/newRecord/newRecord",
-    "pages/moneyAccount/moneyAccount",
-    "pages/myInfo/myInfo",
+    "pages/moneyType/moneyType",
+    "pages/newMoneyAccount/newMoneyAccount",
+    "pages/newBirthday/newBirthday",
+    
     "myComponent/selectAction/index",
     "myComponent/recordList/recordList",
     "myComponent/footerBar/footerBar",
     "pages/diyModule/diyModule",
     "pages/index/index",
     "pages/footerBar/footerBar",
-    "pages/classification/classification",
+    
     "pages/logs/logs"
     
   ],

@@ -1,13 +1,67 @@
 import { $wuxSelect } from '../../miniprogram_npm/wux-weapp/index'
-
+const app = getApp()
 Page({
   data: {
-    value1: '',
-    title1: '',
-    value2: '',
-    title2: '',
-    myTypeValue: '',
-    myType: '',
+    classificationData:[],
+    visible: false,
+    classificationName: ''
+  },
+  onChangeInput(e){
+    console.log(e.detail.value)
+    this.setData({
+      classificationName: e.detail.value
+    })
+  },
+  openNew() {
+    this.setData({
+      visible: true,
+    })
+  },
+  hide(){
+    this.setData({
+      visible: false,
+    })
+  },
+  newClassification(){
+    const vm = this;
+    wx.request({
+      url: app.globalData.url + '/classification',
+      method: 'POST',
+      data:{
+        creator: wx.getStorageSync('userId'),
+        name: vm.data.classificationName
+      },
+      success(res){
+        console.log(res)
+        let data = vm.data.classificationData;
+        data.unshift(res.data)
+        vm.setData({
+          classificationData: data
+        })
+        vm.hide();
+      },
+      error(err){
+        consolo.log(err)
+        vm.hide();
+      }
+    })
+  },
+  onLoad(options){
+    const vm = this;
+    app.checkSkey().then(()=>{
+      wx.request({
+        url: app.globalData.url+'/getClassification/'+wx.getStorageSync('userId'),
+        success(res){
+          console.log(res)
+          vm.setData({
+            classificationData: res.data
+          })
+        },
+        error(err){
+          console.log(err)
+        }
+      })
+    })
   },
   onClick1() {
     $wuxSelect('#wux-select1').open({

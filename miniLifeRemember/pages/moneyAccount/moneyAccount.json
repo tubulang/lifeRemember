@@ -3,6 +3,26 @@
     "wux-icon": "../../miniprogram_npm/wux-weapp/icon/index",
     "wux-badge": "../../miniprogram_npm/wux-weapp/badge/index",
     "wux-tabbar": "../../miniprogram_npm/wux-weapp/tabbar/index",
-    "wux-tabbar-item": "../../miniprogram_npm/wux-weapp/tabbar-item/index"
+    "wux-tabbar-item": "../../miniprogram_npm/wux-weapp/tabbar-item/index",
+
+    "wux-segmented-control": "../../miniprogram_npm/wux-weapp/segmented-control/index",
+    "wux-wing-blank": "../../miniprogram_npm/wux-weapp/wing-blank/index",
+
+    "wux-popover": "../../miniprogram_npm/wux-weapp/popover/index",
+
+    "wux-card": "../../miniprogram_npm/wux-weapp/card/index",
+
+    "i-cell-group": "../../miniprogram_npm/dist/cell-group/index",
+    "i-cell": "../../miniprogram_npm/dist/cell/index",
+
+    "wux-timeline": "../../miniprogram_npm/wux-weapp/timeline/index",
+    "wux-timeline-item": "../../miniprogram_npm/wux-weapp/timeline-item/index",
+
+    "wux-dialog": "../../miniprogram_npm/wux-weapp/dialog/index",
+    "wux-toast": "../../miniprogram_npm/wux-weapp/toast/index",
+
+    "wux-fab-button": "../../miniprogram_npm/wux-weapp/fab-button/index"
+    
+    
   }
 }

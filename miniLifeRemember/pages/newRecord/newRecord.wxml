@@ -2,9 +2,9 @@
 <view class="page newRecordView">
 <form bindsubmit="submitRecord" bindreset="formReset" report-submit='true'>
   <!-- <content-input value></content-input> -->
-  <wux-cell-group title="内容">
+  <wux-cell-group title="你的记录">
     <wux-cell hover-class="none">
-      <wux-textarea hasCount rows="3" bind:change='setContentValue' defaultValue='{{contentValue}}' cursorSpacing="80" placeholder="请输入内容" />
+      <wux-textarea hasCount rows="3" bind:change='setContentValue' defaultValue='{{contentValue}}' cursorSpacing="80" placeholder="请输入记录" />
     </wux-cell>
   </wux-cell-group>
   <wux-select id="classification" />
@@ -39,11 +39,11 @@
       <view class="section">
 
       </view>
-      <wux-cell-group title='移动操作'>
+      <!-- <wux-cell-group title='移动操作'>
         <wux-cell title="添加到日程">
           <wux-switch name="openSchedule" style='width:"80%"' slot="footer" color="calm" value="{{ openSchedule }}" bind:change="openSchedule" />
         </wux-cell>
-      </wux-cell-group>
+      </wux-cell-group> -->
 
     </view>
     <view >

@@ -1,0 +1,55 @@
+<!--pages/newRecord/newRecord.wxml-->
+<view class="page newRecordView">
+<form bindsubmit="submitRecord" bindreset="formReset" report-submit='true'>
+  <!-- <content-input value></content-input> -->
+  <wux-cell-group title="你的计划">
+    <wux-cell hover-class="none">
+      <wux-textarea hasCount rows="3" bind:change='setContentValue' defaultValue='{{contentValue}}' cursorSpacing="80" placeholder="请输入计划" />
+    </wux-cell>
+  </wux-cell-group>
+  <wux-select id="classification" />
+  <wux-select id="label" />
+  <!-- <wux-select id="remindTime" /> -->
+  <wux-calendar id="wux-calendar" />
+
+    <view class="page__bd">
+
+      <wux-cell-group title="选项">
+        <wux-cell title="优先级" hover-class="none">
+          <wux-rater slot="footer" default-value="{{ degreeValue }}" bind:change='setDegree' activeColor='#11c1f3' />
+        </wux-cell>
+
+        <wux-cell title="归类" extra="{{ classification }}" bind:click="showTypes"></wux-cell>
+        <!-- <wux-cell title="标签" extra="{{ label }}" bind:click="showTags"></wux-cell> -->
+
+        <!-- <wux-cell extra="{{ remindTime }}" bind:click="showRemindTime">
+          <picker mode="time" value="{{remindTime}}" bindchange="bindRemindTimeChange">
+            <view class="picker">
+              提醒时间 {{remindTime}}
+            </view>
+          </picker>
+        </wux-cell> -->
+        <!-- <wux-cell title="提醒日期" extra="{{ remindTime }}" bind:click="showRemindTime"></wux-cell> -->
+        <wux-cell title="计划时间" extra="{{ planTime }}" bind:click="showPlanTime"></wux-cell>
+         <wux-cell title="状态">
+          <wux-switch name="recordStatus" style='width:"80%"' slot="footer" color="calm" value="{{ recordStatus === 'finish' }}" bind:change="setRecordStatus" />
+        </wux-cell>
+        <!-- <wux-cell  title="计划时间" extra="{{ myType }}" bind:click="showPlanTime"></wux-cell> -->
+      </wux-cell-group>
+      <view class="section">
+
+      </view>
+      <!-- <wux-cell-group title='移动操作'>
+        <wux-cell title="添加到日程">
+          <wux-switch name="openSchedule" style='width:"80%"' slot="footer" color="calm" value="{{ openSchedule }}" bind:change="openSchedule" />
+        </wux-cell>
+      </wux-cell-group> -->
+
+    </view>
+    <view >
+    <button form-type='submit' class='saveButton'>保存</button>
+    <!-- <wux-button block type="calm" formType='submit' loading='{{isLoading}}' 
+  >保存</wux-button> -->
+    </view>
+  </form>
+</view>
