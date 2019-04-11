@@ -3,7 +3,7 @@ var moment = require('moment')
 module.exports = app => {
   const { STRING, INTEGER, DATE } = app.Sequelize;
 
-  const FormIdGroup = app.model.define('FormIdGroup', {
+  const FormIdGroup = app.model.define('formIdGroup', {
     id: { type: INTEGER, primaryKey: true, autoIncrement: true },
     formId: STRING,
     creator: INTEGER,
