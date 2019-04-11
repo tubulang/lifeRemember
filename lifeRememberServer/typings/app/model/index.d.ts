@@ -5,6 +5,7 @@ import 'egg';
 import ExportBirthday = require('../../../app/model/birthday');
 import ExportClassification = require('../../../app/model/classification');
 import ExportDegree = require('../../../app/model/degree');
+import ExportFormIdGroup = require('../../../app/model/formIdGroup');
 import ExportLabel = require('../../../app/model/label');
 import ExportMoneyAccount = require('../../../app/model/moneyAccount');
 import ExportMoneyType = require('../../../app/model/moneyType');
@@ -18,6 +19,7 @@ declare module 'sequelize' {
     Birthday: ReturnType<typeof ExportBirthday>;
     Classification: ReturnType<typeof ExportClassification>;
     Degree: ReturnType<typeof ExportDegree>;
+    FormIdGroup: ReturnType<typeof ExportFormIdGroup>;
     Label: ReturnType<typeof ExportLabel>;
     MoneyAccount: ReturnType<typeof ExportMoneyAccount>;
     MoneyType: ReturnType<typeof ExportMoneyType>;
