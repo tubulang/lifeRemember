@@ -101,33 +101,51 @@ Page({
     // this.setData({
     //   isLoading: true
     // })
-    let sendData = {
-      labelId: +this.data.labelValue,
-      degreeNumber: +this.data.degreeValue,
-      classificationId: +this.data.classificationValue,
-      recordContent: this.data.contentValue,
-      remindTime: this.data.remindTime[0],
-      creator: wx.getStorageSync('userId'),
-      status: this.data.recordStatus
-    }
-    console.log(sendData)
+    console.log(e)
+    let vm =this;
     wx.request({
-      url: app.globalData.url + '/record', // 仅为示例，并非真实的接口地址
-      data: sendData,
-      method: 'POST',
-      header: {
-        'content-type': 'application/json' // 默认值
+      url: app.globalData.url + '/formIdGroup',
+      method:'post',
+      data:{
+        formId: e.detail.formId,
+        creator: wx.getStorageSync('userId'),
       },
-      success(res) {
-        console.log(res.data)
-        wx.reLaunch({
-          url: '/pages/recordPage/recordPage',
+      success(res){
+        let sendData = {
+          labelId: +vm.data.labelValue,
+          degreeNumber: +vm.data.degreeValue,
+          classificationId: +vm.data.classificationValue,
+          recordContent: vm.data.contentValue,
+          remindTime: vm.data.remindTime[0],
+          creator: wx.getStorageSync('userId'),
+          status: vm.data.recordStatus,
+          formIdIndex: res.data.id
+        }
+        
+        wx.request({
+          url: app.globalData.url + '/record', // 仅为示例，并非真实的接口地址
+          data: sendData,
+          method: 'POST',
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success(res) {
+            console.log(res.data)
+            wx.reLaunch({
+              url: '/pages/recordPage/recordPage',
+            })
+          },
+          error(err) {
+            console.log(err)
+          }
         })
       },
-      error(err) {
+      error(err){
         console.log(err)
       }
     })
+    // console.log(sendData)
+    
     console.log(e)
   },
   //内容

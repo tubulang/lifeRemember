@@ -5,6 +5,7 @@ import 'egg';
 import ExportBirthday = require('../../../app/controller/birthday');
 import ExportClassification = require('../../../app/controller/classification');
 import ExportDegree = require('../../../app/controller/degree');
+import ExportFormIdGroup = require('../../../app/controller/formIdGroup');
 import ExportHome = require('../../../app/controller/home');
 import ExportLabel = require('../../../app/controller/label');
 import ExportLogin = require('../../../app/controller/login');
@@ -21,6 +22,7 @@ declare module 'egg' {
     birthday: ExportBirthday;
     classification: ExportClassification;
     degree: ExportDegree;
+    formIdGroup: ExportFormIdGroup;
     home: ExportHome;
     label: ExportLabel;
     login: ExportLogin;

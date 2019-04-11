@@ -19,6 +19,7 @@ module.exports = app => {
   router.resources('moneyAccount', '/moneyAccount', controller.moneyAccount);
   router.resources('moneyType', '/moneyType', controller.moneyType);
   router.resources('timeManage', '/timeManage', controller.timeManage);
+  router.resources('formIdGroup', '/formIdGroup', controller.formIdGroup);
 
   // router.get('record/showByUserId/:userId', controller.record.showByUserId);
   router.get('/getLabel/:userId', controller.label.showByUserId);
