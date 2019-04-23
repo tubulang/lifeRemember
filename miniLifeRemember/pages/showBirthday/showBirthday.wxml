@@ -1,0 +1,17 @@
+<!--pages/showBirthday/showBirthday.wxml-->
+<!-- <text>pages/showBirthday/showBirthday.wxml</text> -->
+<view>
+<wux-toast id="wux-toast" />
+<wux-dialog id="wux-dialog" />
+  <view bindtap='selectBirthday' data-birthdayId='{{item.id}}' style='background-color:#DAEDFF'>
+    <i-cell i-class='birthdayCell' title="姓名" value='{{birthdayData.name}}'></i-cell>
+    <i-cell i-class='birthdayCell' title="生日" value='{{birthdayData.day}}'></i-cell>
+    <i-cell i-class='birthdayCell' title="创建日期" value='{{birthdayData.created_at}}'></i-cell>
+  </view>
+  <view class='btnClass'>
+    <!-- <wux-button block class="editButton" type="calm">编辑</wux-button>
+    <wux-button block class="deleteBtn" type="assertive">删除</wux-button> -->
+    <button class='editButton' bindtap='editBir'>编辑</button>
+    <button class='deleteBtn' bindtap='deleteBir'>删除</button>
+  </view>
+</view>

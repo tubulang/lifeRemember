@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "i-cell-group": "../../miniprogram_npm/dist/cell-group/index",
+    "i-cell": "../../miniprogram_npm/dist/cell/index",
+    "wux-button": "../../miniprogram_npm/wux-weapp/button/index",
+
+
+    "wux-dialog": "../../miniprogram_npm/wux-weapp/dialog/index",
+    "wux-toast": "../../miniprogram_npm/wux-weapp/toast/index"
+  }
+}

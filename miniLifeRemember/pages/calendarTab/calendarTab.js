@@ -1,5 +1,29 @@
 const MONTHS = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May.', 'June.', 'July.', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
+const buttons = [{
 
+  label: '记录',
+  className: 'newSubButoon'
+  // icon,
+},
+{
+  // openType: 'share',
+  label: '日程',
+  className: 'newSubButoon'
+  // icon,
+},
+{
+  // openType: 'contact',
+  label: '生日',
+  className: 'newSubButoon'
+  // icon,
+},
+{
+  label: '账目',
+  // openType: 'getUserInfo',
+  className: 'newSubButoon'
+  // icon,
+}]
+const app = getApp()
 Page({
 
   /**
@@ -10,7 +34,8 @@ Page({
     month: new Date().getMonth() + 1,    // 月份
     day: new Date().getDate(),
     str: MONTHS[new Date().getMonth()],  // 月份字符串
-
+    buttons,
+    birthdayData:[],
     lunarStatus:false,
     my_calendar_style: [],
     current:'2',
@@ -63,6 +88,36 @@ Page({
     
     console.log('radio发生change事件，携带value值为：', e.detail.value)
   },
+  //新建按钮点击
+  onNewClick(e) {
+    console.log(e)
+    let vm = this;
+    switch (e.detail.index) {
+      case 0:
+        wx.navigateTo({
+          url: '/pages/newRecord/newRecord'
+        })
+        break;
+      case 1:
+        wx.navigateTo({
+          url: '/pages/newSchedule/newSchedule'
+        })
+        break;
+      case 2:
+        wx.navigateTo({
+          url: '/pages/newBirthday/newBirthday'
+        })
+        break;
+      case 3:
+        wx.navigateTo({
+          url: '/pages/newMoneyAccount/newMoneyAccount'
+        })
+        break;
+      default:
+        break;
+    }
+
+  },
   selectLunar(e) {
     this.onChange('islunar', e)
     this.setData({
@@ -72,15 +127,25 @@ Page({
   formSubmit(e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
   },
+  selectBirthday(e){
+    console.log(e);
+    wx.navigateTo({
+      url: '/pages/showBirthday/showBirthday?id='+e.currentTarget.dataset.birthdayid,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const days_count = new Date(this.data.year, this.data.month, 0).getDate();
+    const vm = this;
+    wx.setNavigationBarTitle({
+      title: '徒步浪的随记'
+    })
+    const days_count = new Date(vm.data.year, vm.data.month, 0).getDate();
     console.log(days_count)
     let my_calendar_style = new Array;
     for (let i = 1; i <= days_count; i++) {
-      const date = new Date(this.data.year, this.data.month - 1, i);
+      const date = new Date(vm.data.year, vm.data.month - 1, i);
       // if (date.getDay() == 0) {
       //   my_calendar_style.push({
       //     month: 'current', day: i, color: '#f488cd'
@@ -91,17 +156,33 @@ Page({
         });
       // }
     }
-    my_calendar_style.push({ month: 'current', day: this.data.day, color: 'white', background: '#aad4f5' });
+    my_calendar_style.push({ month: 'current', day: vm.data.day, color: 'white', background: '#aad4f5' }
+);
 
     // my_calendar_style.push({ month: 'current', day: 12, color: 'white', background: '#b49eeb' });
     // my_calendar_style.push({ month: 'current', day: 17, color: 'white', background: '#f5a8f0' });
     // my_calendar_style.push({ month: 'current', day: 20, color: 'white', background: '#aad4f5' });
     // my_calendar_style.push({ month: 'current', day: 25, color: 'white', background: '#84e7d0' });
 
-    this.setData({
+    vm.setData({
       my_calendar_style
     });
 
-    
+    app.checkSkey().then(()=>{
+      let day = vm.data.month+'-' + vm.data.day
+      console.log(day)
+      wx.request({
+        url: app.globalData.url + '/getBirthdayByDay/' + wx.getStorageSync('userId')+'/'+day,
+        success(res){
+          console.log(res);
+          vm.setData({
+            birthdayData: res.data
+          })
+        },
+        error(err){
+          console.log(err);
+        }
+      })
+    })
   },
 })

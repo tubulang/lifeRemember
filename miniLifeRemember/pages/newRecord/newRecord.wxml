@@ -1,7 +1,9 @@
 <!--pages/newRecord/newRecord.wxml-->
 <view class="page newRecordView">
+
+
 <form bindsubmit="submitRecord" bindreset="formReset" report-submit='true'>
-  <!-- <content-input value></content-input> -->
+  <!-- <content-input value></content-input> --><wux-toast id="wux-toast" />
   <wux-cell-group title="你的记录">
     <wux-cell hover-class="none">
       <wux-textarea hasCount rows="3" bind:change='setContentValue' defaultValue='{{contentValue}}' cursorSpacing="80" placeholder="请输入记录" />

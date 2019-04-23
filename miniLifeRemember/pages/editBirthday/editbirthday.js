@@ -18,7 +18,7 @@ Page({
     name: '',
     day: [],
     isLoading: false,
-
+    id: ''
   },
 
   /**
@@ -30,7 +30,26 @@ Page({
     // if(wx.getStorageSync('userId')){
     let vm = this;
     wx.setNavigationBarTitle({
-      title: '新增生日'
+      title: '编辑生日'
+    })
+    console.log(options)
+    vm.setData({
+      id: options.id
+    })
+    app.checkSkey().then(()=>{
+      wx.request({
+        url: app.globalData.url + '/birthday/'+options.id,
+        success(res){
+          console.log(res);
+          vm.setData({
+            name: res.data.name,
+            'day[0]': res.data.day
+          })
+        },
+        error(e){
+          console.log(e)
+        }
+      })
     })
   },
   //保存记录
@@ -52,13 +71,13 @@ Page({
           name: vm.data.name,
           day: vm.data.day[0],
           creator: wx.getStorageSync('userId'),
-          lunarMark:0
+          lunarMark: 0
         }
 
         wx.request({
-          url: app.globalData.url + '/birthday', // 仅为示例，并非真实的接口地址
+          url: app.globalData.url + '/birthday/'+vm.data.id, // 仅为示例，并非真实的接口地址
           data: sendData,
-          method: 'POST',
+          method: 'PUT',
           header: {
             'content-type': 'application/json' // 默认值
           },
@@ -84,7 +103,7 @@ Page({
 
     console.log(e)
   },
-  onChangeName(e){
+  onChangeName(e) {
     console.log(e.detail.value)
     this.setData({
       name: e.detail.value
@@ -99,7 +118,7 @@ Page({
       success: () => fn()
     })
   },
-  
+
   //选择提醒时间
   showSelectTime(e) {
     // console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -163,7 +182,7 @@ Page({
     })
   },
 
-  
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

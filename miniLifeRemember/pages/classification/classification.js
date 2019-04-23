@@ -48,6 +48,9 @@ Page({
   },
   onLoad(options){
     const vm = this;
+    wx.setNavigationBarTitle({
+      title: '分类管理'
+    })
     app.checkSkey().then(()=>{
       wx.request({
         url: app.globalData.url+'/getClassification/'+wx.getStorageSync('userId'),

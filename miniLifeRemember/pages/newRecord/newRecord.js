@@ -5,6 +5,8 @@ import {
 import {
   $wuxCalendar
 } from '../../miniprogram_npm/wux-weapp/index'
+import { $wuxToast } from '../../miniprogram_npm/wux-weapp/index'
+
 const app = getApp();
 Page({
 
@@ -40,6 +42,9 @@ Page({
     //获取label数据
     // if(wx.getStorageSync('userId')){
       let vm  = this;
+    wx.setNavigationBarTitle({
+      title: '新增记录'
+    })
       app.checkSkey().then(()=>{
         //获取标签
         wx.request({
@@ -131,9 +136,12 @@ Page({
           },
           success(res) {
             console.log(res.data)
-            wx.reLaunch({
-              url: '/pages/recordPage/recordPage',
+            vm.showToast('success', '提交成功', ()=>{
+              wx.reLaunch({
+                url: '/pages/recordPage/recordPage',
+              })
             })
+            
           },
           error(err) {
             console.log(err)
@@ -147,6 +155,15 @@ Page({
     // console.log(sendData)
     
     console.log(e)
+  },
+  showToast(type, text, fn) {
+    $wuxToast().show({
+      type: type,
+      duration: 1500,
+      color: '#fff',
+      text: text,
+      success: () => fn()
+    })
   },
   //内容
   setContentValue(e){

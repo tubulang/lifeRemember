@@ -32,6 +32,9 @@ Page({
    */
   onLoad: function (options) {
     let vm = this;
+    wx.setNavigationBarTitle({
+      title: '徒步浪的随记'
+    })
     if (app.globalData.userInfo) {
       console.log('qq')
       this.setData({

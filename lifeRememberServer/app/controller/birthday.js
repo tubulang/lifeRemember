@@ -29,6 +29,20 @@ class BirthdayController extends Controller {
       }
     })
   }
+  async showByUserIdAndDay(){
+    const ctx = this.ctx;
+    console.log(ctx.params.day)
+    ctx.body = await ctx.model.Birthday.findAll({
+      order: [
+        // 转义 username 并对查询结果按 DESC 方向排序
+        ['created_at', 'DESC']
+      ],
+      where:{
+        creator:toInt(ctx.params.userId),
+        day: { $like: '%'+ctx.params.day+'%' } 
+      }
+    })
+  }
   async create() {
     const ctx = this.ctx;
     const { name, creator, day, lunarDay, lunarMark } = ctx.request.body;

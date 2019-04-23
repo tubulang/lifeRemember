@@ -39,6 +39,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: '徒步浪的随记'
+    })
     this.key = Math.floor(Math.random() * 3)
     // console.log(options.date.day)
     try {

@@ -1,0 +1,39 @@
+/* pages/showBirthday/showBirthday.wxss */
+
+.editButton {
+  /* position: fixed;
+  bottom: 0rpx; */
+  width: 100%;
+  margin-bottom: -20rpx;
+  background-color: #11c1f3 !important;
+  color: white;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 24rpx;
+  min-width: 104rpx;
+  min-height: 88rpx;
+  display: inline-block;
+  /* border-radius: 5px; */
+}
+.deleteBtn{
+  /* position: fixed;
+  bottom: 0rpx; */
+  width: 100%;
+  margin-bottom: -20rpx;
+  background-color: #e42112 !important;
+  color: white;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 24rpx;
+  min-width: 104rpx;
+  min-height: 88rpx;
+  display: inline-block;
+  /* border-radius: 5px; */
+}
+.btnClass{
+  position: fixed;
+  bottom: 0rpx;
+  display: flex;
+  width: 100%;
+
+}

@@ -16,7 +16,7 @@ class ShowImageController extends Controller {
 	//显示tmp下的test图片
 	fs.readFile("../public/moneyHeader.jpg","binary",function (error,file){
 		if(error){
-			ctx.writeHead(500,{"Content-Type":"text/plain"});
+			ctx.header = (500,{"Content-Type":"text/plain"});
 			ctx.write(error +"\n");
 			ctx.end();
 		}else{

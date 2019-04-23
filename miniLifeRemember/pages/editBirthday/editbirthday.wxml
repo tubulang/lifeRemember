@@ -16,7 +16,7 @@
         <!-- <wux-cell title="归类" extra="{{ classification }}" bind:click="showTypes"></wux-cell> -->
         <!-- <wux-cell title="标签" extra="{{ label }}" bind:click="showTags"></wux-cell> -->
         <wux-cell>
-          <wux-input label="姓名" bind:change="onChangeName"></wux-input>
+          <wux-input label="姓名" controlled value='{{name}}' bind:change="onChangeName"></wux-input>
         </wux-cell>
         <!-- <wux-cell extra="{{ remindTime }}" bind:click="showRemindTime">
           <picker mode="time" value="{{remindTime}}" bindchange="bindRemindTimeChange">

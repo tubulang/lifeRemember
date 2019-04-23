@@ -61,6 +61,9 @@ Page({
   },
   onLoad(options) {
     const vm = this;
+    wx.setNavigationBarTitle({
+      title: '账目类别管理'
+    })
     app.checkSkey().then(() => {
       wx.request({
         url: app.globalData.url + '/getMoneyType/' + wx.getStorageSync('userId'),

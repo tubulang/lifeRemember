@@ -1,4 +1,5 @@
 <view class="container-fluid">
+  <wux-fab-button buttons="{{ buttons }}" direction='circle' bind:change="onFabButtonChange" bind:click="onNewClick" bind:contact="onContact" wux-class='fabButtonClass' sAngle='160' eAngle='290' spaceBetween='30' theme='calm' />
   <view class="myCalendar">
     <calendar cell-size="40" next="{{true}}" prev="{{true}}" show-more-days="{{true}}" calendar-style="myCalendar-calendar" header-style="myCalendar-header" board-style="myCalendar-board" days-color="{{my_calendar_style}}" binddayClick='dayChoose' lunar='{{lunarStatus}}'
     />
@@ -24,11 +25,15 @@
       </wux-cell>
     </wux-cell-group>
   </view>
-
+  <block wx:for="{{birthdayData}}" wx:key="{{item.id}}">
+  <view bindtap='selectBirthday' data-birthdayId='{{item.id}}'>
+    <i-cell i-class='birthdayCell' title="{{item.name+'的生日'}}" label="{{item.created_at}}" value='{{item.day}}'></i-cell>
+  </view>
+</block>
   <!-- <footer-bar current='{{current}}'></footer-bar> -->
   <view class="page footer-height">
     <view class="page__bd">
-      <wux-tabbar defaultCurrent="{{current}}"  position="bottom" safeArea bindchange="onChangeTab" theme="calm">
+      <wux-tabbar defaultCurrent="{{current}}" position="bottom" safeArea bindchange="onChangeTab" theme="calm">
         <wux-tabbar-item title='记录'>
           <wux-badge slot="icon-on">
             <wux-icon wux-class="icon" type="ios-create" size="25" />
