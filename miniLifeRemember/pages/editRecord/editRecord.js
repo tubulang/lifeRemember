@@ -41,6 +41,9 @@ Page({
     //获取label数据
     // if(wx.getStorageSync('userId')){
     let vm = this;
+    wx.setNavigationBarTitle({
+      title: '编辑记录'
+    })
     console.log(options)
     vm.setData({
       recordId: options.recordId

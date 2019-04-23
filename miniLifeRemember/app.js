@@ -7,8 +7,6 @@ App({
     wx.setStorageSync('logs', logs)
     //判断登陆sessionKey
     this.checkSkey();
-    
-    
   },
   doGetUserInfo(fn){
     // 获取用户信息
@@ -24,31 +22,7 @@ App({
               console.log('userInfo', res)
               const { encryptedData, iv } = res
               const name = res.userInfo.nickName;
-              // console.log('test',encryptedData,'hhhhhhhhhhhhhhhh',iv)
-              // vm.globalData.myInfo = res.userInfo;
-              // console.log(vm.globalData.myInfo);
-              // console.log(res.userInfo);
               fn(encryptedData, iv, name);
-              
-              // wx.request({
-              //   url: this.globalData.url + '/login', // 仅为示例，并非真实的接口地址
-              //   data: {
-              //     encryptedData,
-              //     iv
-              //   },
-              //   method: 'post',
-              //   header: {
-              //     'content-type': 'application/json' // 默认值
-              //   },
-              //   success(res) {
-              //     console.log(res.data)
-              //     wx.setStorageSync('sessionKey', res.data)
-
-              //   },
-              //   error(err) {
-              //     console.log(err)
-              //   }
-              // })
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (vm.userInfoReadyCallback) {
@@ -63,16 +37,13 @@ App({
   //登陆
   doLogin(successRes,failErr) {
     let vm = this;
-    // return new Promise(function (resolve, reject) {
       // 登录
       wx.login({
         success: res => {
           console.log(res)
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
           if (res.code) {
-            // example: 081LXytJ1Xq1Y40sg3uJ1FWntJ1LXyth
             let encryptedData = '', iv = '';
-
             this.doGetUserInfo(function (encryptedData, iv, name){
               vm.globalData.encryptedData = encryptedData;
               vm.globalData.iv = iv;
@@ -96,8 +67,6 @@ App({
                     wx.setStorageSync('userId', res.data)
                     successRes(res);//成功回调
                   }
-
-
                 },
                 error(err) {
                   console.log(err)
@@ -109,15 +78,12 @@ App({
           }
         }
       })
-    // })
   },
   checkSkey(){
     let vm = this;
     return new Promise(function (resolve, reject) {
       //判断登陆sessionkey是否失效
       let loginFlag = wx.getStorageSync('userId');
-      // console.log(loginFlag)
-      
       if (loginFlag) {
         // 检查 session_key 是否过期
         wx.checkSession({
@@ -126,10 +92,8 @@ App({
             console.log(res)
             resolve(res);
             vm.doGetUserInfo(()=>{});
-
             // 业务逻辑处理
           },
-
           // session_key 过期
           fail: function () {
             // session_key过期，重新登录
@@ -140,18 +104,13 @@ App({
         // 无skey，作为首次登录
         vm.doLogin(res => resolve(res), err => reject(err));
       }
-      // vm.doLogin(res => resolve(res), err => reject(err));
-      //vm.getMyInfo();
-      // console.log(vm.globalData.myInfo)
     })
   },
   globalData: {
     userInfo: null,
     encryptedData:'',
     iv:'',
-    // url: 'http://localhost:7001',
-    // myInfo:''
-    url: 'https://api.tubulang.cn',
-    // url:'http://172.16.213.133:7001'
+    url: 'http://localhost:7001',
+    // url: 'https://api.tubulang.cn',
   }
 })

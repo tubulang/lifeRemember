@@ -77,6 +77,9 @@ Page({
    */
   onLoad: function (options) {
     let vm = this;
+    wx.setNavigationBarTitle({
+      title: '徒步浪的随记'
+    })
     app.checkSkey().then(()=>{
       wx.request({
         url: app.globalData.url + '/getMoneyAccount/'+wx.getStorageSync('userId'),

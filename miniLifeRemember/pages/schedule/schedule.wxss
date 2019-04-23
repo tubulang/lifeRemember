@@ -1,6 +1,7 @@
 /* pages/schedule/schedule.wxss */
 .view-page{
   background-color: #DAEDFF;
+  background-image: url(http://localhost:7001/public/recordBG1.jpg);
   min-height: 100vh;
   height: auto;
 }
@@ -19,7 +20,7 @@
   /* border: 0px; */
 }
 .footer-height{
-  height: 20vh
+  height: 92rpx
 }
 .fabButtonClass{
   right:60rpx !important;

@@ -48,6 +48,9 @@ Page({
   },
   onLoad(options) {
     const vm = this;
+    wx.setNavigationBarTitle({
+      title: '标签管理'
+    })
     app.checkSkey().then(() => {
       wx.request({
         url: app.globalData.url + '/getLabel/' + wx.getStorageSync('userId'),

@@ -3,7 +3,7 @@
 <view class='view-page' bindtap='hideAllPopover'>
 <wux-toast id="wux-toast" />
 <wux-dialog id="wux-dialog" />
-  <view class="sub-title">今日日程</view>
+  <view class="sub-title">您的日程</view>
   <wux-fab-button buttons="{{ buttons }}" direction='circle' catch:change="onFabButtonChange" catch:click="onNewClick" catch:contact="onContact" wux-class='fabButtonClass' sAngle='160' eAngle='290' spaceBetween='30' theme='calm' />
   <wux-timeline position="alternate">
     <!-- <wux-timeline-item custom>

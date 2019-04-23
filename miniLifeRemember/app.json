@@ -1,31 +1,38 @@
 {
-  "pages": ["pages/myInfo/myInfo","pages/classification/classification","pages/moneyAccount/moneyAccount","pages/calendarTab/calendarTab","pages/schedule/schedule","pages/newSchedule/newSchedule","pages/recordPage/recordPage",
+  "pages": [
+    "pages/recordPage/recordPage",
+    "pages/dayOption/dayOption",
+    "pages/calendarTab/calendarTab",
+    "pages/editBirthday/editbirthday",
+    "pages/moneyAccount/moneyAccount",
+    "pages/myInfo/myInfo",
+    "pages/classification/classification",
+    "pages/schedule/schedule",
+    "pages/newSchedule/newSchedule",
     "pages/recordDetail/recordDetail",
-    "pages/myDetailInfo/myDetailInfo","pages/label/label",
+    "pages/myDetailInfo/myDetailInfo",
+    "pages/label/label",
     "pages/editRecord/editRecord",
     "pages/editSchedule/editSchedule",
     "pages/editInputMoneyAccount/editInputMoneyAccount",
     "pages/editOutputMoneyAccount/editOutputMoneyAccount",
-    "pages/dayOption/dayOption",
     "pages/newRecord/newRecord",
     "pages/moneyType/moneyType",
     "pages/newMoneyAccount/newMoneyAccount",
     "pages/newBirthday/newBirthday",
-    
+    "pages/showBirthday/showBirthday",
     "myComponent/selectAction/index",
     "myComponent/recordList/recordList",
     "myComponent/footerBar/footerBar",
     "pages/diyModule/diyModule",
     "pages/index/index",
     "pages/footerBar/footerBar",
-    
     "pages/logs/logs"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "徒步浪的随记",
     "navigationBarTextStyle": "black"
   },
   "plugins": {
@@ -33,5 +40,6 @@
       "version": "1.1.3",
       "provider": "wx92c68dae5a8bb046"
     }
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

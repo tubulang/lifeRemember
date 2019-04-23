@@ -65,6 +65,9 @@ Page({
     //获取output数据
     // if(wx.getStorageSync('userId')){
     let vm = this;
+    wx.setNavigationBarTitle({
+      title: '新增账目'
+    })
     app.checkSkey().then(() => {
       //获取标签
       wx.request({

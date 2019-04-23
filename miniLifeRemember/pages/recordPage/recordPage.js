@@ -320,6 +320,9 @@ Page({
   onLoad: function (options) {
     const vm = this;
     console.log(wx.getStorageSync('sessionKey'))
+    wx.setNavigationBarTitle({
+      title: '徒步浪的随记'
+    })
     app.checkSkey().then(()=>{
       wx.request({
         url: app.globalData.url + '/getRecord/'+wx.getStorageSync('userId'),

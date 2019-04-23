@@ -65,6 +65,9 @@ Page({
     //获取output数据
     // if(wx.getStorageSync('userId')){
     let vm = this;
+    wx.setNavigationBarTitle({
+      title: '编辑支出'
+    })
     vm.setData({
       moneyId: options.moneyId
     })

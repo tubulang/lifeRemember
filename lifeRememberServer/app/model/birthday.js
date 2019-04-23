@@ -8,15 +8,16 @@ module.exports = app => {
     name: STRING,
     lunarMark: BOOLEAN,
     lunarDay: DATE,
-    day: {
-      type:DATE,
-      get(){
-        return moment(this.getDataValue('day')).format('YYYY-MM-DD')
-      }
-      // set() {
-      //   return moment(this.getDataValue('day').format('YYYY-MM-DD'))
-      // }
-    },
+    day: STRING,
+    // day: {
+    //   type:DATE,
+    //   get(){
+    //     return moment(this.getDataValue('day')).format('YYYY-MM-DD')
+    //   }
+    //   // set() {
+    //   //   return moment(this.getDataValue('day').format('YYYY-MM-DD'))
+    //   // }
+    // },
     creator: INTEGER,
     created_at:  {
       type:DATE,

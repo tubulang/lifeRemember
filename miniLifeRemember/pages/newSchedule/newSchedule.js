@@ -40,6 +40,9 @@ Page({
     //获取label数据
     // if(wx.getStorageSync('userId')){
     let vm = this;
+    wx.setNavigationBarTitle({
+      title: '新增日程'
+    })
     app.checkSkey().then(() => {
       //获取标签
       // wx.request({

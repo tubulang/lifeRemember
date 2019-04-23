@@ -1,5 +1,5 @@
 <!--pages/recordPage/recordPage.wxml-->
-<view>
+<view class='recordPageBG'>
 <wux-toast id="wux-toast" />
 <wux-dialog id="wux-dialog" />
   <wux-fab-button buttons="{{ buttons }}" direction='circle' bind:change="onFabButtonChange" bind:click="onNewClick" bind:contact="onContact" wux-class='fabButtonClass' sAngle='160' eAngle='290' spaceBetween='30' theme='calm' />

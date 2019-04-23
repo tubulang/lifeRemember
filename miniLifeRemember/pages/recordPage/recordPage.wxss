@@ -1,6 +1,12 @@
 /* pages/recordPage/recordPage.wxss */
+.recordPageBG{
+  height: 100vh;
+  background-image: url(http://localhost:7001/public/recordBG2.jpg);
+   /* background-repeat:no-repeat; */
+  /* background-color: #DAEDFF */
+}
 .footer-height{
-  height: 20vh
+  height: 92rpx
 }
 .newButton {
     float: right;
@@ -44,8 +50,9 @@ bottom:138rpx !important;
   border-bottom: 1px #11c1f3 solid; */
   /* border: 0.1px #efeff4 solid;  */
   /* border-radius: 5px; */
-  margin-top: 0.3rem;
+  /* margin-top: 0.3rem; */
   box-shadow: 1px 1px 5px #efeff4;
+  opacity: 0.8
 }
 .recordView{
   height: 3.5rem;

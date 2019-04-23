@@ -250,6 +250,9 @@ Page({
    */
   onLoad: function (options) {
     const vm = this;
+    wx.setNavigationBarTitle({
+      title: '徒步浪的随记'
+    })
     app.checkSkey().then(()=>{
       wx.request({
         url: app.globalData.url + '/getTimeManage/' + wx.getStorageSync('userId'),
