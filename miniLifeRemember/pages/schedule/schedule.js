@@ -33,7 +33,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    visible: [],
+    
     buttons,
     current: '1',
     pagesOption: [
@@ -43,6 +43,7 @@ Page({
       '../../pages/moneyAccount/moneyAccount',
       '../../pages/myInfo/myInfo',
     ],
+    scheduleVisible: [],
     scheduleData:[],
   },
   deleteSchedule(e){
@@ -50,7 +51,7 @@ Page({
     const vm = this;
     // vm.setData({
     //   // [`searchData[${i}].status`]
-    //   [`visible[${e.currentTarget.dataset.index}]`]: false,
+    //   [`scheduleVisible[${e.currentTarget.dataset.index}]`]: false,
     // })
     vm.confirmDelete(e.currentTarget.dataset.index)
   },
@@ -78,14 +79,14 @@ Page({
             data = vm.data.scheduleData.filter(function (v) {
               return v.id != index
             })
-            let visibleArray = [];
+            let scheduleVisibleArray = [];
             for (let k of data) {
               console.log(k)
-              visibleArray[k.id] = false
+              scheduleVisibleArray[k.id] = false
             }
             vm.setData({
               scheduleData: data,
-              visible: visibleArray
+              scheduleVisible: scheduleVisibleArray
               // recordData: data
 
             })
@@ -108,7 +109,7 @@ Page({
     const vm = this;
     // vm.setData({
     //   // [`searchData[${i}].status`]
-    //   [`visible[${e.currentTarget.dataset.index}]`]: false,
+    //   [`scheduleVisible[${e.currentTarget.dataset.index}]`]: false,
     // })
     const id = e.currentTarget.dataset.index;
     let changeStatus ='';
@@ -173,46 +174,51 @@ Page({
       success: () => console.log(vm.data.scheduleData)
     })
   },
+  onFabButtonChange(){
+    this.hideAllPopover()
+  },
   selectSchedule(e){
     // console.log(event.currentTarget.dataset.index)
-    this.setData({
-      // [`searchData[${i}].status`]
-      [`visible[${e.currentTarget.dataset.index}]`]: false,
-    })
+    // this.setData({
+    //   // [`searchData[${i}].status`]
+    //   [`scheduleVisible[${e.currentTarget.dataset.index}]`]: false,
+    // })
+    this.hideAllPopover()
     wx.navigateTo({
       url: '/pages/editSchedule/editSchedule?scheduleId=' + e.currentTarget.dataset.index
     })
   },
   longSelectSchedule(e){
     console.log(e)
-    console.log(this.data.visible)
+    console.log(this.data.scheduleVisible)
+    this.hideAllPopover();
     this.setData({
       // [`searchData[${i}].status`]
-      [`visible[${e.currentTarget.dataset.index}]`]: true,
+      [`scheduleVisible[${e.currentTarget.dataset.index}]`]: true,
     })
   },
   hide(e) {
     this.setData({
       // [`searchData[${i}].status`]
-      [`visible[${e.currentTarget.dataset.index}]`]: false,
+      [`scheduleVisible[${e.currentTarget.dataset.index}]`]: false,
     })
   },
   onPopoverChange(e) {
     console.log('onChange', e)
     this.setData({
       // [`searchData[${i}].status`]
-      [`visible[${e.currentTarget.dataset.index}]`]: false,
+      [`scheduleVisible[${e.currentTarget.dataset.index}]`]: false,
     })
   },
   hideAllPopover(e){
     console.log(e)
-    let visibleArray = [];
-    this.data.visible.forEach((v,index)=>{
-      visibleArray[index] = false;
+    let scheduleVisibleArray = [];
+    this.data.scheduleVisible.forEach((v,index)=>{
+      scheduleVisibleArray[index] = false;
     })
     this.setData({
       // [`searchData[${i}].status`]
-      visible: visibleArray,
+      scheduleVisible: scheduleVisibleArray,
     })
   },
   //新建按钮点击
@@ -262,17 +268,17 @@ Page({
         },
         success(res) {
           console.log(res.data[0].id)
-          let visibleArray = [];
+          let scheduleVisibleArray = [];
           for(let k of res.data){
             console.log(k)
-            visibleArray[k.id] = false
+            scheduleVisibleArray[k.id] = false
           }
           vm.setData({
             scheduleData: res.data,
             // searchData: res.data
-            visible: visibleArray
+            scheduleVisible: scheduleVisibleArray
           })
-          console.log(visibleArray)
+          console.log(scheduleVisibleArray)
         },
         error(err) {
           console.log(err)

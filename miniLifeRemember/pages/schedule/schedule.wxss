@@ -40,6 +40,9 @@ bottom:138rpx !important;
 
 .wux-card > view{
   text-align: left;
+  min-width:100px;
+max-width:130px;
+
 }
 .wux-wingblank{
   margin-right: 0rpx !important;

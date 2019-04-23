@@ -5,3 +5,148 @@
 .swiper-item-overflow{
   overflow-y: auto
 }
+.dateContent{
+  left: 35vw;
+  width: 30vw;
+  position: relative;
+  font-size: 16px;
+  /* top:1vh; */
+  font-weight: 600px;
+}
+.icon-left{
+  position: relative;
+  float: left;
+  left: 15vw;
+}
+.icon-right{
+  right: 15vw;
+  position: relative;
+  float: right;
+}
+/*  record  */
+
+.recordPageBG{
+  height: 100vh;
+  background-image: url(http://localhost:7001/public/recordBG2.jpg);
+   /* background-repeat:no-repeat; */
+  /* background-color: #DAEDFF */
+}
+.footer-height{
+  height: 92rpx
+}
+.newButton {
+    float: right;
+    /* background-color: #ffffff; */
+    position: fixed;
+    bottom: 140rpx;
+    right: 60rpx;  
+    border: 0rpx solid #ffffff;
+    border-radius: 100%;
+    box-shadow: 0rpx 0rpx 1rpx #cccccc;
+    transition: display 1s linear;
+}
+.hideAdd{
+  display: none
+
+}
+.fabButtonClass{
+  right:60rpx !important;
+bottom:138rpx !important;
+
+}
+.wux-fab-button__button .wux-fab-button__button .newSubButoon{
+  background-color: #DAEDFF !important;
+}
+.wux-fab-button__label{
+  opacity: 1 !important;
+  color: white !important;
+  background-color: #11c1f3 !important;
+  font-size: 15px !important;
+  border-radius: 20px !important;
+}
+
+/* myComponent/recordList/recordList.wxss */
+.recordContent{
+  height: 3.5rem;
+  /* border-top: 1px #11c1f3 solid;
+  border-left: 1px #11c1f3 solid;
+  border-right: 1px #11c1f3 solid;
+
+  
+  border-bottom: 1px #11c1f3 solid; */
+  /* border: 0.1px #efeff4 solid;  */
+  /* border-radius: 5px; */
+  /* margin-top: 0.3rem; */
+  box-shadow: 1px 1px 5px #efeff4;
+  opacity: 0.8
+}
+.recordView{
+  height: 3.5rem;
+  text-align: left;
+  /* background-color: #11c2f304; */
+  /* color: white; */
+  padding-left: 1rem;
+  line-height: 3.5rem;
+  
+}
+.selcetAction{
+  line-height: 0px;
+}
+
+.doneStyle{
+  color: black;
+  opacity: 0.3
+}
+/* 设置提示框的确认按钮颜色 */
+.wux-dialog__button{
+  color: red !important;
+}
+.wux-dialog__button--default {
+  color:#353535 !important;
+
+}
+
+
+
+/* birthday  */
+/* pages/moneyAccount/moneyAccount.wxss */
+.mainPage{
+  /* background-color: #efefef; */
+  height: 100vh;
+}
+.headerImg{
+  width: 100%;
+  height: 15vh;
+}
+.contentClass{
+  margin-top: 30rpx;
+}
+.wux-segment{
+  margin: 0rpx !important;
+  margin-bottom: 30rpx;
+}
+.wux-popover__element{
+  width: 90%;
+}
+.poverClass{
+  left: 30vw !important;
+  top: -30px !important;
+}
+
+
+
+/***** moneyAccount   ****/
+
+.scheduleSwiper{
+  padding-top: 40px;
+}
+.schedulePover{
+  z-index: 100;
+}
+.wux-timeline{
+  margin-left:5px;
+
+}
+
+
+

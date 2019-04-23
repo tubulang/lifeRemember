@@ -47,6 +47,17 @@ Page({
     inputData: [],
     ouputData: [],
   },
+  hideAllMoneyPopover(e) {
+    console.log(e)
+    let visibleArray = [];
+    this.data.visible.forEach((v, index) => {
+      visibleArray[index] = false;
+    })
+    this.setData({
+      // [`searchData[${i}].status`]
+      visible: visibleArray,
+    })
+  },
   onChangeCard(e){
     console.log(e.detail.key)
     if(e.detail.key === 0){
@@ -120,18 +131,20 @@ Page({
     })
   },
   selectInput(e){
-    this.hide(e)
+    this.hideAllMoneyPopover(e)
   },
   longSelectInput(e){
+    this.hideAllMoneyPopover(e)
     this.setData({
       // [`searchData[${i}].status`]
       [`visible[${e.currentTarget.dataset.index}]`]: true,
     })
   },
   selectOutput(e) {
-    this.hide(e)
+    this.hideAllMoneyPopover(e)
   },
   longSelectOutput(e) {
+    this.hideAllMoneyPopover(e)
     this.setData({
       // [`searchData[${i}].status`]
       [`visible[${e.currentTarget.dataset.index}]`]: true,
@@ -242,10 +255,14 @@ Page({
       success: () => console.log(text)
     })
   },
+  onFabButtonChange(){
+    this.hideAllMoneyPopover()
+  },
   //新建按钮点击
   onNewClick(e) {
     console.log(e)
     let vm = this;
+    
     switch (e.detail.index) {
       case 0:
         wx.navigateTo({

@@ -26,10 +26,10 @@
     </wux-cell-group>
   </view>
   <block wx:for="{{birthdayData}}" wx:key="{{item.id}}">
-  <view bindtap='selectBirthday' data-birthdayId='{{item.id}}'>
-    <i-cell i-class='birthdayCell' title="{{item.name+'的生日'}}" label="{{item.created_at}}" value='{{item.day}}'></i-cell>
-  </view>
-</block>
+    <view bindtap='selectBirthday' data-birthdayId='{{item.id}}'>
+      <i-cell i-class='birthdayCell' title="{{item.name+'的生日'}}" label="{{item.created_at}}" value='{{item.day}}'></i-cell>
+    </view>
+  </block>
   <!-- <footer-bar current='{{current}}'></footer-bar> -->
   <view class="page footer-height">
     <view class="page__bd">

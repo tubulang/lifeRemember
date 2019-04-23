@@ -19,7 +19,7 @@ class TimeManageController extends Controller {
   }
   async showByUserId() {
     const ctx = this.ctx;
-    ctx.body = await ctx.model.TimeManage.findAll({
+    let timeMa = await ctx.model.TimeManage.findAll({
       order: [
         // 转义 username 并对查询结果按 DESC 方向排序
         ['created_at', 'DESC']
@@ -28,6 +28,38 @@ class TimeManageController extends Controller {
         creator:toInt(ctx.params.userId)
       }
     })
+    // ctx.body = timeMa
+    let returnData = JSON.parse(JSON.stringify(timeMa))
+    let classificationData = ''
+    // console.log(JSON.parse(JSON.stringify(timeMa)))
+    for(let k = 0; k<returnData.length; k++){
+      classificationData = await ctx.model.Classification.findById(toInt(returnData[k].classificationId));
+      returnData[k].classification = JSON.parse(JSON.stringify(classificationData));
+    }
+    ctx.body = returnData
+  }
+  async showByDay(){
+    const ctx = this.ctx;
+    console.log(ctx.params.day)
+    let timeMa = await ctx.model.TimeManage.findAll({
+      order: [
+        // 转义 username 并对查询结果按 DESC 方向排序
+        ['created_at', 'DESC']
+      ],
+      where:{
+        creator:toInt(ctx.params.userId),
+        planTime: ctx.params.day 
+      }
+    })
+
+    let returnData = JSON.parse(JSON.stringify(timeMa))
+    let classificationData = ''
+    // console.log(JSON.parse(JSON.stringify(timeMa)))
+    for(let k = 0; k<returnData.length; k++){
+      classificationData = await ctx.model.Classification.findById(toInt(returnData[k].classificationId));
+      returnData[k].classification = JSON.parse(JSON.stringify(classificationData));
+    }
+    ctx.body = returnData
   }
   async create() {
     const ctx = this.ctx;

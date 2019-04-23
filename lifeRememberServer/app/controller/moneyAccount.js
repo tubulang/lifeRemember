@@ -19,7 +19,7 @@ class MoneyAccountController extends Controller {
   }
   async showByUserId() {
     const ctx = this.ctx;
-    ctx.body = await ctx.model.MoneyAccount.findAll({
+    let moneyAc = await ctx.model.MoneyAccount.findAll({
       order: [
         // 转义 username 并对查询结果按 DESC 方向排序
         ['created_at', 'DESC']
@@ -28,6 +28,38 @@ class MoneyAccountController extends Controller {
         creator:toInt(ctx.params.userId)
       }
     })
+
+    let returnData = JSON.parse(JSON.stringify(moneyAc))
+    let moneyTypeData = ''
+    console.log(JSON.parse(JSON.stringify(moneyAc)))
+    for(let k = 0; k<returnData.length; k++){
+      moneyTypeData = await ctx.model.MoneyType.findById(toInt(returnData[k].moneyTypeId));
+      returnData[k].moneyType = JSON.parse(JSON.stringify(moneyTypeData));
+    }
+    ctx.body = returnData
+  }
+  async showByDay(){
+    const ctx = this.ctx;
+    console.log(ctx.params.day)
+    let moneyAc = await ctx.model.MoneyAccount.findAll({
+      order: [
+        // 转义 username 并对查询结果按 DESC 方向排序
+        ['created_at', 'DESC']
+      ],
+      where:{
+        creator:toInt(ctx.params.userId),
+        created_at: ctx.params.day 
+      }
+    })
+
+    let returnData = JSON.parse(JSON.stringify(moneyAc))
+    let moneyTypeData = ''
+    console.log(JSON.parse(JSON.stringify(moneyAc)))
+    for(let k = 0; k<returnData.length; k++){
+      moneyTypeData = await ctx.model.MoneyType.findById(toInt(returnData[k].moneyTypeId));
+      returnData[k].moneyType = JSON.parse(JSON.stringify(moneyTypeData));
+    }
+    ctx.body = returnData
   }
   async create() {
     const ctx = this.ctx;

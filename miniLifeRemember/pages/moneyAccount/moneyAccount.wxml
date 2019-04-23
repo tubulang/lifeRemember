@@ -1,5 +1,5 @@
 <!--pages/moneyAccount/moneyAccount.wxml-->
-<view class='mainPage'>
+<view class='mainPage' bindtap='hideAllMoneyPopover'>
 <wux-toast id="wux-toast" />
 <wux-dialog id="wux-dialog" />
   <wux-wing-blank size="default">
@@ -10,8 +10,9 @@
     <wux-segmented-control theme="calm" values="{{ ['收入', '支出'] }}" bind:change="onChangeCard" />
   <!-- </wux-wing-blank> -->
   <view wx:if="{{showInput}}" class='contentClass'>
+  <wux-timeline position="left">
     <block wx:for="{{inputData}}" wx:key='input.id' wx:for-item='input'>
-      <wux-timeline-item custom content="{{input.planTime}}">
+      <wux-timeline-item custom content="{{input.created_at}}">
         <wux-icon slot='dot' type='ios-time' size='23' />
         <!-- 记录每条的高度，*-2为气泡的top值-->
         <wux-popover visible="{{ visible[input.id] }}" controlled placement="top" catch:change="onPopoverChange" wux-class='poverClass {{index%2 == 0 ? "evenClass" : "" }}' data-index="{{input.id}}" data-forIndex="{{index}}" trigger='longpress' catchlongpress='longSelectInput' catchtap='selectInput'>
@@ -22,7 +23,7 @@
           <!-- <wux-wing-blank size="default"> -->
             <!-- <wux-card title="卡片标题" thumb="https://wux.cdn.cloverstd.com/logo.png"> -->
             <view>
-            <i-cell title="{{input.comment}}" label="{{input.created_at}}" value='{{input.money}}'></i-cell>
+            <i-cell title="{{input.comment}}" label="{{input.moneyType.name}}" value='{{input.money}}'></i-cell>
             </view>
             <!-- <wux-card title="{{input.comment}}">
               <view slot="body">{{input.schedule}}</view>
@@ -33,12 +34,14 @@
 
       </wux-timeline-item>
     </block>
+    </wux-timeline>
   </view>
 
 
   <view wx:elif="{{showOutput}}" class='contentClass'>
+  <wux-timeline position="left">
     <block wx:for="{{outputData}}" wx:key='output.id' wx:for-item='output'>
-      <wux-timeline-item custom content="{{output.planTime}}">
+      <wux-timeline-item custom content="{{output.created_at}}">
         <wux-icon slot='dot' type='ios-time' size='23' />
         <wux-popover visible="{{ visible[output.id] }}" controlled placement="top" catch:change="onPopoverChange" wux-class='poverClass {{index%2 == 0 ? "evenClass" : "" }}' data-index="{{output.id}}" data-forIndex="{{index}}" trigger='longpress' catchlongpress='longSelectOutput' catchtap='selectOutput'>
           <view slot="content" catchtap="hide" data-index="{{output.id}}" class='popoverView'>
@@ -46,12 +49,13 @@
             <button size="mini" data-index="{{output.id}}" bindtap='editOutput'>编辑</button>
           </view>
             <view>
-            <i-cell title="{{output.comment}}" label="{{output.created_at}}" value='{{-output.money}}'></i-cell>
+            <i-cell title="{{output.comment}}" label="{{output.moneyType.name}}" value='{{-output.money}}'></i-cell>
             </view>
         </wux-popover>
 
       </wux-timeline-item>
     </block>
+    </wux-timeline>
   </view>
   </wux-wing-blank>
 
