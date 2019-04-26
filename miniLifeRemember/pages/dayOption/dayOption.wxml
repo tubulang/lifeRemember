@@ -1,6 +1,13 @@
 <!--pages/dayOption/dayOption.wxml-->
-<text>日期：{{year+'/'+month+'/'+day}}</text>
 <view>
+  <wux-icon bindtap='previousDay' type="ios-arrow-back" size='20' wux-class='icon-left'/>
+  <text class='dateContent'>{{year+'/'+month+'/'+day}}</text>
+  <wux-icon bindtap='forwardDay' type="ios-arrow-forward" size='20' wux-class='icon-right'/>
+
+</view>
+<wux-toast id="wux-toast" />
+<wux-dialog id="wux-dialog" />
+<view bindtap='hideAllPopover'>
   <!-- <view>
     <view class="sub-title">DefaultCurrent</view>
     <wux-segmented-control default-current="2" values="{{ ['生日', '日程', '记录'] }}" />
@@ -16,8 +23,58 @@
     </wux-tabs>
     <view style='height:auto'>
       <swiper current="{{ index }}" bindchange="onSwiperChange" class='swiper-height'>
+
+        <block wx:key="log">
+          <swiper-item catchtouchmove="stopSwiper">
+            <view class="content">
+              <block wx:for="{{searchData}}" wx:key="{{index}}" wx:value="" wx:for-item='record'>
+                <scroll-view scroll-y='true'>
+                  <wux-swipe-action-group>
+                    <wux-swipe-action autoClose left="{{ left }}" right="{{ right }}" data-selectId="{{record.id}}" wux-class='recordContent' bind:click='onClickOperator' bind:open='openRecordBar'>
+                      <view class="demo-item recordView {{record.status == 'finish'?'doneStyle':''}}">
+                        <wux-selectable color="calm" defaultChecked="{{record.status == 'finish'}}" value="{{index}}" wux-class="selcetAction" data-selectId="{{record.id}}" bind:change="onSelectChange"></wux-selectable>
+                        {{record.recordContent}}</view>
+                    </wux-swipe-action>
+                  </wux-swipe-action-group>
+                </scroll-view>
+              </block>
+            </view>
+          </swiper-item>
+        </block>
+
+        <!-- schedule -->
+        <block wx:key="schedule">
+          <wux-wing-blank>
+
+            <swiper-item class='swiper-item-overflow scheduleSwiper' catchtouchmove="stopSwiper">
+              <wux-timeline position="left">
+                <block wx:for="{{scheduleData}}" wx:key='schedule.id' wx:for-item='schedule'>
+                  <wux-timeline-item custom content="{{schedule.planTime}}">
+                    <wux-icon slot='dot' type='ios-time' size='23' />
+                    <!-- 记录每条的高度，*-2为气泡的top值-->
+                    <wux-popover visible="{{ scheduleVisible[schedule.id] }}" controlled placement="top" catch:change="onMoneyPopoverChange" wux-class='poverClass {{index%2 == 0 ? "evenClass" : "" }} schedulePover' data-index="{{schedule.id}}" data-forIndex="{{index}}" trigger='longpress'
+                      catchlongpress='longSelectSchedule' catchtap='selectSchedule'>
+                      <view slot="content" class='schedulePover' catchtap="hideSchedule" data-index="{{schedule.id}}" class='popoverView'>
+                        <button size="mini" data-index="{{schedule.id}}" bindtap='deleteSchedule'>删除</button>
+                        <button size="mini" data-index="{{schedule.id}}" bindtap='changeScheduleStatus'>{{schedule.status === 'undo' ? '完成' : '未做'}}</button>
+                      </view>
+                      <view>
+                        <i-cell title="{{schedule.schedule}}" label="{{schedule.classification.name}}" value='{{schedule.status}}'></i-cell>
+                      </view>
+
+                    </wux-popover>
+
+                  </wux-timeline-item>
+                </block>
+              </wux-timeline>
+            </swiper-item>
+          </wux-wing-blank>
+
+        </block>
+
+        <!-- birthday -->
         <block wx:key="birth">
-          <swiper-item>
+          <swiper-item catchtouchmove="stopSwiper">
             <view class="content" style='height:30px'>
               <block wx:for="{{birthdayData}}" wx:key="{{item.id}}">
                 <view bindtap='selectBirthday' data-birthdayId='{{item.id}}'>
@@ -27,43 +84,61 @@
             </view>
           </swiper-item>
         </block>
-        <block wx:key="schedule">
-          <swiper-item class='swiper-item-overflow'>
-            <view class="content" style='height:30px'>你的日程1</view>
-            <view class="content" style='height:30px'>你的日程</view>
-            <view class="content" style='height:30px'>你的日程</view>
-            <view class="content" style='height:30px'>你的日程</view>
-            <view class="content" style='height:30px'>你的日程</view>
-            <view class="content" style='height:30px'>你的日程</view>
-            <view class="content" style='height:30px'>你的日程</view>
-            <view class="content" style='height:30px'>你的日程</view>
-            <view class="content" style='height:30px'>你的日程</view>
-            <view class="content" style='height:30px'>你的日程</view>
-            <view class="content" style='height:30px'>你的日程</view>
-            <view class="content" style='height:30px'>你的日程10</view>
-            <view class="content">你的日程</view>
-            <view class="content">你的日程</view>
-            <view class="content">你的日程</view>
-            <view class="content">你的日程</view>
-            <view class="content">你的日程</view>
-            <view class="content">你的日程</view>
-            <view class="content">你的日程</view>
-            <view class="content">你的日程</view>
-            <view class="content">你的日程</view>
-            <view class="content">你的日程</view>
-            <view class="content">你的日程</view>
-            <view class="content">你的日程</view>
-            <view class="content">你的日程100</view>
-          </swiper-item>
-        </block>
-        <block wx:key="log">
-          <swiper-item>
-            <view class="content">记录信息</view>
-          </swiper-item>
-        </block>
+
+        <!-- account -->
         <block wx:key="account">
-          <swiper-item>
-            <view class="content">账目信息</view>
+          <swiper-item catchtouchmove="stopSwiper">
+            <view class="content">
+              <wux-wing-blank>
+                <wux-segmented-control theme="calm" values="{{ ['收入', '支出'] }}" bind:change="onChangeCard" />
+                <view wx:if="{{showInput}}" class='contentClass'>
+                  <wux-timeline position="left">
+                    <block wx:for="{{inputData}}" wx:key='input.id' wx:for-item='input'>
+                      <wux-timeline-item custom content="{{input.created_at}}">
+                        <wux-icon slot='dot' type='ios-time' size='23' />
+                        <!-- 记录每条的高度，*-2为气泡的top值-->
+                        <wux-popover visible="{{ moneyVisible[input.id] }}" controlled placement="top" catch:change="onMoneyPopoverChange" wux-class='poverClass {{index%2 == 0 ? "evenClass" : "" }}' data-index="{{input.id}}" data-forIndex="{{index}}" trigger='longpress' catchlongpress='longSelectInput'
+                          catchtap='selectInput'>
+                          <view slot="content" catchtap="hideMoney" data-index="{{input.id}}" class='popoverView'>
+                            <button size="mini" data-index="{{input.id}}" bindtap='deleteInput'>删除</button>
+                            <button size="mini" data-index="{{input.id}}" bindtap='editInput'>编辑</button>
+                          </view>
+                          <view>
+                            <i-cell title="{{input.comment}}" label="{{input.moneyType.name}}" value='{{input.money}}'></i-cell>
+                          </view>
+
+                        </wux-popover>
+
+                      </wux-timeline-item>
+                    </block>
+                  </wux-timeline>
+                </view>
+
+
+                <view wx:elif="{{showOutput}}" class='contentClass'>
+                  <wux-timeline position="left">
+                    <block wx:for="{{outputData}}" wx:key='output.id' wx:for-item='output'>
+                      <wux-timeline-item custom content="{{output.created_at}}">
+                        <wux-icon slot='dot' type='ios-time' size='23' />
+                        <wux-popover visible="{{ moneyVisible[output.id] }}" controlled placement="top" catch:change="onMoneyPopoverChange" wux-class='poverClass {{index%2 == 0 ? "evenClass" : "" }}' data-index="{{output.id}}" data-forIndex="{{index}}" trigger='longpress' catchlongpress='longSelectOutput'
+                          catchtap='selectOutput'>
+                          <view slot="content" catchtap="hide" data-index="{{output.id}}" class='popoverView'>
+                            <button size="mini" data-index="{{output.id}}" bindtap='deleteOutput'>删除</button>
+                            <button size="mini" data-index="{{output.id}}" bindtap='editOutput'>编辑</button>
+                          </view>
+                          <view>
+                            <i-cell title="{{output.comment}}" label="{{output.moneyType.name}}" value='{{-output.money}}'></i-cell>
+                          </view>
+                        </wux-popover>
+
+                      </wux-timeline-item>
+                    </block>
+                  </wux-timeline>
+                </view>
+              </wux-wing-blank>
+
+
+            </view>
           </swiper-item>
         </block>
       </swiper>

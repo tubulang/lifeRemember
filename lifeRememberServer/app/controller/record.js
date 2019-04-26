@@ -17,6 +17,20 @@ class RecordController extends Controller {
     const ctx = this.ctx;
     ctx.body = await ctx.model.Record.findById(toInt(ctx.params.id));
   }
+  async showByDay() {
+    const ctx = this.ctx;
+    console.log(ctx.params.day)
+    ctx.body = await ctx.model.Record.findAll({
+      order: [
+        // 转义 username 并对查询结果按 DESC 方向排序
+        ['created_at', 'DESC']
+      ],
+      where:{
+        creator:toInt(ctx.params.userId),
+        created_at: ctx.params.day 
+      }
+    })
+  }
   async showByUserId() {
     const ctx = this.ctx;
     ctx.body = await ctx.model.Record.findAll({

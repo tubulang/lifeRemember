@@ -13,7 +13,7 @@
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.6.0",
+	"libVersion": "2.6.6",
 	"appid": "wxd696fb28ab3bb39d",
 	"projectname": "miniLifeRemember",
 	"debugOptions": {

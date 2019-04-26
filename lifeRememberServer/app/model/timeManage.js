@@ -12,7 +12,7 @@ module.exports = app => {
     planTime: {
         type:DATE,
         get(){
-          return moment(this.getDataValue('planTime')).format('YYYY-MM-DD HH:mm:ss')
+          return moment(this.getDataValue('planTime')).format('YYYY-MM-DD')
         }
       },
     creator: INTEGER,

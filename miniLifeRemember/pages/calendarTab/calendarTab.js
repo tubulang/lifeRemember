@@ -65,8 +65,8 @@ Page({
     try {
 
       // 同步接口立即写入
-
-      wx.setStorageSync('selectedDay', JSON.stringify(event.detail));
+      let date = event.detail.year + '-' + event.detail.month + '-' + event.detail.day
+      wx.setStorageSync('selectedDay', date);
       wx.navigateTo({
         url: '/pages/dayOption/dayOption?date='+event.detail
       })

@@ -30,6 +30,9 @@ module.exports = app => {
   router.get('/getTimeManage/:userId', controller.timeManage.showByUserId);
   router.get('/getMoneyType/:userId', controller.moneyType.showByUserId);
   
+  router.get('/getRecordByDay/:userId/:day', controller.record.showByDay);
+  router.get('/getMoneyAccountByDay/:userId/:day', controller.moneyAccount.showByDay);
+  router.get('/getTimeManageByDay/:userId/:day', controller.timeManage.showByDay);
   router.get('/getBirthdayByDay/:userId/:day', controller.birthday.showByUserIdAndDay);
 
   router.get('/showMoneyHeader', controller.showImage.showMoneyHeader);
