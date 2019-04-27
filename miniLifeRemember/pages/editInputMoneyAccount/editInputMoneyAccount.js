@@ -26,7 +26,9 @@ Page({
     inputMoney: '',
     outputMoney: '',
     isIncome: true,
-    moneyId: ''
+    moneyId: '',
+    spinning: true,
+    isSubmit:false
   },
   onChangeCard(e) {
     if (e.detail.key === 0) {
@@ -71,7 +73,8 @@ Page({
       title: '编辑收入'
     })
     vm.setData({
-      moneyId: options.moneyId
+      moneyId: options.moneyId,
+      spinning:true
     })
     app.checkSkey().then(() => {
       const moneyTypePromise = new Promise((resolve, reject) => {
@@ -133,11 +136,15 @@ Page({
               input: inputData,
               // degreeValue: getRecordData.degreeNumber,
               // 'remindTime[0]': getRecordData.remindTime,
-              inputMoney: res.data.money
+              inputMoney: res.data.money,
+              spinning:false
               // classificationValue: getRecordData.class
             })
           },
           error(err){
+            vm.setData({
+              spinning: false
+            })
             console.log(err)
           }
         })
@@ -161,6 +168,9 @@ Page({
     // })
     let sendData = {};
     let vm =this;
+    vm.setData({
+      isSubmit: true
+    })
     if (this.data.isIncome) {
       sendData = {
         accountType: 'income',
@@ -199,10 +209,11 @@ Page({
               'content-type': 'application/json' // 默认值
             },
             success(res) {
-              console.log(res.data)
-              wx.reLaunch({
+              console.log(res.data);
+              vm.showToast('success', '提交成功', () => { wx.reLaunch({
                 url: '/pages/moneyAccount/moneyAccount',
-              })
+              })})
+              
             },
             error(err) {
               console.log(err)

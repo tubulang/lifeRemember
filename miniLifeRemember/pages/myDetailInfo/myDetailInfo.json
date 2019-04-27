@@ -1,3 +1,4 @@
 {
-  "usingComponents": {}
+  "usingComponents": {"i-cell-group": "../../miniprogram_npm/dist/cell-group/index",
+    "i-cell": "../../miniprogram_npm/dist/cell/index","wux-spin": "../../miniprogram_npm/wux-weapp/spin/index"}
 }

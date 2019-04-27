@@ -63,6 +63,7 @@ Page({
       text: '删除',
       style: 'background-color: #F4333C; color: white; width: 3.5rem;border: 0px;',
     }],
+    spinning:true
     // viewData: 'aa'
   },
   showToast(type,text) {
@@ -323,6 +324,9 @@ Page({
     wx.setNavigationBarTitle({
       title: '徒步浪的随记'
     })
+    vm.setData({
+      spinning: true
+    })
     app.checkSkey().then(()=>{
       wx.request({
         url: app.globalData.url + '/getRecord/'+wx.getStorageSync('userId'),
@@ -334,10 +338,14 @@ Page({
           console.log(res.data)
           vm.setData({
             recordData: res.data,
-            searchData: res.data
+            searchData: res.data,
+            spinning: false
           })
         },
         error(err) {
+          vm.setData({
+            spinning: false
+          })
           console.log(err)
         }
       })

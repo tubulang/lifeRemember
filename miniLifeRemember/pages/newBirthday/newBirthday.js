@@ -18,7 +18,7 @@ Page({
     name: '',
     day: [],
     isLoading: false,
-
+    isSubmit:false
   },
 
   /**
@@ -44,6 +44,9 @@ Page({
     // })
     console.log(e)
     let vm = this;
+    vm.setData({
+      isSubmit:true
+    })
     wx.request({
       url: app.globalData.url + '/formIdGroup',
       method: 'post',
@@ -78,7 +81,10 @@ Page({
 
             },
             error(err) {
-              console.log(err)
+              console.log(err);
+              vm.setData({
+                isSubmit: false
+              })
             }
         })
         }

@@ -18,7 +18,9 @@ Page({
     name: '',
     day: [],
     isLoading: false,
-    id: ''
+    id: '',
+    spinning:true,
+    isSubmit:false
   },
 
   /**
@@ -34,7 +36,8 @@ Page({
     })
     console.log(options)
     vm.setData({
-      id: options.id
+      id: options.id,
+      spinning:true
     })
     app.checkSkey().then(()=>{
       wx.request({
@@ -43,10 +46,14 @@ Page({
           console.log(res);
           vm.setData({
             name: res.data.name,
-            'day[0]': res.data.day
+            'day[0]': res.data.day,
+            spinning:false
           })
         },
         error(e){
+          vm.setData({
+            spinning: false
+          })
           console.log(e)
         }
       })
@@ -59,6 +66,9 @@ Page({
     // })
     console.log(e)
     let vm = this;
+    vm.setData({
+      isSubmit:true
+    })
     wx.request({
       url: app.globalData.url + '/formIdGroup',
       method: 'post',

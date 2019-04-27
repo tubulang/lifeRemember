@@ -26,7 +26,9 @@ Page({
     inputMoney: '',
     outputMoney: '',
     isIncome: false,
-    moneyId:''
+    moneyId:'',
+    spinning:true,
+    isSubmit:false
   },
   onChangeCard(e) {
     if (e.detail.key === 0) {
@@ -71,7 +73,8 @@ Page({
       title: '编辑支出'
     })
     vm.setData({
-      moneyId: options.moneyId
+      moneyId: options.moneyId,
+      spinning:true
     })
     app.checkSkey().then(() => {
       const moneyTypePromise = new Promise((resolve, reject) => {
@@ -104,7 +107,8 @@ Page({
               });
               vm.setData({
                 outputOptions: outputData,
-                inputOptions: inputData
+                inputOptions: inputData,
+                
               })
               resolve();
             }
@@ -129,7 +133,7 @@ Page({
             vm.setData({
               outputContentValue: res.data.comment,
               outputValue: res.data.moneyTypeId,
-              output: outputData,
+              output: outputData, spinning: false,
               // degreeValue: getRecordData.degreeNumber,
               // 'remindTime[0]': getRecordData.remindTime,
               outputMoney: res.data.money
@@ -137,6 +141,9 @@ Page({
             })
           },
           error(err) {
+            vm.setData({
+              spinning: false
+            })
             console.log(err)
           }
         })
@@ -159,6 +166,11 @@ Page({
     //   isLoading: true
     // })
     const vm = this;
+    vm.setData({
+     
+        isSubmit: true
+    
+  })
     let sendData = {};
     if (this.data.isIncome) {
       sendData = {
@@ -197,10 +209,11 @@ Page({
               'content-type': 'application/json' // 默认值
             },
             success(res) {
-              console.log(res.data)
-              wx.reLaunch({
+              console.log(res.data);
+              vm.showToast('success', '提交成功', () => {wx.reLaunch({
                 url: '/pages/moneyAccount/moneyAccount',
-              })
+              }) })
+              
             },
             error(err) {
               console.log(err)

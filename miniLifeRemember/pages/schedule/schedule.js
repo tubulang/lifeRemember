@@ -45,6 +45,7 @@ Page({
     ],
     scheduleVisible: [],
     scheduleData:[],
+    spinning: true
   },
   deleteSchedule(e){
     console.log(e)
@@ -259,6 +260,9 @@ Page({
     wx.setNavigationBarTitle({
       title: '徒步浪的随记'
     })
+    vm.setData({
+      spinning: true
+    })
     app.checkSkey().then(()=>{
       wx.request({
         url: app.globalData.url + '/getTimeManage/' + wx.getStorageSync('userId'),
@@ -276,11 +280,15 @@ Page({
           vm.setData({
             scheduleData: res.data,
             // searchData: res.data
-            scheduleVisible: scheduleVisibleArray
+            scheduleVisible: scheduleVisibleArray,
+            spinning: false
           })
           console.log(scheduleVisibleArray)
         },
         error(err) {
+          vm.setData({
+            spinning: false
+          })
           console.log(err)
         }
       })

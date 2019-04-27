@@ -21,7 +21,8 @@
     "wux-dialog": "../../miniprogram_npm/wux-weapp/dialog/index",
     "wux-toast": "../../miniprogram_npm/wux-weapp/toast/index",
 
-    "wux-fab-button": "../../miniprogram_npm/wux-weapp/fab-button/index"
+    "wux-fab-button": "../../miniprogram_npm/wux-weapp/fab-button/index",
+    "wux-spin": "../../miniprogram_npm/wux-weapp/spin/index"
     
     
   }

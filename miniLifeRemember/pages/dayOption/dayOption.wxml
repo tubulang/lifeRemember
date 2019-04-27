@@ -1,5 +1,8 @@
 <!--pages/dayOption/dayOption.wxml-->
 <view>
+<wux-spin nested spinning="{{ spinning }}" tip="Loading...">
+<view>
+
   <wux-icon bindtap='previousDay' type="ios-arrow-back" size='20' wux-class='icon-left'/>
   <text class='dateContent'>{{year+'/'+month+'/'+day}}</text>
   <wux-icon bindtap='forwardDay' type="ios-arrow-forward" size='20' wux-class='icon-right'/>
@@ -104,7 +107,7 @@
                             <button size="mini" data-index="{{input.id}}" bindtap='editInput'>编辑</button>
                           </view>
                           <view>
-                            <i-cell title="{{input.comment}}" label="{{input.moneyType.name}}" value='{{input.money}}'></i-cell>
+                            <i-cell title="{{input.comment||'无备注'}}" label="{{input.moneyType.name||'未选择分类'}}" value='{{input.money}}'></i-cell>
                           </view>
 
                         </wux-popover>
@@ -127,7 +130,7 @@
                             <button size="mini" data-index="{{output.id}}" bindtap='editOutput'>编辑</button>
                           </view>
                           <view>
-                            <i-cell title="{{output.comment}}" label="{{output.moneyType.name}}" value='{{-output.money}}'></i-cell>
+                            <i-cell title="{{output.comment||'无备注'}}" label="{{output.moneyType.name||'未选择分类'}}" value='{{-output.money}}'></i-cell>
                           </view>
                         </wux-popover>
 
@@ -144,5 +147,7 @@
       </swiper>
     </view>
   </view>
+  
   <!-- <footer-bar></footer-bar> -->
+</view></wux-spin>
 </view>

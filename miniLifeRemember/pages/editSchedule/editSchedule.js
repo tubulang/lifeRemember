@@ -32,6 +32,8 @@ Page({
     isLoading: false,
     labelOptions: [],
     classificationOptions: [],
+    spinning:true,
+    isSubmit:false
 
   },
 
@@ -48,7 +50,8 @@ Page({
     })
     console.log(options)
     vm.setData({
-      scheduleId: options.scheduleId
+      scheduleId: options.scheduleId,
+      spinning:true
     })
     app.checkSkey().then(() => {
       //获取标签
@@ -155,7 +158,8 @@ Page({
           'planTime[0]': getClassificationData.planTime,
           scheduleStatus: getClassificationData.status,
           classificationValue: getClassificationData.classificationId,
-          classification: classificationData
+          classification: classificationData,
+          spinning:false
         })
         console.log(this.data.labelOptions)
       })
@@ -179,6 +183,9 @@ Page({
     //   isLoading: true
     // })
     const vm = this;
+    vm.setData({
+      isSubmit:true
+    })
     wx.request({
       url: app.globalData.url + '/formIdGroup',
       method: 'post',
@@ -208,10 +215,11 @@ Page({
               'content-type': 'application/json' // 默认值
             },
             success(res) {
-              console.log(res.data)
-              wx.reLaunch({
+              console.log(res.data);
+              vm.showToast('success', '提交成功', () => { wx.reLaunch({
                 url: '/pages/schedule/schedule',
-              })
+              })})
+              
             },
             error(err) {
               console.log(err)

@@ -18,6 +18,7 @@
     "wux-tabbar-item": "../../miniprogram_npm/wux-weapp/tabbar-item/index",
 
     "wux-dialog": "../../miniprogram_npm/wux-weapp/dialog/index",
-    "wux-toast": "../../miniprogram_npm/wux-weapp/toast/index"
+    "wux-toast": "../../miniprogram_npm/wux-weapp/toast/index",
+    "wux-spin": "../../miniprogram_npm/wux-weapp/spin/index"
   }
 }

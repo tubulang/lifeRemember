@@ -31,7 +31,7 @@ Page({
     isLoading: false,
     labelOptions: [],
     classificationOptions: [],
-
+isSubmit:false
   },
 
   /**
@@ -128,10 +128,14 @@ Page({
       creator: wx.getStorageSync('userId'),
       status: this.data.recordStatus
     }
+    let vm = this
     console.log(sendData)
     if(!sendData.schedule){
       this.showToast('forbidden', '请填写计划内容', () => { })
     }else{
+      this.setData({
+        isSubmit:true
+      })
       wx.request({
         url: app.globalData.url + '/timeManage', // 仅为示例，并非真实的接口地址
         data: sendData,
@@ -141,9 +145,12 @@ Page({
         },
         success(res) {
           console.log(res.data)
-          wx.reLaunch({
+
+          vm.showToast('success', '提交成功', () => {wx.reLaunch({
             url: '/pages/schedule/schedule',
-          })
+          }) })
+
+          
         },
         error(err) {
           console.log(err)

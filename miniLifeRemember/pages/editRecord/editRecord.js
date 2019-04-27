@@ -32,6 +32,8 @@ Page({
     isLoading: false,
     labelOptions: [],
     classificationOptions: [],
+    spinning:true,
+    isSubmit:false
 
   },
 
@@ -48,7 +50,8 @@ Page({
     })
     console.log(options)
     vm.setData({
-      recordId: options.recordId
+      recordId: options.recordId,
+      spinning:true
     })
     app.checkSkey().then(() => {
       //获取标签
@@ -161,7 +164,8 @@ Page({
           label: labelData,
           degreeValue: getRecordData.degreeNumber,
           
-          recordStatus: getRecordData.status
+          recordStatus: getRecordData.status,
+          spinning:false
           // classificationValue: getRecordData.class
         })
         console.log(this.data.labelOptions)
@@ -186,6 +190,9 @@ Page({
     //   isLoading: true
     // })
     const vm = this
+    vm.setData({
+      isSubmit:true
+    })
     wx.request({
       url: app.globalData.url + '/formIdGroup',
       method: 'post',
@@ -212,10 +219,11 @@ Page({
               'content-type': 'application/json' // 默认值
             },
             success(res) {
-              console.log(res.data)
-              wx.reLaunch({
+              console.log(res.data);
+              vm.showToast('success', '提交成功', () => { wx.reLaunch({
                 url: '/pages/recordPage/recordPage',
-              })
+              })})
+              
             },
             error(err) {
               console.log(err)

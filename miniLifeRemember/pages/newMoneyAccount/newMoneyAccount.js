@@ -25,6 +25,7 @@ Page({
     inputMoney: '',
     outputMoney: '',
     isIncome: true,
+    isSubmit:false
 
   },
   onChangeCard(e){
@@ -120,6 +121,9 @@ Page({
     // })
     let sendData = {};
     let vm = this;
+    vm.setData({
+      isSubmit: true
+    })
     if(this.data.isIncome){
       sendData = {
         accountType: 'income',
@@ -129,6 +133,7 @@ Page({
         money: +this.data.inputMoney
       }
     }else{
+      
       sendData = {
         accountType: 'expend',
         comment: this.data.outputContentValue,
@@ -156,10 +161,11 @@ Page({
               'content-type': 'application/json' // 默认值
             },
             success(res) {
-              console.log(res.data)
-              wx.reLaunch({
+              console.log(res.data);
+              vm.showToast('success', '提交成功', () => {wx.reLaunch({
                 url: '/pages/moneyAccount/moneyAccount',
-              })
+              }) })
+              
             },
             error(err) {
               console.log(err)

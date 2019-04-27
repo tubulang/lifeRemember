@@ -14,6 +14,7 @@ Page({
     // currentDate: '',
     current: 1,
 
+    spinning: true,
     tabs: [
       {
         key: 'log',
@@ -550,6 +551,9 @@ Page({
     wx.setNavigationBarTitle({
       title: '徒步浪的随记'
     })
+    this.setData({
+      spinning:true
+    })
     console.log(wx.getStorageSync('selectedDay'))
     let date = moment(wx.getStorageSync('selectedDay'), "YYYY-MM-DD")
     console.log(date.date())
@@ -559,9 +563,13 @@ Page({
     let birthMonth = '',birthDay = '';
     if (date.get('month') + 1 < 10){
       birthMonth = '0' + (date.get('month') + 1)
+    }else{
+      birthMonth = date.get('month') + 1
     }
     if (date.get('date') < 10){
       birthDay = '0' + date.get('date')
+    }else{
+      birthDay = date.get('date')
     }
     const selectDayBir = `${birthMonth}-${birthDay}`
     const vm = this;
@@ -571,7 +579,7 @@ Page({
     // })
     //record
     app.checkSkey().then(() => {
-      wx.request({
+      const recordPromise = new Promise((resolve, reject) => {wx.request({
         url: app.globalData.url + '/getRecordByDay/' + wx.getStorageSync('userId') + '/' + selectDay,
         method: 'GET',
         header: {
@@ -583,15 +591,18 @@ Page({
             recordData: res.data,
             searchData: res.data
           })
+          resolve()
         },
         error(err) {
+          reject()
           console.log(err)
         }
       })
-    })
+      })
+    
 
     //birthday
-    app.checkSkey().then(() => {
+      const birthdayPromise = new Promise((resolve, reject) => {
       wx.request({
         url: app.globalData.url + '/getBirthdayByDay/' + wx.getStorageSync('userId') + '/' + selectDayBir,
         success(res) {
@@ -599,15 +610,17 @@ Page({
           vm.setData({
             birthdayData: res.data
           })
+          resolve()
         },
         error(err) {
+          reject()
           console.log(err);
         }
       })
-    })
+      })
 
     //moneyAccount
-    app.checkSkey().then(() => {
+      const moneyAccountPromise = new Promise((resolve, reject) => {
       wx.request({
         url: app.globalData.url + '/getMoneyAccountByDay/' + wx.getStorageSync('userId') + '/' + selectDay,
         success(res) {
@@ -632,17 +645,19 @@ Page({
             inputData: inputArray,
             moneyVisible: moneyVisibleArray
           })
+          resolve()
           console.log(outputArray, inputArray)
         },
         error(err) {
+          reject()
           console.log(err)
         }
       })
-    })
+      })
 
 
     //schedule
-    app.checkSkey().then(() => {
+      const schedulePromise = new Promise((resolve, reject) => {
       wx.request({
         url: app.globalData.url + '/getTimeManageByDay/' + wx.getStorageSync('userId') + '/' + selectDay,
         method: 'GET',
@@ -661,12 +676,23 @@ Page({
             // searchData: res.data
             scheduleVisible: scheduleVisibleArray
           })
+          resolve()
           console.log(scheduleVisibleArray)
         },
         error(err) {
+          reject()
           console.log(err)
         }
       })
+      })
+
+      Promise.all([recordPromise, schedulePromise, birthdayPromise,
+      moneyAccountPromise]).then(() => {
+        vm.setData({
+          spinning: false
+        })
+      })
+    
     })
 
 
