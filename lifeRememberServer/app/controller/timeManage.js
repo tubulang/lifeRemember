@@ -22,7 +22,7 @@ class TimeManageController extends Controller {
     let timeMa = await ctx.model.TimeManage.findAll({
       order: [
         // 转义 username 并对查询结果按 DESC 方向排序
-        ['created_at', 'DESC']
+        ['planTime', 'DESC']
       ],
       where:{
         creator:toInt(ctx.params.userId)
@@ -44,7 +44,7 @@ class TimeManageController extends Controller {
     let timeMa = await ctx.model.TimeManage.findAll({
       order: [
         // 转义 username 并对查询结果按 DESC 方向排序
-        ['created_at', 'DESC']
+        ['planTime', 'DESC']
       ],
       where:{
         creator:toInt(ctx.params.userId),

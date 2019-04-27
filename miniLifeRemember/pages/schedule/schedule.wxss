@@ -40,7 +40,7 @@ bottom:138rpx !important;
 
 .wux-card > view{
   text-align: left;
-  min-width:100px;
+  min-width:130px;
 max-width:130px;
 
 }

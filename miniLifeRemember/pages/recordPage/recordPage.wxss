@@ -1,8 +1,10 @@
 /* pages/recordPage/recordPage.wxss */
 .recordPageBG{
-  height: 100vh;
+  /* height: 100vh; */
   background-image: url(http://localhost:7001/public/recordBG2.jpg);
-   /* background-repeat:no-repeat; */
+   background-repeat:space repeat;
+   min-height: 100vh;
+  height: auto;
   /* background-color: #DAEDFF */
 }
 .footer-height{

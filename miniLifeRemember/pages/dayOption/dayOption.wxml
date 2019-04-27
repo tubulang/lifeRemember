@@ -59,7 +59,7 @@
                         <button size="mini" data-index="{{schedule.id}}" bindtap='changeScheduleStatus'>{{schedule.status === 'undo' ? '完成' : '未做'}}</button>
                       </view>
                       <view>
-                        <i-cell title="{{schedule.schedule}}" label="{{schedule.classification.name}}" value='{{schedule.status}}'></i-cell>
+                        <i-cell title="{{schedule.schedule}}" label="{{schedule.classification.name ? schedule.classification.name : '未选择分类'}}" value='{{schedule.status}}'></i-cell>
                       </view>
 
                     </wux-popover>

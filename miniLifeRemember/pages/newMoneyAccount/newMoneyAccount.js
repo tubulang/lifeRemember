@@ -5,6 +5,7 @@ import {
 import {
   $wuxCalendar
 } from '../../miniprogram_npm/wux-weapp/index'
+import { $wuxToast } from '../../miniprogram_npm/wux-weapp/index'
 const app = getApp();
 Page({
 
@@ -80,7 +81,8 @@ Page({
           let inputData = [],outputData = [];
           console.log(res.statusCode)
           if (res.statusCode === 200) {
-            
+            inputData.push({ 'title': '', 'value': '' })
+            outputData.push({ 'title': '', 'value': '' })
             res.data.forEach((v, index) => {
               console.log(index)
               if(v.type === 'income'){
@@ -102,12 +104,22 @@ Page({
       })
     })
   },
+  showToast(type, text, fn) {
+    $wuxToast().show({
+      type: type,
+      duration: 1500,
+      color: '#fff',
+      text: text,
+      success: () => fn()
+    })
+  },
   //保存记录
   submitMoneyAccount(e) {
     // this.setData({
     //   isLoading: true
     // })
     let sendData = {};
+    let vm = this;
     if(this.data.isIncome){
       sendData = {
         accountType: 'income',
@@ -125,21 +137,39 @@ Page({
         money: +this.data.outputMoney
       }
     }
-    console.log(sendData)
     wx.request({
-      url: app.globalData.url + '/moneyAccount', // 仅为示例，并非真实的接口地址
-      data: sendData,
-      method: 'POST',
-      header: {
-        'content-type': 'application/json' // 默认值
+      url: app.globalData.url + '/formIdGroup',
+      method: 'post',
+      data: {
+        formId: e.detail.formId,
+        creator: wx.getStorageSync('userId'),
       },
       success(res) {
-        console.log(res.data)
-        wx.reLaunch({
-          url: '/pages/moneyAccount/moneyAccount',
-        })
+        if(!sendData.money){
+          vm.showToast('forbidden', '请填写正确的金额', () => { })
+        }else{
+          wx.request({
+            url: app.globalData.url + '/moneyAccount', // 仅为示例，并非真实的接口地址
+            data: sendData,
+            method: 'POST',
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success(res) {
+              console.log(res.data)
+              wx.reLaunch({
+                url: '/pages/moneyAccount/moneyAccount',
+              })
+            },
+            error(err) {
+              console.log(err)
+            }
+          })
+        }
+        console.log(sendData)
+        
       },
-      error(err) {
+      error(err){
         console.log(err)
       }
     })

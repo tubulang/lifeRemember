@@ -13,7 +13,10 @@ module.exports = app => {
     remindTime: {
         type:DATE,
         get(){
-          return moment(this.getDataValue('remindTime')).format('YYYY-MM-DD')
+          if(this.getDataValue('remindTime'))
+            return moment(this.getDataValue('remindTime')).format('YYYY-MM-DD')
+          else
+            return this.getDataValue('remindTime')
         }
     },
     creator: INTEGER,

@@ -5,6 +5,8 @@ import {
 import {
   $wuxCalendar
 } from '../../miniprogram_npm/wux-weapp/index'
+import { $wuxToast } from '../../miniprogram_npm/wux-weapp/index'
+
 const app = getApp();
 Page({
 
@@ -87,6 +89,8 @@ Page({
 
               res.data.forEach((v, index) => {
                 console.log(index)
+                outputData.push({ 'title': '', 'value': '' })
+                inputData.push({ 'title': '', 'value': '' })
                 if (v.type === 'income') {
                   inputData.push({
                     'title': v.name,
@@ -141,6 +145,15 @@ Page({
 
     })
   },
+  showToast(type, text, fn) {
+    $wuxToast().show({
+      type: type,
+      duration: 1500,
+      color: '#fff',
+      text: text,
+      success: () => fn()
+    })
+  },
   //保存记录
   submitMoneyAccount(e) {
     // this.setData({
@@ -165,21 +178,40 @@ Page({
         money: +this.data.outputMoney
       }
     }
-    console.log(sendData)
     wx.request({
-      url: app.globalData.url + '/moneyAccount/' + vm.data.moneyId, // 仅为示例，并非真实的接口地址
-      data: sendData,
-      method: 'PUT',
-      header: {
-        'content-type': 'application/json' // 默认值
+      url: app.globalData.url + '/formIdGroup',
+      method: 'post',
+      data: {
+        formId: e.detail.formId,
+        creator: wx.getStorageSync('userId'),
       },
       success(res) {
-        console.log(res.data)
-        wx.reLaunch({
-          url: '/pages/moneyAccount/moneyAccount',
-        })
+        console.log(sendData)
+        if(!sendData.money){
+          vm.showToast('forbidden', '请填写正确的金额', () => { })
+
+        }else{
+          wx.request({
+            url: app.globalData.url + '/moneyAccount/' + vm.data.moneyId, // 仅为示例，并非真实的接口地址
+            data: sendData,
+            method: 'PUT',
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success(res) {
+              console.log(res.data)
+              wx.reLaunch({
+                url: '/pages/moneyAccount/moneyAccount',
+              })
+            },
+            error(err) {
+              console.log(err)
+            }
+          })
+        }
+        
       },
-      error(err) {
+      error(err){
         console.log(err)
       }
     })
