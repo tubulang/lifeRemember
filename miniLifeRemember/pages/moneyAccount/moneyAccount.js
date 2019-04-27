@@ -23,7 +23,8 @@ const buttons = [{
 {
   label: '账目',
   // openType: 'getUserInfo',
-  className: 'newSubButoon'
+  className: 'newSubButoon',
+  spinning: true
   // icon,
 }]
 Page({
@@ -91,6 +92,9 @@ Page({
     wx.setNavigationBarTitle({
       title: '徒步浪的随记'
     })
+    vm.setData({
+      spinning: true
+    })
     app.checkSkey().then(()=>{
       wx.request({
         url: app.globalData.url + '/getMoneyAccount/'+wx.getStorageSync('userId'),
@@ -114,11 +118,15 @@ Page({
           vm.setData({
             outputData: outputArray,
             inputData: inputArray,
-            visible: visibleArray
+            visible: visibleArray,
+            spinning:false
           })
           console.log(outputArray,inputArray)
         },
         error(err) {
+          vm.setData({
+            spinning: false
+          })
           console.log(err)
         }
       })

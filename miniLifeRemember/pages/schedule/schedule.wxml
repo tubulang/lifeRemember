@@ -3,6 +3,7 @@
 <view class='view-page' bindtap='hideAllPopover'>
 <wux-toast id="wux-toast" />
 <wux-dialog id="wux-dialog" />
+<wux-spin nested spinning="{{ spinning }}" tip="Loading...">
   <view class="sub-title">您的日程</view>
   <wux-fab-button buttons="{{ buttons }}" direction='circle' catch:change="onFabButtonChange" catch:click="onNewClick" catch:contact="onContact" wux-class='fabButtonClass' sAngle='160' eAngle='290' spaceBetween='30' theme='calm' />
   <wux-timeline position="alternate">
@@ -71,6 +72,7 @@
 
     </wux-timeline-item> -->
   </wux-timeline>
+  </wux-spin>
   <!-- <view>
   <wux-popover visible="{{ visible }}" controlled placement="top" title="Title" bind:change="onChange">
           <view slot="content" bindtap="hide">Close</view>

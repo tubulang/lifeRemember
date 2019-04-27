@@ -10,6 +10,7 @@
     "wux-calendar": "../../miniprogram_npm/wux-weapp/calendar/index",
     "wux-icon": "../../miniprogram_npm/wux-weapp/icon/index",
     "wux-button": "../../miniprogram_npm/wux-weapp/button/index",
-    "wux-toast": "../../miniprogram_npm/wux-weapp/toast/index"
+    "wux-toast": "../../miniprogram_npm/wux-weapp/toast/index",
+    "wux-spin": "../../miniprogram_npm/wux-weapp/spin/index"
   }
 }

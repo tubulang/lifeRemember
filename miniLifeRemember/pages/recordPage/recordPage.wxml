@@ -1,5 +1,6 @@
 <!--pages/recordPage/recordPage.wxml-->
 <view class='recordPageBG'>
+
   <wux-toast id="wux-toast" />
   <wux-dialog id="wux-dialog" />
   <wux-fab-button buttons="{{ buttons }}" direction='circle' bind:change="onFabButtonChange" bind:click="onNewClick" bind:contact="onContact" wux-class='fabButtonClass' sAngle='160' eAngle='290' spaceBetween='30' theme='calm' />
@@ -7,6 +8,7 @@
   <view class="page__bd">
     <wux-search-bar clear value="{{ searchValue }}" controlled placeholder="Search" bind:change="onSearchChange" bind:focus="onFocus" bind:blur="onBlur" bind:confirm="onConfirm" bind:clear="onClear" bind:cancel="onCancel" />
   </view>
+  <wux-spin nested spinning="{{ spinning }}" tip="Loading...">
   <block wx:for="{{searchData}}" wx:key="{{index}}" wx:value="" wx:for-item='record'>
     <!-- <record-list bindtap='selectOperator' bindselectTap='selectOperator' bind:openBar='openRecordBar'>
       </record-list> -->
@@ -22,6 +24,7 @@
       </wux-swipe-action-group>
     </scroll-view>
   </block>
+  </wux-spin>
   <!-- <record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list> -->
 
   <!-- <wux-icon type="ios-add-circle-outline" class="{{newButton}}" color='#11c1f3' size="50" bindtap="newRecord"></wux-icon> -->
@@ -75,4 +78,5 @@
     </view>
 
   </view>
+  
 </view>

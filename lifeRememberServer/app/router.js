@@ -35,6 +35,11 @@ module.exports = app => {
   router.get('/getTimeManageByDay/:userId/:day', controller.timeManage.showByDay);
   router.get('/getBirthdayByDay/:userId/:day', controller.birthday.showByUserIdAndDay);
 
+  router.get('/getRecordCount/:userId', controller.record.getCount);
+  router.get('/getFinishRecordCount/:userId', controller.record.getFinishCount);
+  router.get('/getTimeManageCount/:userId', controller.timeManage.getCount);
+  router.get('/getFinishTimeManageCount/:userId', controller.timeManage.getFinishCount);
+
   router.get('/showMoneyHeader', controller.showImage.showMoneyHeader);
 
   // router.post('/user/:name/:age', controller.user.create);

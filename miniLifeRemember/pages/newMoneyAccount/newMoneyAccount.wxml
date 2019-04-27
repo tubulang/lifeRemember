@@ -45,7 +45,7 @@
 
     </view>
     <view>
-      <button form-type='submit' class='saveButton'>保存</button>
+      <button form-type='submit' class='saveButton' loading="{{isSubmit}}" disabled="{{isSubmit}}">保存</button>
       <!-- <wux-button block type="calm" formType='submit' loading='{{isLoading}}' 
   >保存</wux-button> -->
     </view>

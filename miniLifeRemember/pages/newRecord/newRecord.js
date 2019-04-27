@@ -31,6 +31,7 @@ Page({
     isLoading: false,
     labelOptions: [],
     classificationOptions: [],
+    isSubmit:false
 
   },
 
@@ -110,6 +111,9 @@ Page({
     // })
     console.log(e)
     let vm =this;
+    vm.setData({
+      isSubmit:true
+    })
     wx.request({
       url: app.globalData.url + '/formIdGroup',
       method:'post',
@@ -151,7 +155,7 @@ Page({
             }
           })
         }else{
-          vm.showToast('forbidden', '请填写记录内容', () => { })
+          vm.showToast('forbidden', '请填写记录内容', () => { vm.setData({isSubmit:false})})
         }
         
       },
@@ -159,7 +163,7 @@ Page({
         console.log(err)
       }
     })
-    // console.log(sendData)
+    
     
     console.log(e)
   },

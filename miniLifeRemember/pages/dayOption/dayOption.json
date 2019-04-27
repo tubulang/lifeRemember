@@ -30,6 +30,7 @@
     "wux-card": "../../miniprogram_npm/wux-weapp/card/index",
     
     "wux-timeline": "../../miniprogram_npm/wux-weapp/timeline/index",
-    "wux-timeline-item": "../../miniprogram_npm/wux-weapp/timeline-item/index"
+    "wux-timeline-item": "../../miniprogram_npm/wux-weapp/timeline-item/index",
+    "wux-spin": "../../miniprogram_npm/wux-weapp/spin/index"
   }
 }

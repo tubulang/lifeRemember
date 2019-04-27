@@ -49,6 +49,7 @@ Page({
 
     // thumb: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=',
     islunar: false,
+    spinning: true
   },
   onChangeTab(e) {
     console.log('onChange', e)
@@ -165,7 +166,8 @@ Page({
     // my_calendar_style.push({ month: 'current', day: 25, color: 'white', background: '#84e7d0' });
 
     vm.setData({
-      my_calendar_style
+      my_calendar_style,
+      spinning:true
     });
 
     app.checkSkey().then(()=>{
@@ -176,10 +178,14 @@ Page({
         success(res){
           console.log(res);
           vm.setData({
-            birthdayData: res.data
+            birthdayData: res.data,
+            spinning:false
           })
         },
         error(err){
+          vm.setData({
+            spinning: false
+          })
           console.log(err);
         }
       })

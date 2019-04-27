@@ -1,2 +1,16 @@
 <!--pages/myDetailInfo/myDetailInfo.wxml-->
-<text>pages/myDetailInfo/myDetailInfo.wxml</text>
+
+<view>
+<wux-spin nested spinning="{{ spinning }}" tip="Loading...">
+<view class='userinfo'>
+  <!-- <wux-avatar body-style="background-color: #11c1f3" size="large"> -->
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover">
+    </image>
+    <view>{{userInfo.nickName}}</view>
+  </view>
+<i-cell title="{{'历史记录总数'}}" label="{{}}" value='{{recordCount}}'></i-cell>
+<i-cell title="{{'历史日程总数'}}" label="{{}}" value='{{scheduleCount}}'></i-cell>
+<i-cell title="{{'已完成记录数'}}" label="{{}}" value='{{finishRecordCount}}'></i-cell>
+<i-cell title="{{'已完成日程数'}}" label="{{}}" value='{{finishScheduleCount}}'></i-cell>
+</wux-spin>
+</view>

@@ -2,11 +2,13 @@
 <view class='mainPage' bindtap='hideAllMoneyPopover'>
 <wux-toast id="wux-toast" />
 <wux-dialog id="wux-dialog" />
+  <wux-spin nested spinning="{{ spinning }}" tip="Loading...">
   <wux-wing-blank size="default">
   <wux-fab-button buttons="{{ buttons }}" direction='circle' catch:change="onFabButtonChange" catch:click="onNewClick" catch:contact="onContact" wux-class='fabButtonClass' sAngle='160' eAngle='290' spaceBetween='30' theme='calm' />
     <image class="headerImg" src="http://localhost:7001/public/moneyHeader.jpg"></image>
   <!-- </wux-wing-blank> -->
   <!-- <wux-wing-blank size="default"> -->
+  
     <wux-segmented-control theme="calm" values="{{ ['收入', '支出'] }}" bind:change="onChangeCard" />
   <!-- </wux-wing-blank> -->
   <view wx:if="{{showInput}}" class='contentClass'>
@@ -23,7 +25,7 @@
           <!-- <wux-wing-blank size="default"> -->
             <!-- <wux-card title="卡片标题" thumb="https://wux.cdn.cloverstd.com/logo.png"> -->
             <view>
-            <i-cell title="{{input.comment}}" label="{{input.moneyType.name}}" value='{{input.money}}'></i-cell>
+            <i-cell title="{{input.comment||'无备注'}}" label="{{input.moneyType.name || '未选择分类'}}" value='{{input.money}}'></i-cell>
             </view>
             <!-- <wux-card title="{{input.comment}}">
               <view slot="body">{{input.schedule}}</view>
@@ -49,7 +51,7 @@
             <button size="mini" data-index="{{output.id}}" bindtap='editOutput'>编辑</button>
           </view>
             <view>
-            <i-cell title="{{output.comment}}" label="{{output.moneyType.name}}" value='{{-output.money}}'></i-cell>
+            <i-cell title="{{output.comment||'无备注'}}" label="{{output.moneyType.name || '未选择分类'}}" value='{{-output.money}}'></i-cell>
             </view>
         </wux-popover>
 
@@ -58,7 +60,7 @@
     </wux-timeline>
   </view>
   </wux-wing-blank>
-
+</wux-spin>
   <view class="page footer-height">
     <view class="page__bd">
       <wux-tabbar current="{{current}}" controlled position="bottom" safeArea bindchange="onChangeTab" theme="calm">

@@ -22,7 +22,7 @@ class MoneyAccountController extends Controller {
     let moneyAc = await ctx.model.MoneyAccount.findAll({
       order: [
         // 转义 username 并对查询结果按 DESC 方向排序
-        ['created_at', 'DESC']
+        ['id', 'DESC']
       ],
       where:{
         creator:toInt(ctx.params.userId)
@@ -44,7 +44,7 @@ class MoneyAccountController extends Controller {
     let moneyAc = await ctx.model.MoneyAccount.findAll({
       order: [
         // 转义 username 并对查询结果按 DESC 方向排序
-        ['created_at', 'DESC']
+        ['id', 'DESC']
       ],
       where:{
         creator:toInt(ctx.params.userId),

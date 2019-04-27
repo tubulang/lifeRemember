@@ -17,6 +17,26 @@ class TimeManageController extends Controller {
     const ctx = this.ctx;
     ctx.body = await ctx.model.TimeManage.findById(toInt(ctx.params.id));
   }
+  async getCount(){
+    const ctx = this.ctx;
+    ctx.body = await ctx.model.TimeManage.count({
+      where:{
+        creator:toInt(ctx.params.userId)
+      },
+      // distinct: true,
+ 
+    })
+  }
+  async getFinishCount(){
+    const ctx = this.ctx;
+    ctx.body = await ctx.model.TimeManage.count({
+      where:{
+        creator:toInt(ctx.params.userId),
+        status: 'finish'
+      },
+      // distinct: true,
+    })
+  }
   async showByUserId() {
     const ctx = this.ctx;
     let timeMa = await ctx.model.TimeManage.findAll({
