@@ -1,5 +1,7 @@
 <!--pages/newRecord/newRecord.wxml-->
 <view class="page newRecordView">
+<wux-toast id="wux-toast" />
+
   <form bindsubmit="submitMoneyAccount" bindreset="formReset" report-submit='true'>
     <!-- <content-input value></content-input> -->
 

@@ -5,6 +5,8 @@ import {
 import {
   $wuxCalendar
 } from '../../miniprogram_npm/wux-weapp/index'
+import { $wuxToast } from '../../miniprogram_npm/wux-weapp/index'
+
 const app = getApp();
 Page({
 
@@ -63,6 +65,7 @@ Page({
             if (res.statusCode === 200) {
               res.data.forEach((v, index) => {
                 // console.log(index)
+                data.push({ 'title': '', 'value': '' })
                 data.push({
                   'title': v.name,
                   'value': v.id
@@ -161,38 +164,66 @@ Page({
     // }
 
   },
+  showToast(type, text, fn) {
+    $wuxToast().show({
+      type: type,
+      duration: 1500,
+      color: '#fff',
+      text: text,
+      success: () => fn()
+    })
+  },
   //修改记录
   submitSchedule(e) {
     // this.setData({
     //   isLoading: true
     // })
-    let sendData = {
-      // labelId: +this.data.labelValue,
-      degreeNumber: +this.data.degreeValue,
-      classificationId: +this.data.classificationValue,
-      schedule: this.data.contentValue,
-      planTime: this.data.planTime[0],
-      creator: wx.getStorageSync('userId'),
-      status: this.data.scheduleStatus
-    }
-    console.log(sendData)
+    const vm = this;
     wx.request({
-      url: app.globalData.url + '/timeManage/' + this.data.scheduleId, // 仅为示例，并非真实的接口地址
-      data: sendData,
-      method: 'PUT',
-      header: {
-        'content-type': 'application/json' // 默认值
+      url: app.globalData.url + '/formIdGroup',
+      method: 'post',
+      data: {
+        formId: e.detail.formId,
+        creator: wx.getStorageSync('userId'),
       },
       success(res) {
-        console.log(res.data)
-        wx.reLaunch({
-          url: '/pages/schedule/schedule',
-        })
+        let sendData = {
+          // labelId: +this.data.labelValue,
+          degreeNumber: +vm.data.degreeValue,
+          classificationId: +vm.data.classificationValue,
+          schedule: vm.data.contentValue,
+          planTime: vm.data.planTime[0],
+          creator: wx.getStorageSync('userId'),
+          status: vm.data.scheduleStatus
+        }
+        console.log(sendData)
+        if(!sendData.schedule){
+          vm.showToast('forbidden', '请填写计划内容', () => { })
+        }else{
+          wx.request({
+            url: app.globalData.url + '/timeManage/' + vm.data.scheduleId, // 仅为示例，并非真实的接口地址
+            data: sendData,
+            method: 'PUT',
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success(res) {
+              console.log(res.data)
+              wx.reLaunch({
+                url: '/pages/schedule/schedule',
+              })
+            },
+            error(err) {
+              console.log(err)
+            }
+          })
+        }
       },
-      error(err) {
+      error(err){
         console.log(err)
       }
     })
+    
     console.log(e)
   },
   //内容

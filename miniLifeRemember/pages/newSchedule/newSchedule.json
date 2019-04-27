@@ -9,6 +9,7 @@
     "wux-rater": "../../miniprogram_npm/wux-weapp/rater/index",
     "wux-calendar": "../../miniprogram_npm/wux-weapp/calendar/index",
     "wux-icon": "../../miniprogram_npm/wux-weapp/icon/index",
-    "wux-button": "../../miniprogram_npm/wux-weapp/button/index"
+    "wux-button": "../../miniprogram_npm/wux-weapp/button/index",
+    "wux-toast": "../../miniprogram_npm/wux-weapp/toast/index"
   }
 }

@@ -5,6 +5,8 @@ import {
 import {
   $wuxCalendar
 } from '../../miniprogram_npm/wux-weapp/index'
+import { $wuxToast } from '../../miniprogram_npm/wux-weapp/index'
+
 const app = getApp();
 Page({
 
@@ -61,6 +63,7 @@ Page({
             let data = [];
             console.log(res.data)
             if (res.statusCode === 200) {
+              data.push({ 'title': '', 'value': '' })
               res.data.forEach((v, index) => {
                 // console.log(index)
                 data.push({
@@ -144,12 +147,20 @@ Page({
             labelData = v.title
           }
         })
+        // let getRemindTime = ''
+        if (getRecordData.remindTime){
+          vm.setData({
+            'remindTime[0]': getRecordData.remindTime,
+          })
+        } 
+        console.log(getRecordData.remindTime)
+        // console.log(getRemindTime)
         vm.setData({
           contentValue: getRecordData.recordContent,
           labelValue: getRecordData.labelId,
           label: labelData,
           degreeValue: getRecordData.degreeNumber,
-          'remindTime[0]': getRecordData.remindTime,
+          
           recordStatus: getRecordData.status
           // classificationValue: getRecordData.class
         })
@@ -160,38 +171,67 @@ Page({
     // }
 
   },
+  showToast(type, text, fn) {
+    $wuxToast().show({
+      type: type,
+      duration: 1500,
+      color: '#fff',
+      text: text,
+      success: () => fn()
+    })
+  },
   //修改记录
   submitRecord(e) {
     // this.setData({
     //   isLoading: true
     // })
-    let sendData = {
-      labelId: +this.data.labelValue,
-      degreeNumber: +this.data.degreeValue,
-      // classificationId: +this.data.classificationValue,
-      recordContent: this.data.contentValue,
-      remindTime: this.data.remindTime[0],
-      creator: wx.getStorageSync('userId'),
-      status: this.data.recordStatus
-    }
-    console.log(sendData)
+    const vm = this
     wx.request({
-      url: app.globalData.url + '/record/'+this.data.recordId, // 仅为示例，并非真实的接口地址
-      data: sendData,
-      method: 'PUT',
-      header: {
-        'content-type': 'application/json' // 默认值
+      url: app.globalData.url + '/formIdGroup',
+      method: 'post',
+      data: {
+        formId: e.detail.formId,
+        creator: wx.getStorageSync('userId'),
       },
       success(res) {
-        console.log(res.data)
-        wx.reLaunch({
-          url: '/pages/recordPage/recordPage',
-        })
+        let sendData = {
+          labelId: +vm.data.labelValue,
+          degreeNumber: +vm.data.degreeValue,
+          // classificationId: +this.data.classificationValue,
+          recordContent: vm.data.contentValue,
+          remindTime: vm.data.remindTime[0],
+          creator: wx.getStorageSync('userId'),
+          status: vm.data.recordStatus
+        }
+        if(sendData.recordContent){
+          wx.request({
+            url: app.globalData.url + '/record/' + vm.data.recordId, // 仅为示例，并非真实的接口地址
+            data: sendData,
+            method: 'PUT',
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success(res) {
+              console.log(res.data)
+              wx.reLaunch({
+                url: '/pages/recordPage/recordPage',
+              })
+            },
+            error(err) {
+              console.log(err)
+            }
+          })
+        }else{
+          vm.showToast('forbidden','请填写记录内容',()=>{})
+        }
+        console.log(sendData)
       },
-      error(err) {
+      error(err){
         console.log(err)
       }
     })
+    
+    
     console.log(e)
   },
   //内容

@@ -32,6 +32,10 @@ Page({
     wx.setNavigationBarTitle({
       title: '新增生日'
     })
+    let date = new Date();
+    vm.setData({
+      'day[0]': `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}-${date.getUTCDate()}`
+    })
   },
   //保存记录
   submitRecord(e) {
@@ -54,27 +58,31 @@ Page({
           creator: wx.getStorageSync('userId'),
           lunarMark:0
         }
-
-        wx.request({
-          url: app.globalData.url + '/birthday', // 仅为示例，并非真实的接口地址
-          data: sendData,
-          method: 'POST',
-          header: {
-            'content-type': 'application/json' // 默认值
-          },
-          success(res) {
-            console.log(res.data)
-            vm.showToast('success', '提交成功', () => {
-              wx.reLaunch({
-                url: '/pages/calendarTab/calendarTab',
+        if(!sendData.name){
+          vm.showToast('forbidden', '请填写姓名', () => { })
+        }else{
+          wx.request({
+            url: app.globalData.url + '/birthday', // 仅为示例，并非真实的接口地址
+            data: sendData,
+            method: 'POST',
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success(res) {
+              console.log(res.data)
+              vm.showToast('success', '提交成功', () => {
+                wx.reLaunch({
+                  url: '/pages/calendarTab/calendarTab',
+                })
               })
-            })
 
-          },
-          error(err) {
-            console.log(err)
-          }
+            },
+            error(err) {
+              console.log(err)
+            }
         })
+        }
+        
       },
       error(err) {
         console.log(err)

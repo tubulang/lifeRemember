@@ -5,6 +5,8 @@ import {
 import {
   $wuxCalendar
 } from '../../miniprogram_npm/wux-weapp/index'
+import { $wuxToast } from '../../miniprogram_npm/wux-weapp/index'
+
 const app = getApp();
 Page({
 
@@ -80,6 +82,7 @@ Page({
           let data = [];
           console.log(res.statusCode)
           if (res.statusCode === 200) {
+            data.push({ 'title': '', 'value': '' })
             res.data.forEach((v, index) => {
               console.log(index)
               data.push({ 'title': v.name, 'value': v.id })
@@ -95,9 +98,21 @@ Page({
         }
       })
     })
-
+    let date = new Date();
+    vm.setData({
+      'planTime[0]': `${date.getUTCFullYear()}-${date.getUTCMonth()+1}-${date.getUTCDate()}`
+    })
     // }
 
+  },
+  showToast(type, text, fn) {
+    $wuxToast().show({
+      type: type,
+      duration: 1500,
+      color: '#fff',
+      text: text,
+      success: () => fn()
+    })
   },
   //保存记录
   submitRecord(e) {
@@ -114,23 +129,28 @@ Page({
       status: this.data.recordStatus
     }
     console.log(sendData)
-    wx.request({
-      url: app.globalData.url + '/timeManage', // 仅为示例，并非真实的接口地址
-      data: sendData,
-      method: 'POST',
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success(res) {
-        console.log(res.data)
-        wx.reLaunch({
-          url: '/pages/schedule/schedule',
-        })
-      },
-      error(err) {
-        console.log(err)
-      }
-    })
+    if(!sendData.schedule){
+      this.showToast('forbidden', '请填写计划内容', () => { })
+    }else{
+      wx.request({
+        url: app.globalData.url + '/timeManage', // 仅为示例，并非真实的接口地址
+        data: sendData,
+        method: 'POST',
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success(res) {
+          console.log(res.data)
+          wx.reLaunch({
+            url: '/pages/schedule/schedule',
+          })
+        },
+        error(err) {
+          console.log(err)
+        }
+      })
+    }
+    
     console.log(e)
   },
   //内容

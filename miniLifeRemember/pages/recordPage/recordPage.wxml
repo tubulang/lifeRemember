@@ -1,7 +1,7 @@
 <!--pages/recordPage/recordPage.wxml-->
 <view class='recordPageBG'>
-<wux-toast id="wux-toast" />
-<wux-dialog id="wux-dialog" />
+  <wux-toast id="wux-toast" />
+  <wux-dialog id="wux-dialog" />
   <wux-fab-button buttons="{{ buttons }}" direction='circle' bind:change="onFabButtonChange" bind:click="onNewClick" bind:contact="onContact" wux-class='fabButtonClass' sAngle='160' eAngle='290' spaceBetween='30' theme='calm' />
   <wux-select id="wux-select3" />
   <view class="page__bd">
@@ -14,65 +14,65 @@
 
       <wux-swipe-action-group>
         <wux-swipe-action autoClose left="{{ left }}" right="{{ right }}" data-selectId="{{record.id}}" wux-class='recordContent' bind:click='onClickOperator' bind:open='openRecordBar'>
-          <view class="demo-item recordView {{record.status == 'finish'?'doneStyle':''}}" >
-            <wux-selectable color="calm" defaultChecked="{{record.status == 'finish'}}"  value="{{index}}" wux-class="selcetAction" data-selectId="{{record.id}}" bind:change="onSelectChange"></wux-selectable>
-          {{record.recordContent}}</view>
+          <view class="demo-item recordView {{record.status == 'finish'?'doneStyle':''}}">
+            <wux-selectable color="calm" defaultChecked="{{record.status == 'finish'}}" value="{{index}}" wux-class="selcetAction" data-selectId="{{record.id}}" bind:change="onSelectChange"></wux-selectable>
+            {{record.recordContent}}</view>
         </wux-swipe-action>
 
       </wux-swipe-action-group>
     </scroll-view>
   </block>
   <!-- <record-list bindtap='selectOperator' bindselectTap='selectOperator'></record-list> -->
-  
+
   <!-- <wux-icon type="ios-add-circle-outline" class="{{newButton}}" color='#11c1f3' size="50" bindtap="newRecord"></wux-icon> -->
 
   <!-- <footer-bar bindchangeBar='onChangeBar'></footer-bar> -->
   <view class="page footer-height">
     <view class="page__bd">
-        <wux-tabbar current="{{current}}" controlled position="bottom" safeArea bindchange="onChangeTab" theme="calm">
-            <wux-tabbar-item title='记录'>
-            <wux-badge  slot="icon-on">
-                    <wux-icon wux-class="icon" type="ios-create" size="25" />
-                </wux-badge>
-                <wux-badge  slot="icon-off" >
-                    <wux-icon wux-class="icon" type="ios-create" size="25" />
-                </wux-badge>
-                
-            </wux-tabbar-item>
-            <wux-tabbar-item title='日程'>
-                <wux-badge slot="icon-on">
-                    <wux-icon wux-class="icon" type="ios-sunny" size="25" />
-                </wux-badge>
-                <wux-badge slot="icon-off">
-                    <wux-icon wux-class="icon" type="ios-sunny" size="25" />
-                </wux-badge>
-            </wux-tabbar-item>
-            <wux-tabbar-item title="日历">
-                <wux-badge slot="icon-on">
-                    <wux-icon wux-class="icon" type="ios-calendar" size="25" />
-                </wux-badge>
-                <wux-badge slot="icon-off">
-                    <wux-icon wux-class="icon" type="ios-calendar" size="25" />
-                </wux-badge>
-            </wux-tabbar-item>
-            <wux-tabbar-item title="账目" >
-                <wux-badge slot="icon-on">
-                    <wux-icon wux-class="icon" type="ios-card" size="25"/>
-                </wux-badge>
-                <wux-badge slot="icon-off">
-                    <wux-icon wux-class="icon" type="ios-card" size="25" />
-                </wux-badge>
-            </wux-tabbar-item>
-            <wux-tabbar-item title="我的">
-                <wux-badge slot="icon-on">
-                    <wux-icon wux-class="icon" type="ios-person" size="25" />
-                </wux-badge>
-                <wux-badge slot="icon-off">
-                    <wux-icon wux-class="icon" type="ios-person" size="25" />
-                </wux-badge>
-            </wux-tabbar-item>
-        </wux-tabbar>
+      <wux-tabbar current="{{current}}" controlled position="bottom" safeArea bindchange="onChangeTab" theme="calm">
+        <wux-tabbar-item title='记录'>
+          <wux-badge slot="icon-on">
+            <wux-icon wux-class="icon" type="ios-create" size="25" />
+          </wux-badge>
+          <wux-badge slot="icon-off">
+            <wux-icon wux-class="icon" type="ios-create" size="25" />
+          </wux-badge>
+
+        </wux-tabbar-item>
+        <wux-tabbar-item title='日程'>
+          <wux-badge slot="icon-on">
+            <wux-icon wux-class="icon" type="ios-sunny" size="25" />
+          </wux-badge>
+          <wux-badge slot="icon-off">
+            <wux-icon wux-class="icon" type="ios-sunny" size="25" />
+          </wux-badge>
+        </wux-tabbar-item>
+        <wux-tabbar-item title="日历">
+          <wux-badge slot="icon-on">
+            <wux-icon wux-class="icon" type="ios-calendar" size="25" />
+          </wux-badge>
+          <wux-badge slot="icon-off">
+            <wux-icon wux-class="icon" type="ios-calendar" size="25" />
+          </wux-badge>
+        </wux-tabbar-item>
+        <wux-tabbar-item title="账目">
+          <wux-badge slot="icon-on">
+            <wux-icon wux-class="icon" type="ios-card" size="25" />
+          </wux-badge>
+          <wux-badge slot="icon-off">
+            <wux-icon wux-class="icon" type="ios-card" size="25" />
+          </wux-badge>
+        </wux-tabbar-item>
+        <wux-tabbar-item title="我的">
+          <wux-badge slot="icon-on">
+            <wux-icon wux-class="icon" type="ios-person" size="25" />
+          </wux-badge>
+          <wux-badge slot="icon-off">
+            <wux-icon wux-class="icon" type="ios-person" size="25" />
+          </wux-badge>
+        </wux-tabbar-item>
+      </wux-tabbar>
     </view>
-    
-</view>
+
+  </view>
 </view>

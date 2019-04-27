@@ -57,10 +57,12 @@ Page({
             let data = [];
             console.log(res.statusCode)
             if (res.statusCode === 200) {
+              data.push({ 'title': '', 'value': '' })
               res.data.forEach((v, index) => {
                 console.log(index)
                 data.push({ 'title': v.name, 'value': v.id })
               });
+              
               vm.setData({
                 labelOptions: data
               })
@@ -126,27 +128,32 @@ Page({
           status: vm.data.recordStatus,
           formIdIndex: res.data.id
         }
-        
-        wx.request({
-          url: app.globalData.url + '/record', // 仅为示例，并非真实的接口地址
-          data: sendData,
-          method: 'POST',
-          header: {
-            'content-type': 'application/json' // 默认值
-          },
-          success(res) {
-            console.log(res.data)
-            vm.showToast('success', '提交成功', ()=>{
-              wx.reLaunch({
-                url: '/pages/recordPage/recordPage',
+        console.log(sendData)
+        if(sendData.recordContent){
+          wx.request({
+            url: app.globalData.url + '/record', // 仅为示例，并非真实的接口地址
+            data: sendData,
+            method: 'POST',
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success(res) {
+              console.log(res.data)
+              vm.showToast('success', '提交成功', ()=>{
+                wx.reLaunch({
+                  url: '/pages/recordPage/recordPage',
+                })
               })
-            })
-            
-          },
-          error(err) {
-            console.log(err)
-          }
-        })
+              
+            },
+            error(err) {
+              console.log(err)
+            }
+          })
+        }else{
+          vm.showToast('forbidden', '请填写记录内容', () => { })
+        }
+        
       },
       error(err){
         console.log(err)

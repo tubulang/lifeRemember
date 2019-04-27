@@ -1,5 +1,7 @@
 <!--pages/newRecord/newRecord.wxml-->
 <view class="page newRecordView">
+<wux-toast id="wux-toast" />
+
 <form bindsubmit="submitSchedule" bindreset="formReset" report-submit='true'>
   <!-- <content-input value></content-input> -->
   <wux-cell-group title="内容">

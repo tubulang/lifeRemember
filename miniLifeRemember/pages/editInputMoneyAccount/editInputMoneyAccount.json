@@ -12,6 +12,7 @@
     "wux-button": "../../miniprogram_npm/wux-weapp/button/index",
     "i-input": "../../miniprogram_npm/dist/input/index",
     "wux-segmented-control": "../../miniprogram_npm/wux-weapp/segmented-control/index",
-    "wux-input": "../../miniprogram_npm/wux-weapp/input/index"
+    "wux-input": "../../miniprogram_npm/wux-weapp/input/index",
+    "wux-toast": "../../miniprogram_npm/wux-weapp/toast/index"
   }
 }
