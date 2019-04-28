@@ -34,7 +34,7 @@ Page({
     })
     let date = new Date();
     vm.setData({
-      'day[0]': `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}-${date.getUTCDate()}`
+      'day[0]': `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
     })
   },
   //保存记录

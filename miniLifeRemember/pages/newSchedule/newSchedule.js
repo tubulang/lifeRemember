@@ -99,8 +99,9 @@ isSubmit:false
       })
     })
     let date = new Date();
+    console.log(date)
     vm.setData({
-      'planTime[0]': `${date.getUTCFullYear()}-${date.getUTCMonth()+1}-${date.getUTCDate()}`
+      'planTime[0]': `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`
     })
     // }
 

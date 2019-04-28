@@ -271,7 +271,7 @@ Page({
           'content-type': 'application/json' // 默认值
         },
         success(res) {
-          console.log(res.data[0].id)
+          // console.log(res.data[0].id)
           let scheduleVisibleArray = [];
           for(let k of res.data){
             console.log(k)

@@ -13,6 +13,7 @@ App({
     wx.getSetting({
       success: res => {
         let vm =this;
+        console.log(res)
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
@@ -30,6 +31,10 @@ App({
               }
             }
           })
+        }else{
+          wx.reLaunch({
+            url: '/pages/index/index',
+          })
         }
       }
     })
@@ -43,8 +48,10 @@ App({
           console.log(res)
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
           if (res.code) {
+            console.log(res.code)
             let encryptedData = '', iv = '';
-            this.doGetUserInfo(function (encryptedData, iv, name){
+            vm.doGetUserInfo(function (encryptedData, iv, name){
+              console.log(name)
               vm.globalData.encryptedData = encryptedData;
               vm.globalData.iv = iv;
               wx.request({
@@ -110,7 +117,7 @@ App({
     userInfo: null,
     encryptedData:'',
     iv:'',
-    url: 'http://localhost:7001',
-    // url: 'https://api.tubulang.cn',
+    // url: 'http://localhost:7001',
+    url: 'https://api.tubulang.cn',
   }
 })
