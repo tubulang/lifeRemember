@@ -89,11 +89,11 @@ Page({
               outputData = [];
             console.log(res.statusCode)
             if (res.statusCode === 200) {
-
+outputData.push({ 'title': '', 'value': '' })
+                inputData.push({ 'title': '', 'value': '' })
               res.data.forEach((v, index) => {
                 console.log(index)
-                outputData.push({ 'title': '', 'value': '' })
-                inputData.push({ 'title': '', 'value': '' })
+                
                 if (v.type === 'income') {
                   inputData.push({
                     'title': v.name,

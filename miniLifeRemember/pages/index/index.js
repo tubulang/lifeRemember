@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'welcome to 徒步浪',
+    motto: 'welcome to 徒步浪的随记',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
@@ -46,10 +46,19 @@ Page({
   },
   getUserInfo: function(e) {
     console.log(e)
+    let vm = this;
     app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+    const userPromise = new Promise((resolve,reject)=>{
+      vm.setData({
+        userInfo: e.detail.userInfo,
+        hasUserInfo: true
+      })
+      resolve()
+    }).then(()=>{
+      wx.reLaunch({
+      url: '/pages/recordPage/recordPage',
     })
+    })
+    
   }
 })
