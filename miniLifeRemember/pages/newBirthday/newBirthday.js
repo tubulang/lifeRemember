@@ -33,6 +33,7 @@ Page({
       title: '新增生日'
     })
     let date = new Date();
+    
     vm.setData({
       'day[0]': `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
     })

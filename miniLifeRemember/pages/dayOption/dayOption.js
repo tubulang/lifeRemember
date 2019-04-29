@@ -702,10 +702,11 @@ Page({
       // 同步接口立即返回值
       
       console.log(date.year(),date.month(),date.day())
+     
       this.setData({
         year: date.get('year'),
-        month: date.get('month') + 1,
-        day: date.get('date')
+        month: birthMonth,
+        day: birthDay
       })
 
     } catch (e) {
