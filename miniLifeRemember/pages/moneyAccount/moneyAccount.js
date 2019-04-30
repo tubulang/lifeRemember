@@ -60,7 +60,7 @@ Page({
     })
   },
   onChangeCard(e){
-    console.log(e.detail.key)
+    // console.log(e.detail.key)
     if(e.detail.key === 0){
       this.setData({
         showInput: true,
@@ -82,7 +82,7 @@ Page({
     wx.redirectTo({
       url: this.data.pagesOption[e.detail.key]
     })
-    this.triggerEvent('changeBar', e)
+    // this.triggerEvent('changeBar', e)
   },
   /**
    * 生命周期函数--监听页面加载

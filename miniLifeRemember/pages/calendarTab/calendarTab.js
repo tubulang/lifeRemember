@@ -60,13 +60,25 @@ Page({
     wx.redirectTo({
       url: this.data.pagesOption[e.detail.key]
     })
-    this.triggerEvent('changeBar', e)
+    // this.triggerEvent('changeBar', e)
   },
   dayChoose:function(event){
     try {
 
       // 同步接口立即写入
-      let date = event.detail.year + '-' + event.detail.month + '-' + event.detail.day
+      let nowMonth = ''
+      if (event.detail.month < 10) {
+        nowMonth = '0' + event.detail.month
+      } else {
+        nowMonth = event.detail.month
+      }
+      let nowDay = ''
+      if (event.detail.day < 10) {
+        nowDay = '0' + event.detail.day
+      } else {
+        nowDay = event.detail.day
+      }
+      let date = event.detail.year + '-' + nowMonth + '-' + nowDay
       wx.setStorageSync('selectedDay', date);
       wx.navigateTo({
         url: '/pages/dayOption/dayOption?date='+event.detail

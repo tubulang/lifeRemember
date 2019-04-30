@@ -163,7 +163,7 @@ Page({
     wx.redirectTo({
       url: this.data.pagesOption[e.detail.key]
     })
-    this.triggerEvent('changeBar', e)
+    // this.triggerEvent('changeBar', e)
   },
   showToast(type, text) {
     let vm = this;

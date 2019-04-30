@@ -25,7 +25,7 @@ Page({
     wx.redirectTo({
       url: this.data.pagesOption[e.detail.key]
     })
-    this.triggerEvent('changeBar', e)
+    // this.triggerEvent('changeBar', e)
   },
   /**
    * 生命周期函数--监听页面加载

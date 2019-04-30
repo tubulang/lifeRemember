@@ -44,6 +44,7 @@ Page({
         url: app.globalData.url + '/birthday/'+options.id,
         success(res){
           console.log(res);
+          // if(res.data.day)
           vm.setData({
             name: res.data.name,
             'day[0]': res.data.day,

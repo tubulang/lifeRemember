@@ -144,12 +144,17 @@ Page({
             labelData = v.title
           }
         })
+        if (getRecordData.remindTime){
+          vm.setData({
+            'remindTime[0]': getRecordData.remindTime
+          })
+        }
         vm.setData({
           contentValue: getRecordData.recordContent,
           labelValue: getRecordData.labelId,
           label: labelData,
           degreeValue: getRecordData.degreeNumber,
-          'remindTime[0]': getRecordData.remindTime,
+          // 'remindTime[0]': getRecordData.remindTime || null,
           recordStatus: getRecordData.status
           // classificationValue: getRecordData.class
         })
@@ -222,7 +227,7 @@ Page({
     $wuxCalendar().open({
       value: this.data.remindTime,
       minDate,
-      direction: 'vertical',
+      // direction: 'vertical',
       onChange: (values, displayValues) => {
         console.log('onChange', values, displayValues)
         this.setData({

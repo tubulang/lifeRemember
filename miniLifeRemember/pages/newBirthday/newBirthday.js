@@ -33,9 +33,21 @@ Page({
       title: '新增生日'
     })
     let date = new Date();
-    
+    console.log(`${date.getFullYear()} - ${date.getMonth() + 1} - ${date.getDate()}`)
+    let nowMonth = ''
+    if (date.getMonth() + 1 < 10) {
+      nowMonth = '0' + (date.getMonth() + 1)
+    } else {
+      nowMonth = date.getMonth() + 1
+    }
+    let nowDay = ''
+    if (date.getDate() < 10) {
+      nowDay = '0' + date.getDate()
+    } else {
+      nowDay = date.getDate()
+    }
     vm.setData({
-      'day[0]': `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+      'day[0]': `${date.getFullYear()}-${nowMonth}-${nowDay}`
     })
   },
   //保存记录
