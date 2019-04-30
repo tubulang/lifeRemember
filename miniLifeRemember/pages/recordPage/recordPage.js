@@ -85,7 +85,7 @@ Page({
     wx.redirectTo({
       url: this.data.pagesOption[e.detail.key]
     })
-    this.triggerEvent('changeBar', e)
+    // this.triggerEvent('changeBar', e)
   },
   //新建按钮点击
   onNewClick(e){

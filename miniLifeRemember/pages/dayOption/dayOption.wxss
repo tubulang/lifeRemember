@@ -1,15 +1,18 @@
 /* pages/dayOption/dayOption.wxss */
 .swiper-height{
-   height:80vh
+   height:100vh
 }
 .swiper-item-overflow{
   overflow-y: auto
 }
+.topView{
+  /* height: 3ovh; */
+}
 .dateContent{
-  left: 35vw;
-  width: 30vw;
-  position: relative;
-  font-size: 16px;
+  left: 37vw;
+  width: 26vw;
+  position: absolute;
+  font-size: 18px;
   /* top:1vh; */
   font-weight: 600px;
 }

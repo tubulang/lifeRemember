@@ -535,13 +535,15 @@ Page({
     let currentDay = moment(wx.getStorageSync('selectedDay')).subtract(1, 'day').format("YYYY-MM-DD")
     wx.setStorageSync('selectedDay', currentDay)
     // wx.setStorageSync('selectedDay', currentDay)
-    console.log(currentDay)
+    console.log('left',currentDay)
     this.onLoad()
   },
   forwardDay(e){
-    let currentDay = moment(wx.getStorageSync('selectedDay')).add(1, 'day').format("YYYY-MM-DD")
+    console.log(wx.getStorageSync('selectedDay'))
+    // console.log(moment(moment(wx.getStorageSync('selectedDay')).add(1, 'day')).format)
+    let currentDay = moment(wx.getStorageSync('selectedDay')).add(1, 'days').format("YYYY-MM-DD")
     wx.setStorageSync('selectedDay', currentDay)
-    console.log(e);
+    console.log('right',currentDay);
     this.onLoad()
   },
   /**
@@ -555,23 +557,49 @@ Page({
       spinning:true
     })
     console.log(wx.getStorageSync('selectedDay'))
-    let date = moment(wx.getStorageSync('selectedDay'), "YYYY-MM-DD")
-    console.log(date.date())
-    const selectDay = `${date.get('year')}-${date.get('month')+1}-${date.get('date')}`
+    let myDate = moment(wx.getStorageSync('selectedDay')).format();
+    console.log(myDate)
+    // console.log(myDate.get('year'), myDate.get('month'), myDate.get('date'))
+    // // // console.log(`${myDate.getFullYear()} - ${myDate.getMonth() + 1} - ${myDate.getDate()}`)
+    // let nowMonth = ''
+    // if (myDate.get('month') + 1 < 10) {
+    //   nowMonth = '0' + (myDate.get('month') + 1)
+    // } else {
+    //   nowMonth = myDate.get('month') + 1
+    // }
+    // let nowDay = ''
+    // if (myDate.get('date') < 10) {
+    //   nowDay = '0' + myDate.get('date')
+    // } else {
+    //   nowDay = myDate.get('date')
+    // }
+    // console.log(myDate.get('year'), myDate.get('month') + 1, myDate.get('date'))
+    const selectYear = myDate.substring(0, 4);
+    const selectMonth = myDate.substring(5,7);
+    const selectDate = myDate.substring(8, 10);
+
+    const selectDay = myDate
+    const selectDayBir = `${selectMonth}-${selectDate}`
     console.log(selectDay)
-    console.log(date)
-    let birthMonth = '',birthDay = '';
-    if (date.get('month') + 1 < 10){
-      birthMonth = '0' + (date.get('month') + 1)
-    }else{
-      birthMonth = date.get('month') + 1
-    }
-    if (date.get('date') < 10){
-      birthDay = '0' + date.get('date')
-    }else{
-      birthDay = date.get('date')
-    }
-    const selectDayBir = `${birthMonth}-${birthDay}`
+    console.log(selectDayBir)
+    // console.log('storage',wx.getStorageSync('selectedDay'))
+    // let date = moment(`${myDate.getFullYear()}-${nowMonth}-${nowDay}`, "YYYY-MM-DD")
+    // // console.log(date)
+    // const selectDay = `${date.get('year')}-${date.get('month')+1}-${date.get('date')}`
+    // console.log(selectDay)
+    // // console.log(date)
+    // let birthMonth = '',birthDay = '';
+    // if (date.get('month') + 1 < 10){
+    //   birthMonth = '0' + (date.get('month') + 1)
+    // }else{
+    //   birthMonth = date.get('month') + 1
+    // }
+    // if (date.get('date') < 10){
+    //   birthDay = '0' + date.get('date')
+    // }else{
+    //   birthDay = date.get('date')
+    // }
+    
     const vm = this;
     console.log(wx.getStorageSync('sessionKey'))
     // wx.setNavigationBarTitle({
@@ -697,16 +725,17 @@ Page({
 
 
     this.key = Math.floor(Math.random() * 3)
+    console.log(this.key)
     // console.log(options.date.day)
     try {
       // 同步接口立即返回值
       
-      console.log(date.year(),date.month(),date.day())
+      // console.log(date.year(),date.month(),date.day())
      
       this.setData({
-        year: date.get('year'),
-        month: birthMonth,
-        day: birthDay
+        year: selectYear,
+        month: selectMonth,
+        day: selectDate
       })
 
     } catch (e) {
