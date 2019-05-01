@@ -1,10 +1,13 @@
 import { $wuxSelect } from '../../miniprogram_npm/wux-weapp/index'
 const app = getApp()
+import { $wuxToast } from '../../miniprogram_npm/wux-weapp/index'
+
 Page({
   data: {
     labelData: [],
     visible: false,
-    labelName: ''
+    labelName: '',
+    isSubmit:false
   },
   onChangeInput(e) {
     console.log(e.detail.value)
@@ -15,36 +18,61 @@ Page({
   openNew() {
     this.setData({
       visible: true,
+      labelName:''
     })
   },
   hide() {
     this.setData({
       visible: false,
+      labelName: ''
+    })
+  },
+  showToast(type, text, fn) {
+    $wuxToast().show({
+      type: type,
+      duration: 1500,
+      color: '#fff',
+      text: text,
+      success: () => fn()
     })
   },
   newLabel() {
     const vm = this;
-    wx.request({
-      url: app.globalData.url + '/label',
-      method: 'POST',
-      data: {
-        creator: wx.getStorageSync('userId'),
-        name: vm.data.labelName
-      },
-      success(res) {
-        console.log(res)
-        let data = vm.data.labelData;
-        data.unshift(res.data)
-        vm.setData({
-          labelData: data
-        })
-        vm.hide();
-      },
-      error(err) {
-        consolo.log(err)
-        vm.hide();
-      }
-    })
+    if(!vm.data.labelName){
+      vm.showToast('forbidden', '请填写标签信息', () => { })
+    }else{
+      vm.setData({
+        isSubmit: true
+      })
+      wx.request({
+        url: app.globalData.url + '/label',
+        method: 'POST',
+        data: {
+          creator: wx.getStorageSync('userId'),
+          name: vm.data.labelName
+        },
+        success(res) {
+          console.log(res)
+          let data = vm.data.labelData;
+          data.unshift(res.data)
+          vm.setData({
+            labelData: data,
+            isSubmit: false,
+            labelName:''
+          })
+          vm.hide();
+        },
+        error(err) {
+          consolo.log(err)
+          vm.setData({
+            isSubmit: false
+          })
+          vm.hide();
+        }
+      })
+    }
+    
+    
   },
   onLoad(options) {
     const vm = this;
