@@ -12,6 +12,7 @@
     "wux-radio": "../../miniprogram_npm/wux-weapp/radio/index",
 
     "i-radio-group": "../../miniprogram_npm/dist/radio-group/index",
-    "i-radio": "../../miniprogram_npm/dist/radio/index"
+    "i-radio": "../../miniprogram_npm/dist/radio/index",
+    "wux-toast": "../../miniprogram_npm/wux-weapp/toast/index"
   }
 }

@@ -10,14 +10,16 @@
             <wux-cell title="归类" extra="{{ myType }}" bind:click="showTypes"></wux-cell>
         </wux-cell-group>
     </view> -->
+        <wux-toast id="wux-toast" />
+
   <wux-popup position="center" visible="{{ visible }}" bind:close="hide">
     <wux-cell-group title="新增分类">
       <!-- <wux-cell hover-class="none" title="Jack Ma"></wux-cell> -->
       <wux-cell>
-      <wux-input  label="名称" defaultValue="{{classificationName}}" bind:change="onChangeInput"></wux-input>
+      <wux-input  label="名称" controlled value="{{classificationName}}" bind:change="onChangeInput"></wux-input>
       </wux-cell>
       <wux-cell hover-class="none">
-        <wux-button block type="calm" bindtap="newClassification">确认</wux-button>
+        <wux-button block type="calm" bindtap="newClassification" loading="{{isSubmit}}" disabled="{{isSubmit}}">确认</wux-button>
       </wux-cell>
     </wux-cell-group>
   </wux-popup>
@@ -26,7 +28,7 @@
     <i-cell title="{{item.name}}"></i-cell>
   </block>
   <view>
-    <button bindtap='openNew' class='saveButton'>新增</button>
+    <button bindtap='openNew' class='saveButton'>新增分类</button>
     <!-- <wux-button block type="calm" formType='submit' loading='{{isLoading}}' 
   >保存</wux-button> -->
   </view>

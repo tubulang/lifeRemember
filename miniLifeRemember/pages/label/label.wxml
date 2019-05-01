@@ -10,14 +10,16 @@
             <wux-cell title="归类" extra="{{ myType }}" bind:click="showTypes"></wux-cell>
         </wux-cell-group>
     </view> -->
+        <wux-toast id="wux-toast" />
+
   <wux-popup position="center" visible="{{ visible }}" bind:close="hide">
     <wux-cell-group title="新增标签">
       <!-- <wux-cell hover-class="none" title="Jack Ma"></wux-cell> -->
       <wux-cell>
-      <wux-input  label="名称" defaultValue="{{labelName}}" bind:change="onChangeInput"></wux-input>
+      <wux-input  label="名称" value="{{labelName}}" controlled bind:change="onChangeInput"></wux-input>
       </wux-cell>
       <wux-cell hover-class="none">
-        <wux-button block type="calm" bindtap="newLabel">确认</wux-button>
+        <wux-button block type="calm" bindtap="newLabel" loading="{{isSubmit}}" disabled="{{isSubmit}}">确认</wux-button>
       </wux-cell>
     </wux-cell-group>
   </wux-popup>

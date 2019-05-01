@@ -6,6 +6,7 @@
     "i-cell": "../../miniprogram_npm/dist/cell/index",
     "wux-popup": "../../miniprogram_npm/wux-weapp/popup/index",
     "wux-button": "../../miniprogram_npm/wux-weapp/button/index",
-    "wux-input": "../../miniprogram_npm/wux-weapp/input/index"
+    "wux-input": "../../miniprogram_npm/wux-weapp/input/index",
+        "wux-toast": "../../miniprogram_npm/wux-weapp/toast/index"
   }
 }

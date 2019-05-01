@@ -1,11 +1,14 @@
 import { $wuxSelect } from '../../miniprogram_npm/wux-weapp/index'
+import { $wuxToast } from '../../miniprogram_npm/wux-weapp/index'
+
 const app = getApp()
 Page({
   data: {
     moneyTypeData: [],
     visible: false,
     moneyTypeName: '',
-    type: '收入'
+    type: '收入',
+    isSubmit: false
   },
   handleTypeChange(e){
     this.setData({
@@ -21,11 +24,13 @@ Page({
   openNew() {
     this.setData({
       visible: true,
+      moneyTypeName: ''
     })
   },
   hide() {
     this.setData({
       visible: false,
+      moneyTypeName: ''
     })
   },
   newMoneyType() {
@@ -36,27 +41,47 @@ Page({
     }else{
       typeData = 'expend'
     }
-    wx.request({
-      url: app.globalData.url + '/moneyType',
-      method: 'POST',
-      data: {
-        creator: wx.getStorageSync('userId'),
-        name: vm.data.moneyTypeName,
-        type: typeData
-      },
-      success(res) {
-        console.log(res)
-        let data = vm.data.moneyTypeData;
-        data.unshift(res.data)
-        vm.setData({
-          moneyTypeData: data
-        })
-        vm.hide();
-      },
-      error(err) {
-        consolo.log(err)
-        vm.hide();
-      }
+    if (!vm.data.moneyTypeName) {
+      vm.showToast('forbidden', '请填写账目类别信息', () => { })
+    } else {
+      vm.setData({
+        isSubmit: true
+      })
+      wx.request({
+        url: app.globalData.url + '/moneyType',
+        method: 'POST',
+        data: {
+          creator: wx.getStorageSync('userId'),
+          name: vm.data.moneyTypeName,
+          type: typeData
+        },
+        success(res) {
+          console.log(res)
+          let data = vm.data.moneyTypeData;
+          data.unshift(res.data)
+          vm.setData({
+            moneyTypeData: data,
+            isSubmit: false,
+          })
+          vm.hide();
+        },
+        error(err) {
+          consolo.log(err)
+          vm.setData({
+            isSubmit: false
+          })
+          vm.hide();
+        }
+      })
+    }
+  },
+  showToast(type, text, fn) {
+    $wuxToast().show({
+      type: type,
+      duration: 1500,
+      color: '#fff',
+      text: text,
+      success: () => fn()
     })
   },
   onLoad(options) {
