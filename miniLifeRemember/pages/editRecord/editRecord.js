@@ -178,7 +178,7 @@ Page({
   showToast(type, text, fn) {
     $wuxToast().show({
       type: type,
-      duration: 1500,
+      duration: 1000,
       color: '#fff',
       text: text,
       success: () => fn()
@@ -190,9 +190,7 @@ Page({
     //   isLoading: true
     // })
     const vm = this
-    vm.setData({
-      isSubmit:true
-    })
+    
     wx.request({
       url: app.globalData.url + '/formIdGroup',
       method: 'post',
@@ -211,6 +209,9 @@ Page({
           status: vm.data.recordStatus
         }
         if(sendData.recordContent){
+          vm.setData({
+            isSubmit: true
+          })
           wx.request({
             url: app.globalData.url + '/record/' + vm.data.recordId, // 仅为示例，并非真实的接口地址
             data: sendData,
@@ -227,6 +228,9 @@ Page({
             },
             error(err) {
               console.log(err)
+              vm.setData({
+                isSubmit: false
+              })
             }
           })
         }else{

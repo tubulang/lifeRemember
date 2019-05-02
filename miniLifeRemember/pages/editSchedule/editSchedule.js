@@ -171,7 +171,7 @@ Page({
   showToast(type, text, fn) {
     $wuxToast().show({
       type: type,
-      duration: 1500,
+      duration: 1000,
       color: '#fff',
       text: text,
       success: () => fn()
@@ -183,9 +183,7 @@ Page({
     //   isLoading: true
     // })
     const vm = this;
-    vm.setData({
-      isSubmit:true
-    })
+    
     wx.request({
       url: app.globalData.url + '/formIdGroup',
       method: 'post',
@@ -207,6 +205,9 @@ Page({
         if(!sendData.schedule){
           vm.showToast('forbidden', '请填写计划内容', () => { })
         }else{
+          vm.setData({
+            isSubmit: true
+          })
           wx.request({
             url: app.globalData.url + '/timeManage/' + vm.data.scheduleId, // 仅为示例，并非真实的接口地址
             data: sendData,
@@ -222,6 +223,9 @@ Page({
               
             },
             error(err) {
+              vm.setData({
+                isSubmit: false
+              })
               console.log(err)
             }
           })

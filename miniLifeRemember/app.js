@@ -117,7 +117,7 @@ App({
     userInfo: null,
     encryptedData:'',
     iv:'',
-    // url: 'http://localhost:7001',
-    url: 'https://api.tubulang.cn',
+    url: 'http://localhost:7001',
+    // url: 'https://api.tubulang.cn',
   }
 })

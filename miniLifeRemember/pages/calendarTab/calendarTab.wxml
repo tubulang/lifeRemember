@@ -2,7 +2,20 @@
   <wux-fab-button buttons="{{ buttons }}" direction='circle' bind:change="onFabButtonChange" bind:click="onNewClick" bind:contact="onContact" wux-class='fabButtonClass' sAngle='160' eAngle='290' spaceBetween='30' theme='calm' />
   <wux-spin nested spinning="{{ spinning }}" tip="Loading...">
   <view class="myCalendar">
-    <calendar cell-size="40" next="{{true}}" prev="{{true}}" show-more-days="{{true}}" calendar-style="myCalendar-calendar" header-style="myCalendar-header" board-style="myCalendar-board" days-color="{{my_calendar_style}}" binddayClick='dayChoose' lunar='{{lunarStatus}}'
+    <calendar
+    cell-size="40"
+    next="{{true}}"
+    prev="{{true}}"
+    show-more-days="{{true}}"
+    calendar-style="myCalendar-calendar"
+    header-style="myCalendar-header"
+    board-style="myCalendar-board"
+    days-color="{{my_calendar_style}}"
+    binddayClick='dayChoose'
+    lunar='{{lunarStatus}}'
+    bindnextMonth="nextMonth"
+    bindprevMonth="prevMonth"
+    binddateChange="headerDateChange"
     />
   </view>
   <!-- <wux-button>农历</wux-button> -->

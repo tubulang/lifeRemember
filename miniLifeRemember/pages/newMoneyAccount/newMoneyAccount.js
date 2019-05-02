@@ -108,7 +108,7 @@ Page({
   showToast(type, text, fn) {
     $wuxToast().show({
       type: type,
-      duration: 1500,
+      duration: 1000,
       color: '#fff',
       text: text,
       success: () => fn()
@@ -121,9 +121,7 @@ Page({
     // })
     let sendData = {};
     let vm = this;
-    vm.setData({
-      isSubmit: true
-    })
+    
     if(this.data.isIncome){
       sendData = {
         accountType: 'income',
@@ -153,6 +151,9 @@ Page({
         if(!sendData.money){
           vm.showToast('forbidden', '请填写正确的金额', () => { })
         }else{
+          vm.setData({
+            isSubmit: true
+          })
           wx.request({
             url: app.globalData.url + '/moneyAccount', // 仅为示例，并非真实的接口地址
             data: sendData,
@@ -169,6 +170,9 @@ Page({
             },
             error(err) {
               console.log(err)
+              vm.setData({
+                isSubmit: false
+              })
             }
           })
         }

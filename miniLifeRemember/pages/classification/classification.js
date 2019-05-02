@@ -24,7 +24,7 @@ Page({
   showToast(type, text, fn) {
     $wuxToast().show({
       type: type,
-      duration: 1500,
+      duration: 1000,
       color: '#fff',
       text: text,
       success: () => fn()

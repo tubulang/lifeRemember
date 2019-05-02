@@ -169,7 +169,7 @@ Page({
     let vm = this;
     $wuxToast().show({
       type: type,
-      duration: 1500,
+      duration: 1000,
       color: '#fff',
       text: text,
       success: () => console.log(vm.data.scheduleData)

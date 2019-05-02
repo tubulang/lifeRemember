@@ -5,7 +5,9 @@ import {
 import {
   $wuxCalendar
 } from '../../miniprogram_npm/wux-weapp/index'
-import { $wuxToast } from '../../miniprogram_npm/wux-weapp/index'
+import {
+  $wuxToast
+} from '../../miniprogram_npm/wux-weapp/index'
 
 const app = getApp();
 Page({
@@ -26,9 +28,9 @@ Page({
     inputMoney: '',
     outputMoney: '',
     isIncome: false,
-    moneyId:'',
-    spinning:true,
-    isSubmit:false
+    moneyId: '',
+    spinning: true,
+    isSubmit: false
   },
   onChangeCard(e) {
     if (e.detail.key === 0) {
@@ -64,7 +66,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     // app.checkSkey();
     //获取output数据
     // if(wx.getStorageSync('userId')){
@@ -74,7 +76,7 @@ Page({
     })
     vm.setData({
       moneyId: options.moneyId,
-      spinning:true
+      spinning: true
     })
     app.checkSkey().then(() => {
       const moneyTypePromise = new Promise((resolve, reject) => {
@@ -89,8 +91,14 @@ Page({
               outputData = [];
             console.log(res.statusCode)
             if (res.statusCode === 200) {
-              outputData.push({ 'title': '', 'value': '' })
-              inputData.push({ 'title': '', 'value': '' })
+              outputData.push({
+                'title': '',
+                'value': ''
+              })
+              inputData.push({
+                'title': '',
+                'value': ''
+              })
               res.data.forEach((v, index) => {
                 console.log(index)
                 if (v.type === 'income') {
@@ -108,7 +116,7 @@ Page({
               vm.setData({
                 outputOptions: outputData,
                 inputOptions: inputData,
-                
+
               })
               resolve();
             }
@@ -133,7 +141,8 @@ Page({
             vm.setData({
               outputContentValue: res.data.comment,
               outputValue: res.data.moneyTypeId,
-              output: outputData, spinning: false,
+              output: outputData,
+              spinning: false,
               // degreeValue: getRecordData.degreeNumber,
               // 'remindTime[0]': getRecordData.remindTime,
               outputMoney: res.data.money
@@ -154,7 +163,7 @@ Page({
   showToast(type, text, fn) {
     $wuxToast().show({
       type: type,
-      duration: 1500,
+      duration: 1000,
       color: '#fff',
       text: text,
       success: () => fn()
@@ -166,11 +175,7 @@ Page({
     //   isLoading: true
     // })
     const vm = this;
-    vm.setData({
-     
-        isSubmit: true
     
-  })
     let sendData = {};
     if (this.data.isIncome) {
       sendData = {
@@ -198,11 +203,14 @@ Page({
       },
       success(res) {
         console.log(sendData)
-        if(!sendData.money){
-          vm.showToast('forbidden', '请填写正确的金额', () => { })
-        }else{
+        if (!sendData.money) {
+          vm.showToast('forbidden', '请填写正确的金额', () => {})
+        } else {
+          vm.setData({
+            isSubmit: true
+          })
           wx.request({
-            url: app.globalData.url + '/moneyAccount/'+ vm.data.moneyId, // 仅为示例，并非真实的接口地址
+            url: app.globalData.url + '/moneyAccount/' + vm.data.moneyId, // 仅为示例，并非真实的接口地址
             data: sendData,
             method: 'PUT',
             header: {
@@ -210,19 +218,24 @@ Page({
             },
             success(res) {
               console.log(res.data);
-              vm.showToast('success', '提交成功', () => {wx.reLaunch({
-                url: '/pages/moneyAccount/moneyAccount',
-              }) })
-              
+              vm.showToast('success', '提交成功', () => {
+                wx.reLaunch({
+                  url: '/pages/moneyAccount/moneyAccount',
+                })
+              })
+
             },
             error(err) {
+              vm.setData({
+                isSubmit: false
+              })
               console.log(err)
             }
           })
         }
-        
+
       },
-      error(err){
+      error(err) {
         console.log(err)
       }
     })
@@ -328,49 +341,49 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })
